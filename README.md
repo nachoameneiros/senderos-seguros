@@ -1,2 +1,0 @@
-# senderos-seguros
-Senderos Seguros
