@@ -131,6 +131,21 @@ WITH (
 ALTER TABLE public.tb_local
   OWNER TO postgres;
 
+-- Table: public.tb_reportes
 
+-- DROP TABLE public.tb_reportes;
+
+CREATE TABLE public.tb_reportes
+(
+  idalumno bigint,
+  idagente bigint,
+  asistencia character varying(60) NOT NULL,
+  motivo character varying(255) NOT NULL
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.tb_reportes
+  OWNER TO postgres;
 
 

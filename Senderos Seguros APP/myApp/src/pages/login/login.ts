@@ -56,13 +56,8 @@ export class Login {
    }
    else{
     this.presentToast("Ingresar usuario y contraseña");
-   }
-      
-      
-  
+   } 
   }
-
-
 
   gotowelcome(){
    this.navCtrl.popToRoot();

@@ -16,6 +16,7 @@ import { MapaAgente } from '../pages/mapa-agente/mapa-agente';
 import { TabsPageAgente } from '../pages/tabs-agente/tabs-agente';
 import { TabsPageAlumno } from '../pages/tabs-alumno/tabs-alumno';
 import { VerAgentesAlumno } from '../pages/ver-agentes-alumno/ver-agentes-alumno';
+import { ReportarAgente } from '../pages/reportar-agente/reportar-agente';
 import { GoogleMaps } from '@ionic-native/google-maps';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -30,6 +31,7 @@ import { SafePipe } from '../providers/pipe';
   declarations: [
     MyApp,
     Welcome,
+    ReportarAgente,
     VerAgentesAlumno,
     SelecionAgenteAlumno,
     Login,
@@ -49,6 +51,7 @@ import { SafePipe } from '../providers/pipe';
   entryComponents: [
     MyApp,
     Welcome,
+    ReportarAgente,
     VerAgentesAlumno,
     SelecionAgenteAlumno,
     Login,

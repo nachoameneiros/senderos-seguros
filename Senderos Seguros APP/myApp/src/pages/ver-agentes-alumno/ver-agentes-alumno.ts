@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {AuthService} from "../../providers/auth-service";
+import { ReportarAgente } from '../reportar-agente/reportar-agente';
 
 @Component({
   selector: 'page-ver-agentes-alumno',
@@ -22,6 +23,10 @@ export class VerAgentesAlumno {
     }, (err) => {
       //Connection failed message
     });
-  }    
-
+  }       
+    
+  reportar (data) {
+        this.navCtrl.push(ReportarAgente, data);
+  }  
+    
 }

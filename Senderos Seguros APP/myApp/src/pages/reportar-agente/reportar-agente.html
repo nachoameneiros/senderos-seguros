@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Reportes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>  
+  <ion-item>
+    <ion-label fixed>Asistencia</ion-label>
+    <ion-input type="text" value="" [(ngModel)]="userData.asistencia"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Motivo</ion-label>
+    <ion-input type="text" [(ngModel)]="userData.motivo"></ion-input>
+  </ion-item>  
+  
+  <button ion-button  (click)="enviarreporte()">Reportar</button>
+
+</ion-content>
