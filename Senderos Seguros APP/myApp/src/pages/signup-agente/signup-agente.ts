@@ -34,8 +34,8 @@ export class SignupAgente {
     this.resposeData = result;
     if(this.resposeData.resultQuery == "OK"){
       console.log(this.resposeData);
-      localStorage.setItem('userData', JSON.stringify(this.resposeData) )
-      this.navCtrl.push(TabsPageAgente);
+      this.presentToast("Registro Exitoso");
+      this.gotowelcome();
     }
     else{
     this.presentToast("Email existente");

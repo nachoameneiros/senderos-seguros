@@ -22,13 +22,15 @@ export class MyApp {
   }
 
    backToWelcome(){
-   const root = this.app.getRootNav();
+    const root = this.app.getRootNav();
     root.popToRoot();
   }
 
   logout(){
     localStorage.clear();
     setTimeout(() => this.backToWelcome(), 1000);
+    this.menu.close();
+
   }
         
 }

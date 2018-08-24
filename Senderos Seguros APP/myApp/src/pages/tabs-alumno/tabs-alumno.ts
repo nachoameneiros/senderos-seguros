@@ -9,8 +9,8 @@ import { VerAgentesAlumno } from '../ver-agentes-alumno/ver-agentes-alumno';
 })
 export class TabsPageAlumno {
 
-  tab1Root = VerAgentesAlumno;
-  tab2Root = MapaAlumno;
+  tab1Root = MapaAlumno;
+  tab2Root = VerAgentesAlumno;
 
   constructor() {
 

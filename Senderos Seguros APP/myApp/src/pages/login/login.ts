@@ -34,20 +34,20 @@ export class Login {
     }
     this.authService.postData(this.userData,login).then((res) =>{
     this.resposeData = res;
-    if(this.resposeData.userData.res){
-        localStorage.setItem('userData', JSON.stringify(this.resposeData) )
+    if(this.resposeData.userData.res){         
+        localStorage.setItem('nombre', this.resposeData.userData.nombre);
+        localStorage.setItem('apellido', this.resposeData.userData.apellido);
+        localStorage.setItem('idcolegio', this.resposeData.userData.idcolegio);
+        localStorage.setItem('id', this.resposeData.userData.id);
     if (this.tipousuario == "Agente") {        
         this.navCtrl.push(TabsPageAgente);
     } else { 
         this.navCtrl.push(TabsPageAlumno);        
     }
-  }
-  else{
-    this.presentToast("Usuario o password incorrecto");
-  }
-    
-
-
+      }
+      else{
+        this.presentToast("Usuario o password incorrecto");
+      }
     }, (err) => {
       //Connection failed message
     });

@@ -18,10 +18,6 @@ import { SelecionAgenteAlumno } from '../selecion-agente-alumno/selecion-agente-
 export class Welcome {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-   
-   if(localStorage.getItem('userData')){
-    
-   }
 
   }
 

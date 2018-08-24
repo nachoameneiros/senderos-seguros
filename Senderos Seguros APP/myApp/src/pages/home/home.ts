@@ -25,7 +25,7 @@ export class HomePage {
     public app: App,
     public authService: AuthService 
   ) {
-    const data = JSON.parse(localStorage.getItem("userData"));
+    const data = JSON.parse(localStorage.getItem("id"));
     this.userDetails = data.userData;
     data.name = "pepe";
     this.userPostData.user_id = 'admin';

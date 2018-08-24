@@ -8,8 +8,8 @@ import { HomePage } from '../home/home';
 })
 export class TabsPageAgente {
 
-  tab1Root = HomePage;
-  tab3Root = MapaAgente;
+  tab1Root = MapaAgente;
+  tab2Root = MapaAgente;
 
   constructor() {
 

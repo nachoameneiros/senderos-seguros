@@ -18,7 +18,7 @@ export class SplitPane {
   }
 
   getSplitPane() {
-    if (localStorage.getItem('userData')) {
+    if (localStorage.getItem('id')) {
       if (this.platform.width() > 850) {
         this.splitPaneState = true;
       } else {
