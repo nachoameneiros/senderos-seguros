@@ -1,0 +1,42 @@
+<ion-content padding>
+<ion-list>
+<h1> Sign-up Alumno </h1>
+
+  <ion-item>
+    <ion-label fixed>Nombre</ion-label>
+    <ion-input type="text"  [(ngModel)]="userData.nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Apellido</ion-label>
+    <ion-input type="text"  [(ngModel)]="userData.apellido"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Email</ion-label>
+    <ion-input type="text"  [(ngModel)]="userData.email"></ion-input>
+  </ion-item>  
+    
+  <ion-item>
+    <ion-label fixed>password</ion-label>
+    <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
+  </ion-item>
+ 
+	<ion-item>
+	  <ion-label>Colegio</ion-label>
+	  <ion-select [(ngModel)]="userData.colegio">
+	    <ion-option *ngFor="let colegio of colegios"  [value]="colegio.id">{{colegio.nombre}}</ion-option>
+	  </ion-select>
+	</ion-item>
+
+  <ion-item>
+    <ion-label fixed>DNI</ion-label>
+    <ion-input type="text" [(ngModel)]="userData.dni"></ion-input>
+  </ion-item>
+
+
+  <button ion-button block color="primary" (click)="signup()">Signup</button>
+  
+<a href="#" (click)="gotowelcome()">Back</a>
+</ion-list>
+</ion-content>
