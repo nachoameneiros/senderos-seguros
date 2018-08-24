@@ -13,7 +13,7 @@ export class VerAgentesAlumno {
 
   constructor(public navCtrl: NavController,public authService: AuthService, public navParams: NavParams) {    
       this.userData.idcolegio = localStorage.getItem('idcolegio');      
-    }    
+  }    
 
   ionViewDidLoad() {    
     this.authService.postData(this.userData,"getagentes/").then((res) =>{
@@ -23,6 +23,5 @@ export class VerAgentesAlumno {
       //Connection failed message
     });
   }    
-
 
 }

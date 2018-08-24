@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
+import { IonicPage,App, NavController, NavParams } from 'ionic-angular';
 import { MapaAgente } from '../mapa-agente/mapa-agente';
-import { HomePage } from '../home/home';
 
 @Component({
   templateUrl: 'tabs-agente.html'
@@ -9,9 +9,19 @@ import { HomePage } from '../home/home';
 export class TabsPageAgente {
 
   tab1Root = MapaAgente;
-  tab2Root = MapaAgente;
 
-  constructor() {
 
+  constructor( public app: App) {
+
+  }
+    
+  backToWelcome(){
+    const root = this.app.getRootNav();
+    root.popToRoot();
+  }
+
+  logout(){
+    localStorage.clear();
+    this.backToWelcome();
   }
 }

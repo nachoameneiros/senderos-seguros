@@ -31014,20 +31014,6 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
-.navbarLogo {
-  height: 40px;
-  float: left;
-  margin-left: 10px;
-}
-
-page-home .blue {
-  color: #006699;
-}
-
-page-home #udpateBox textarea {
-  width: 100%;
-}
-
 page-welcome #welcome {
   background: #f2b632;
 }

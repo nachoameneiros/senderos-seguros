@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, ToastController,MenuController } from 'ionic-angular';
 import { TabsPageAgente } from '../tabs-agente/tabs-agente';
 import { TabsPageAlumno } from '../tabs-alumno/tabs-alumno';
 import {AuthService} from "../../providers/auth-service";
@@ -16,7 +16,7 @@ export class Login {
     
   tipousuario: any;
 
-  constructor(public navCtrl: NavController, public authService: AuthService, private toastCtrl:ToastController) {
+  constructor(public navCtrl: NavController, public authService: AuthService, private toastCtrl:ToastController, public menu: MenuController) {
       this.tipousuario = "Alumno";
   }
 
@@ -41,8 +41,10 @@ export class Login {
         localStorage.setItem('id', this.resposeData.userData.id);
     if (this.tipousuario == "Agente") {        
         this.navCtrl.push(TabsPageAgente);
+        this.menu.close();
     } else { 
-        this.navCtrl.push(TabsPageAlumno);        
+        this.navCtrl.push(TabsPageAlumno);  
+        this.menu.close();      
     }
       }
       else{

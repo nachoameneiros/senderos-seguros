@@ -28,9 +28,8 @@ export class MyApp {
 
   logout(){
     localStorage.clear();
-    setTimeout(() => this.backToWelcome(), 1000);
+    this.backToWelcome();
     this.menu.close();
-
   }
         
 }

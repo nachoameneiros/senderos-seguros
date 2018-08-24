@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
+import { IonicPage,App, NavController, NavParams } from 'ionic-angular';
 import { MapaAlumno } from '../mapa-alumno/mapa-alumno';
-import { HomePage } from '../home/home';
 import { VerAgentesAlumno } from '../ver-agentes-alumno/ver-agentes-alumno';
 
 @Component({
@@ -12,7 +12,17 @@ export class TabsPageAlumno {
   tab1Root = MapaAlumno;
   tab2Root = VerAgentesAlumno;
 
-  constructor() {
+  constructor( public app: App) {
 
+  }
+    
+  backToWelcome(){
+    const root = this.app.getRootNav();
+    root.popToRoot();
+  }
+
+  logout(){
+    localStorage.clear();
+    this.backToWelcome();
   }
 }
