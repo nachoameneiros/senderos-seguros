@@ -16,7 +16,7 @@ return $xmlStr;
 
 include_once("../db_connect.php");
 
-$query = "SELECT * FROM tb_local";
+$query = "select lat , lng from tb_geo_agente union select lat , lng from tb_local";
 $result = pg_query($query);
 if (!$result) {
   die('Invalid query: ' . pg_error());
@@ -28,11 +28,8 @@ echo '<markers>';
 
 while ($row = @pg_fetch_assoc($result)){
   echo '<marker ';
-  echo 'name="' . parseToXML($row['name']) . '" ';
-  echo 'address="' . parseToXML($row['address']) . '" ';
   echo 'lat="' . $row['lat'] . '" ';
   echo 'lng="' . $row['lng'] . '" ';
-  echo 'type="' . $row['type'] . '" ';
   echo '/>';
 }
 

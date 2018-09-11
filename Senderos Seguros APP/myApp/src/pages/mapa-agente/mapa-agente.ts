@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, Platform } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
+import {AuthService} from "../../providers/auth-service";
 
 @Component({
   selector: 'page-mapa-agente',
@@ -12,9 +13,12 @@ export class MapaAgente {
     public LocalLng : any;
     public urlMap = "http://localhost/GoogleMaps/";
 
+  resposeData : any;
+  userData = {"idagente":""};
 
   constructor(
     private navCtrl: NavController,
+    public authService: AuthService,
     public geolocation : Geolocation
   ) {
          this.geolocation.getCurrentPosition().then((resp) => {
@@ -30,8 +34,23 @@ export class MapaAgente {
   }
 
   ionViewDidLoad(){   
-
+        this.userData.idagente = localStorage.getItem('id');
+        this.heartalerta();
   }    
 
 
+  heartalerta() {
+     
+    this.authService.postData(this.userData,'/getalerta').then((res) =>{
+     this.resposeData = res;
+     if(this.resposeData.resultQuery == "OK"){
+          this.heartalerta();
+     }
+     if(this.resposeData.resultQuery == "ALERTA"){
+         
+     }
+    }, (err) => {
+      //Connection failed message
+    });
+  }
 }
