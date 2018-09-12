@@ -10,10 +10,9 @@ $request = json_decode($postdata);
 $idagente = $request->idagente;
 $json_response = "";
 
-$result = pg_fetch_assoc(pg_query($conn, "select 'ALERTA' as resultQuery from tb_alertas where idagente='".$idagente."'"));
+$result = pg_fetch_assoc(pg_query($conn, "select id, idalumno , lat , lng  from tb_alertas where idagente=".$idagente." and fecha > NOW() - INTERVAL '5 minutes'"));
 
-$response->resultQuery = "ALERTA";
-$json_response = json_encode($response);
+$json_response = json_encode($result);
 
 echo $json_response;
 ?>

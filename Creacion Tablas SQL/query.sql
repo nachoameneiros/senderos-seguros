@@ -77,7 +77,7 @@ ALTER TABLE public.tb_escuela
 
 CREATE TABLE public.tb_geo_agente
 (
-  id bigint,
+  id bigint not null,
   lat numeric(10,6),
   lng numeric(10,6) DEFAULT NULL::numeric,
   CONSTRAINT my_fk_geo_agente FOREIGN KEY (id)
@@ -98,7 +98,7 @@ ALTER TABLE public.tb_geo_agente
 
 CREATE TABLE public.tb_geo_alumnos
 (
-  id bigint,
+  id bigint not null,
   lat numeric(10,6),
   lng numeric(10,6) DEFAULT NULL::numeric,
   CONSTRAINT my_fk_geo_alumnos FOREIGN KEY (id)
@@ -146,6 +146,52 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE public.tb_reportes
+  OWNER TO postgres;
+
+
+-- Function: public.insert_alerta(bigint, numeric, numeric)
+
+-- DROP FUNCTION public.insert_alerta(bigint, numeric, numeric);
+
+CREATE OR REPLACE FUNCTION public.insert_alerta(
+    p_idalumno bigint,
+    p_latitud numeric,
+    p_longitud numeric)
+  RETURNS boolean AS
+$BODY$
+DECLARE rnt BOOLEAN;
+DECLARE p_idagente bigint;
+DECLARE distance numeric;
+BEGIN
+	rnt := (select true FROM tb_alertas WHERE fecha > NOW() - INTERVAL '5 minutes'  and tb_alertas.idalumno = p_idalumno);
+
+	 IF (rnt is null) THEN
+	 begin
+		select tb_geo_agente.id , 
+		tb_geo_agente.lat-p_latitud + tb_geo_agente.lng-p_longitud
+		into p_idagente , distance
+		from tb_geo_agente
+		where tb_geo_agente.id not in 
+		(SELECT tb_alertas.idagente FROM tb_alertas WHERE fecha > NOW() - INTERVAL '5 minutes')
+		order by 2 asc limit 1;
+		
+		INSERT INTO tb_alertas(
+		    idagente, lat, lng, idalumno , fecha)
+		VALUES (p_idagente,p_latitud, p_longitud, p_idalumno , current_timestamp);		
+
+		RETURN true;
+	 end;
+	 else
+	 begin
+		RETURN false;
+	 end;
+	 end if;
+	 
+END;
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+ALTER FUNCTION public.insert_alerta(bigint, numeric, numeric)
   OWNER TO postgres;
 
 

@@ -13,6 +13,7 @@ import { SignupAgente } from '../pages/signup-agente/signup-agente';
 import { SignupAlumno } from '../pages/signup-alumno/signup-alumno';
 import { MapaAlumno } from '../pages/mapa-alumno/mapa-alumno';
 import { MapaAgente } from '../pages/mapa-agente/mapa-agente';
+import { MapaMostrarUbicacion } from '../pages/mapa-mostrar-ubicacion/mapa-mostrar-ubicacion';
 import { TabsPageAgente } from '../pages/tabs-agente/tabs-agente';
 import { TabsPageAlumno } from '../pages/tabs-alumno/tabs-alumno';
 import { VerAgentesAlumno } from '../pages/ver-agentes-alumno/ver-agentes-alumno';
@@ -39,6 +40,7 @@ import { SafePipe } from '../providers/pipe';
     SignupAlumno,
     MapaAlumno,
     MapaAgente,
+    MapaMostrarUbicacion,
     SafePipe,
     TabsPageAgente,
     TabsPageAlumno
@@ -59,6 +61,7 @@ import { SafePipe } from '../providers/pipe';
     SignupAlumno,
     MapaAlumno,
     MapaAgente,
+    MapaMostrarUbicacion,
     TabsPageAgente,
     TabsPageAlumno
   ],
