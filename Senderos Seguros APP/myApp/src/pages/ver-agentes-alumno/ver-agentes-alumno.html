@@ -13,7 +13,8 @@
   <ion-list>
 	  <ion-item *ngFor="let res of resposeData">
 	    <h2> {{ res.agente }} </h2>
-	    <button ion-button  (click)="reportar(res)">Reportar</button>
+	    <button ion-button  (click)="like(res)">Like</button>
+	    <button ion-button  (click)="dislike(res)">Dislike</button>
 	  </ion-item>
   </ion-list>
 

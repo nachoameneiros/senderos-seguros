@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, Platform , AlertController ,ToastController,NavParams} from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
-import {AuthService} from "../../providers/auth-service";
+import { AuthService } from "../../providers/auth-service";
+import { FinalizarAsistencia } from "../finalizar-asistencia/finalizar-asistencia";
 
 @Component({
   selector: 'page-mapa-mostrar-ubicacion',
@@ -14,6 +15,8 @@ export class MapaMostrarUbicacion {
     public urlMap = "http://localhost/GoogleMaps/";
 
   resposeData : any;
+    
+    data : any;
 
   userData = {"idalumno":"", "lat":"" , "lng":""};
     
@@ -26,14 +29,14 @@ export class MapaMostrarUbicacion {
     public navParams: NavParams,
     private toastCtrl:ToastController
   ) {
-         var data = this.navParams.data;  
+         this.data = this.navParams.data;  
          this.geolocation.getCurrentPosition().then((resp) => {
           this.LocalLat =resp.coords.latitude;
           this.LocalLng =resp.coords.longitude;
          // HARCODEO DE MOMENTO PORQUE LA LOCALIZACION EN DEBUG ES EL CENTRO DEL MUNDO Y PONGO LA DE ARGENTINA             
           this.LocalLat =-34.59122497;
           this.LocalLng =-58.40407397;             
-          this.urlMap = "http://localhost/GoogleMaps/mostrar.php?lat="+this.LocalLat+"&lng="+this.LocalLng+"&lng_alumno="+data.lng+"&lat_alumno="+data.lat;   
+          this.urlMap = "http://localhost/GoogleMaps/mostrar.php?lat="+this.LocalLat+"&lng="+this.LocalLng+"&lng_alumno="+this.data.lng+"&lat_alumno="+this.data.lat;   
         }).catch((error) => {
           console.log('Error getting location', error);
         });
@@ -59,9 +62,8 @@ export class MapaMostrarUbicacion {
       {
         text: 'Si',
         handler: () => {
-          console.log('aceptado');                 
-          this.navCtrl.popToRoot();
-            //volver a iniciar el observable
+          console.log('aceptado');           
+          this.navCtrl.push(FinalizarAsistencia , this.data);  
         }
       }
     ]

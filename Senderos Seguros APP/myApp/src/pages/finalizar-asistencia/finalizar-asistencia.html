@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Finalizar Asistencia</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>  
+	<ion-item>
+	  <ion-label>Motivo</ion-label>
+	  <ion-select [(ngModel)]="userData.motivo">
+	    <ion-option value="1">motivo 1</ion-option>
+	    <ion-option value="2">motivo 2</ion-option>
+	    <ion-option value="3">motivo 3</ion-option>
+	    <ion-option value="4">motivo 4</ion-option>
+	  </ion-select>
+	</ion-item>
+
+  <ion-item>
+    <ion-label fixed>Descripcion</ion-label>
+    <ion-input type="text" [(ngModel)]="userData.descripcion"></ion-input>
+  </ion-item>  
+  
+  <button ion-button  (click)="finalizar()">Enviar</button>
+
+</ion-content>

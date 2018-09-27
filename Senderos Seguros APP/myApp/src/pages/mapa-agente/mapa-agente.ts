@@ -16,8 +16,11 @@ export class MapaAgente {
     public LocalLng : any;
     public urlMap = "http://localhost/GoogleMaps/";
     public sub : any;
+    public subT : any;
     
-    
+    timer : int = 600;
+    maxTime : any;
+    hidevalue : any;
   resposeData : any;
   userData = {"idagente":""};
 
@@ -43,12 +46,27 @@ export class MapaAgente {
   ionViewDidLoad(){   
       this.userData.idagente = localStorage.getItem('id');     
       this.iniciarObservable(); 
+      this.StartTimer();
+      
+      
   }
     
   iniciarObservable () {      
       this.sub = Observable.interval(5000).subscribe((val) => { this.heartalerta();});
   }
 
+        
+  StartTimer(){       
+      this.subT = Observable.interval(1000).subscribe((val) => { this.label_timer();});    
+  }
+    
+  label_timer() {
+      if (this.timer == 0) {
+            this.sub.unsubscribe();      
+      } else {
+            this.timer = this.timer - 1; 
+      }
+  }
 
   heartalerta() {
      
@@ -63,7 +81,12 @@ export class MapaAgente {
     });
   }
     
-    
+    reiniciar_timer() {
+        if (this.timer == 0) {
+            this.iniciarObservable ();
+        }
+        this.timer = 600;
+    }
 
     mostraralerta() {
     let alert = this.alertCtrl.create({

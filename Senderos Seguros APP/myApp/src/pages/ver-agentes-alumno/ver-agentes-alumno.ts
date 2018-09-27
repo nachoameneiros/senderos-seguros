@@ -25,8 +25,12 @@ export class VerAgentesAlumno {
     });
   }       
     
-  reportar (data) {
+  dislike (data) {
         this.navCtrl.push(ReportarAgente, data);
-  }  
+  }
+    
+  like (data) {
+        this.navCtrl.push(ReportarAgente, data);
+  }
     
 }

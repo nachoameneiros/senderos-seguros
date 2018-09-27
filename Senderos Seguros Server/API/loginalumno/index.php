@@ -10,7 +10,7 @@ $request = json_decode($postdata);
 $email = $request->email;
 $password = $request->password;
 
-$result = pg_query($conn, "select 'OK' as res , id , idcolegio , nombre , apellido  from tb_alumnos where email='".$email."' and password='".$password."'");
+$result = pg_query($conn, "select 'OK' as res , id , idcolegio , nombre , apellido  from tb_alumnos where email='".$email."' and password='".$password."' and lockeado=false");
 
 $rows = pg_fetch_assoc($result);
 

@@ -18,6 +18,7 @@ import { TabsPageAgente } from '../pages/tabs-agente/tabs-agente';
 import { TabsPageAlumno } from '../pages/tabs-alumno/tabs-alumno';
 import { VerAgentesAlumno } from '../pages/ver-agentes-alumno/ver-agentes-alumno';
 import { ReportarAgente } from '../pages/reportar-agente/reportar-agente';
+import { FinalizarAsistencia } from '../pages/finalizar-asistencia/finalizar-asistencia';
 import { GoogleMaps } from '@ionic-native/google-maps';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -33,6 +34,7 @@ import { SafePipe } from '../providers/pipe';
     MyApp,
     Welcome,
     ReportarAgente,
+    FinalizarAsistencia,
     VerAgentesAlumno,
     SelecionAgenteAlumno,
     Login,
@@ -54,6 +56,7 @@ import { SafePipe } from '../providers/pipe';
     MyApp,
     Welcome,
     ReportarAgente,
+    FinalizarAsistencia,
     VerAgentesAlumno,
     SelecionAgenteAlumno,
     Login,
