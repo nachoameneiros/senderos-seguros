@@ -13,9 +13,18 @@
   <ion-list>
 	  <ion-item *ngFor="let res of resposeData">
 	    <h2> {{ res.agente }} </h2>
-	    <button ion-button  (click)="like(res)">Like</button>
-	    <button ion-button  (click)="dislike(res)">Dislike</button>
+	    <rating [(ngModel)]="res.rate" 
+	        readOnly="false"
+	        max="5" 
+	        emptyStarIconName="star-outline"
+	        halfStarIconName="star-half" 
+	        starIconName="star" 
+	        nullable="false"
+	        (ngModelChange)="onModelChange($event,res)">
+        </rating>
 	  </ion-item>
   </ion-list>
+  
+
 
 </ion-content>

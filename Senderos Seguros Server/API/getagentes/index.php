@@ -9,7 +9,7 @@ $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 $idcolegio = $request->idcolegio;
 
-$result = pg_query($conn, "select id , nombre||' '||apellido as agente  from tb_agente where idcolegio = ".$idcolegio);
+$result = pg_query($conn, "select id , nombre||' '||apellido as agente , lockeado from tb_agente where idcolegio = ".$idcolegio);
 
 $rows = pg_fetch_all($result);
 

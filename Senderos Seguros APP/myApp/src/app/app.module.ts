@@ -21,6 +21,8 @@ import { ReportarAgente } from '../pages/reportar-agente/reportar-agente';
 import { FinalizarAsistencia } from '../pages/finalizar-asistencia/finalizar-asistencia';
 import { GoogleMaps } from '@ionic-native/google-maps';
 
+import { Ionic2RatingModule } from 'ionic2-rating';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -49,7 +51,9 @@ import { SafePipe } from '../providers/pipe';
   ],
   imports: [
     BrowserModule,HttpModule,MomentModule,LinkyModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    
+    Ionic2RatingModule // Put ionic2-rating module here
   ],
   bootstrap: [IonicApp],
   entryComponents: [

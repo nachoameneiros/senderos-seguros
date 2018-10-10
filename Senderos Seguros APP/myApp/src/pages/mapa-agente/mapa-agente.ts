@@ -18,7 +18,8 @@ export class MapaAgente {
     public sub : any;
     public subT : any;
     
-    timer : int = 600;
+    timer : any = 600;
+    estadoAgente : any = "INACTIVO";
     maxTime : any;
     hidevalue : any;
   resposeData : any;
@@ -46,7 +47,7 @@ export class MapaAgente {
   ionViewDidLoad(){   
       this.userData.idagente = localStorage.getItem('id');     
       this.iniciarObservable(); 
-      this.StartTimer();
+    //  this.StartTimer();
       
       
   }
@@ -56,7 +57,7 @@ export class MapaAgente {
   }
 
         
-  StartTimer(){       
+ /* StartTimer(){       
       this.subT = Observable.interval(1000).subscribe((val) => { this.label_timer();});    
   }
     
@@ -66,8 +67,24 @@ export class MapaAgente {
       } else {
             this.timer = this.timer - 1; 
       }
-  }
-
+  }*/
+  /*  reiniciar_timer() {
+        if (this.timer == 0) {
+            this.iniciarObservable ();
+        }
+        this.timer = 600;
+    }*/   
+    
+    estadoagente() {    
+        if (this.estadoAgente == "ACTIVO")   {            
+            this.estadoAgente = "INACTIVO";
+            this.sub.unsubscribe();      
+        } else {
+            this.estadoAgente = "ACTIVO";
+            this.iniciarObservable(); 
+        }        
+    }    
+    
   heartalerta() {
      
     this.authService.postData(this.userData,'getalerta/').then((res) =>{
@@ -81,12 +98,7 @@ export class MapaAgente {
     });
   }
     
-    reiniciar_timer() {
-        if (this.timer == 0) {
-            this.iniciarObservable ();
-        }
-        this.timer = 600;
-    }
+
 
     mostraralerta() {
     let alert = this.alertCtrl.create({
