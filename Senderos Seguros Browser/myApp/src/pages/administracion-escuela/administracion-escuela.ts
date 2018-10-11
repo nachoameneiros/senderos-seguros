@@ -6,6 +6,8 @@ import 'rxjs/add/observable/interval';
 import {Observable} from 'rxjs/Observable';
 import { verAgentes } from '../ver-agentes/ver-agentes';
 import { verAlumnos } from '../ver-alumnos/ver-alumnos';
+import { verReportes } from '../ver-reportes/ver-reportes';
+import { verReportesAsistencia } from '../ver-reportes-asistencia/ver-reportes-asistencia';
 
 @Component({
   selector: 'page-administracion-escuela',
@@ -37,11 +39,12 @@ export class AdministracionEscuela {
   pushveralumnos() {        
       this.navCtrl.push(verAlumnos);      
   }
-/*  pushverreportes() {        
+  pushverreportes() {        
       this.navCtrl.push(verReportes);      
-  }
+  }   
+    
   pushverreportesasistencia() {        
       this.navCtrl.push(verReportesAsistencia);      
-  }*/
+  }
 
 }
