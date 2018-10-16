@@ -34,8 +34,10 @@ export class MapaMostrarUbicacion {
           this.LocalLat =resp.coords.latitude;
           this.LocalLng =resp.coords.longitude;
          // HARCODEO DE MOMENTO PORQUE LA LOCALIZACION EN DEBUG ES EL CENTRO DEL MUNDO Y PONGO LA DE ARGENTINA             
-          this.LocalLat =-34.59122497;
-          this.LocalLng =-58.40407397;             
+          if (localStorage.getItem('hardcode') == "t"){
+              this.LocalLat =-34.59122497;
+              this.LocalLng =-58.40407397;            
+          }                
           this.urlMap = "http://localhost/GoogleMaps/mostrar.php?lat="+this.LocalLat+"&lng="+this.LocalLng+"&lng_alumno="+this.data.lng+"&lat_alumno="+this.data.lat;   
         }).catch((error) => {
           console.log('Error getting location', error);

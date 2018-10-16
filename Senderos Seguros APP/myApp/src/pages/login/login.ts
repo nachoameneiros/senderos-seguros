@@ -39,6 +39,7 @@ export class Login {
         localStorage.setItem('apellido', this.resposeData.userData.apellido);
         localStorage.setItem('idcolegio', this.resposeData.userData.idcolegio);
         localStorage.setItem('id', this.resposeData.userData.id);
+        localStorage.setItem('hardcode', "t"); // T = HABILITO EL HARCODEO DE POSICIONES EN TODO EL CODIGO
     if (this.tipousuario == "Agente") {        
         this.navCtrl.push(TabsPageAgente);
         this.menu.close();

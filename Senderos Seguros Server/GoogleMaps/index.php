@@ -22,14 +22,14 @@
     <div id="map"></div>
 
     <script>
-      var customLabel = {
-        restaurant: {
-          label: 'R'
-        },
-        bar: {
-          label: 'B'
-        }
-      };
+    var customLabel = {
+            escuela: {
+              label: 'E'
+            },
+            local: {
+              label: 'L'
+            }
+          };
 
       var taxiData = [];
         function initMap() {
@@ -41,15 +41,19 @@
     
         });
         
+
         heatmap = new google.maps.visualization.HeatmapLayer({
             data: taxiData,
             map: map
-          });
+        });
+        
         var infoWindow = new google.maps.InfoWindow;
 
        // heatmap.set('radius', heatmap.get('radius') ? null : 20);
           // Change this depending on the name of your PHP or XML file
-          downloadUrl('http://localhost/GoogleMaps/local.php', function(data) {
+          <?php  
+          echo'downloadUrl("http://localhost/GoogleMaps/local.php?escuela='.$_GET["escuela"].'", function(data) {'
+              ?> 
             var xml = data.responseXML;
             var markers = xml.documentElement.getElementsByTagName('marker');
             Array.prototype.forEach.call(markers, function(markerElem) {
@@ -90,11 +94,10 @@
                 taxiData.push(new google.maps.LatLng(markerElem.getAttribute('lat'), markerElem.getAttribute('lng')));
                 
               });
-            });
+              heatmap.set('radius', heatmap.get('radius') ? null : 100);                    
+           });
 
-          heatmap.set('radius', heatmap.get('radius') ? null : 100);
-
-          
+            
         }
         
         function zoomChanged () {
@@ -128,7 +131,7 @@
 
       function doNothing() {}
     </script>
-    <script async defer
+    <script 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYMuTOSiSMRFNNG_oLy37wljUsK0AHhb8&libraries=visualization&callback=initMap">
     </script>
   </body>

@@ -23,7 +23,8 @@ export class MapaAgente {
     maxTime : any;
     hidevalue : any;
   resposeData : any;
-  userData = {"idagente":""};
+  userData = {"idagente":""};any;
+  userSigData = {"idagente":"" , "idalumno":"" ,"lat":"" ,"lng":"" };
 
   constructor(
     private navCtrl: NavController,
@@ -34,10 +35,13 @@ export class MapaAgente {
          this.geolocation.getCurrentPosition().then((resp) => {
           this.LocalLat =resp.coords.latitude;
           this.LocalLng =resp.coords.longitude;
-         // HARCODEO DE MOMENTO PORQUE LA LOCALIZACION EN DEBUG ES EL CENTRO DEL MUNDO Y PONGO LA DE ARGENTINA          
-          this.LocalLat =-34.59122497;
-          this.LocalLng =-58.40407397;             
-          this.urlMap = "http://localhost/GoogleMaps/?lat="+this.LocalLat+"&lng="+this.LocalLng;         
+         // HARCODEO DE MOMENTO PORQUE LA LOCALIZACION EN DEBUG ES EL CENTRO DEL MUNDO Y PONGO LA DE ARGENTINA   
+          if (localStorage.getItem('hardcode') == "t"){
+              this.LocalLat =-34.59122497;
+              this.LocalLng =-58.40407397;            
+          }                  
+          var idescuela = localStorage.getItem('idcolegio');     
+          this.urlMap = "http://localhost/GoogleMaps/?lat="+this.LocalLat+"&lng="+this.LocalLng+"&escuela="+idescuela;         
         }).catch((error) => {
           console.log('Error getting location', error);
         });
@@ -56,25 +60,6 @@ export class MapaAgente {
       this.sub = Observable.interval(5000).subscribe((val) => { this.heartalerta();});
   }
 
-        
- /* StartTimer(){       
-      this.subT = Observable.interval(1000).subscribe((val) => { this.label_timer();});    
-  }
-    
-  label_timer() {
-      if (this.timer == 0) {
-            this.sub.unsubscribe();      
-      } else {
-            this.timer = this.timer - 1; 
-      }
-  }*/
-  /*  reiniciar_timer() {
-        if (this.timer == 0) {
-            this.iniciarObservable ();
-        }
-        this.timer = 600;
-    }*/   
-    
     estadoagente() {    
         if (this.estadoAgente == "ACTIVO")   {            
             this.estadoAgente = "INACTIVO";
@@ -89,14 +74,20 @@ export class MapaAgente {
      
     this.authService.postData(this.userData,'getalerta/').then((res) =>{
     this.resposeData = res;
-    if(this.resposeData.id){
-       this.sub.unsubscribe();
-       this.mostraralerta();
+    if(this.resposeData.id){            
+        this.userSigData.idagente=this.resposeData.idagente;
+        this.userSigData.idalumno=this.resposeData.idalumno;
+        this.userSigData.lat=this.resposeData.lat;
+        this.userSigData.lng=this.resposeData.lng;
+        this.sub.unsubscribe();
+        this.mostraralerta();
     }
     }, (err) => {
       //Connection failed message
     });
   }
+    
+    
     
 
 
@@ -127,11 +118,19 @@ export class MapaAgente {
     }
         
     aceptaralerta() { 
+        this.authService.postData(this.resposeData,'postaceptaralerta/').then((res) =>{
+        }, (err) => {
+          //Connection failed message
+        });
+        
         this.navCtrl.push(MapaMostrarUbicacion, this.resposeData);
     }
     
-    cancelaralerta() {
-        //borrar insert y crear otro con el siguiente ajente en tb_alertas
+    cancelaralerta() {              
+    this.authService.postData(this.userSigData,'postsigalerta/').then((res) =>{
+    }, (err) => {
+      //Connection failed message
+    });
     }
     
 }

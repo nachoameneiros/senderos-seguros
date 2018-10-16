@@ -17,9 +17,6 @@ $lng = $request->lng;
 $query = "INSERT INTO tb_reportes_asistencia(idalumno, idagente,  motivo, descripcion , lat ,lng , fecha ) VALUES (".$idalumno.", ".$idagente.", ".$motivo.", ".$descripcion." , ".$lat." ,".$lng." , current_date )";
 pg_query($conn, $query);
 
-$query2 = "delete from tb_alertas where idagente = ".$idagente." and idalumno =".$idalumno;
-pg_query($conn, $query2);
-
 $response->resultQuery = "OK";
 
 $json_response = json_encode($response);

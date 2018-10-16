@@ -37,6 +37,7 @@ export class VerAgentesAlumno {
     
   onModelChange(event,data) {
           //TODO : ENVIAR PUNTAJE QUE ES EL EVENT
+          //TODO : PASAR A FALSE EL ESTADO DE TB_ALERTAS DEL AGENTE EN CUESTION PARA QUE NO APAREZCA MAS
           this.mostraralerta(data);
   }
     

@@ -10,7 +10,7 @@ $request = json_decode($postdata);
 $idagente = $request->idagente;
 $json_response = "";
 
-$result = pg_fetch_assoc(pg_query($conn, "select id, idalumno , lat , lng  from tb_alertas where idagente=".$idagente." and fecha > NOW() - INTERVAL '5 minutes'"));
+$result = pg_fetch_assoc(pg_query($conn, "select id,idagente, idalumno , lat , lng  from tb_alertas where estado is null and idagente=".$idagente." and fecha > NOW() - INTERVAL '5 minutes'"));
 
 $json_response = json_encode($result);
 
