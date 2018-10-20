@@ -28,9 +28,9 @@ export class Login {
    if(this.userData.email && this.userData.password && this.tipousuario){
     var login = "";
     if (this.tipousuario == "Agente") {
-        var login = "loginagente/";
+        login = "loginagente/";
     } else {
-        var login = "loginalumno/";
+        login = "loginalumno/";
     }
     this.authService.postData(this.userData,login).then((res) =>{
     this.resposeData = res;

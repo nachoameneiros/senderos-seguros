@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { IonicPage,App, NavController, NavParams } from 'ionic-angular';
+import { App } from 'ionic-angular';
 import { MapaAlumno } from '../mapa-alumno/mapa-alumno';
 import { VerAgentesAlumno } from '../ver-agentes-alumno/ver-agentes-alumno';
 

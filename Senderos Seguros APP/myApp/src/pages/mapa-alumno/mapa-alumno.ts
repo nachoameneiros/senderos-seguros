@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, Platform , AlertController ,ToastController} from 'ionic-angular';
+import { AlertController ,ToastController} from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import {AuthService} from "../../providers/auth-service";
 
@@ -19,7 +19,6 @@ export class MapaAlumno {
     
     
   constructor(
-    private navCtrl: NavController,
     public geolocation : Geolocation,
     public authService: AuthService,
     private alertCtrl: AlertController,

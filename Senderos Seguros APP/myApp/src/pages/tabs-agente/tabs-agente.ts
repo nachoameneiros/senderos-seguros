@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation';
 
-import { IonicPage,App, NavController, NavParams } from 'ionic-angular';
+import { App } from 'ionic-angular';
 import { MapaAgente } from '../mapa-agente/mapa-agente';
 import {AuthService} from "../../providers/auth-service";
 import 'rxjs/add/observable/interval';
@@ -36,11 +36,11 @@ export class TabsPageAgente {
               this.LocalLat =-34.59122497;
               this.LocalLng =-58.40407397;            
           }                    
-             this.userData.lat = LocalLat;
-             this.userData.lng = LocalLng; 
+             this.userData.lat = LocalLat.toString();
+             this.userData.lng = LocalLng.toString(); 
              this.userData.id = localStorage.getItem("id");
              this.authService.postData(this.userData,'postgeoagente/').then((res) =>{
-             var resposeData = res;
+        //     var resposeData = res;
          }, (err) => {
           //Connection failed message
          }); 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, Platform , AlertController ,ToastController,NavParams} from 'ionic-angular';
+import { NavController,  AlertController ,ToastController,NavParams} from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { AuthService } from "../../providers/auth-service";
 import { FinalizarAsistencia } from "../finalizar-asistencia/finalizar-asistencia";

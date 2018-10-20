@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, Platform , AlertController } from 'ionic-angular';
+import { NavController , AlertController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import {AuthService} from "../../providers/auth-service";
 import { MapaMostrarUbicacion } from '../mapa-mostrar-ubicacion/mapa-mostrar-ubicacion';
@@ -12,7 +12,7 @@ import {Observable} from 'rxjs/Observable';
 })
 export class MapaAgente {
 
-    public LocalLat : any;
+    public LocalLat : any; 
     public LocalLng : any;
     public urlMap = "http://localhost/GoogleMaps/";
     public sub : any;

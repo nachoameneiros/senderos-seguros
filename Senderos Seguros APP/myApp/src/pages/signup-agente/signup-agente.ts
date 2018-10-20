@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {IonicPage, NavController, ToastController} from 'ionic-angular';
 import {AuthService} from "../../providers/auth-service";
 
-import {TabsPageAgente} from '../tabs-agente/tabs-agente';
 
 /**
  * Generated class for the Signup page.
