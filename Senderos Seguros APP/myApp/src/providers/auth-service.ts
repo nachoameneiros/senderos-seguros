@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
+import * as Constants from '../constants';
 
-let apiUrl = 'http://localhost/API/';
+let apiUrl = Constants.API_ENDPOINT+'API/';
 /*
   Generated class for the AuthService provider.
 

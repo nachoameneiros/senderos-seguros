@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-22:12
-INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-22:12
-INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-22:12
-INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-22:12
+ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-23:12
 MERGED from [:tbxml-android:] /home/user/.gradle/caches/transforms-1/files-1.1/tbxml-android.aar/dc39cd77f848e5c3fc15bc8fa02e5210/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/6dd5595183f5728849bab3292f4c6517/AndroidManifest.xml:17:1-32:12
 MERGED from [com.google.android.gms:play-services-location:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-location-15.0.1.aar/ec875fd26d84edfb88efd93745ccac3a/AndroidManifest.xml:2:1-9:12
@@ -19,9 +19,9 @@ MERGED from [com.android.support:support-media-compat:26.1.0] /home/user/.gradle
 MERGED from [com.android.support:support-core-ui:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/dc2f03b6ad30ed6ed7171935d650bb84/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/640a0e60170f50135885de28d15ff076/AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/user/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/962afd37d18a36e89a4bbf1baba60378/AndroidManifest.xml:17:1-30:12
-INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-22:12
-INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-22:12
-INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-22:12
+INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-23:12
 	package
 		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:98-124
 		INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml
@@ -202,6 +202,10 @@ uses-feature#android.hardware.location.gps
 ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:21:5-66
 	android:name
 		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:21:19-63
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:22:5-81
+	android:name
+		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:22:22-78
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/5dd8817a489edb9c78444ef2a65fe682/AndroidManifest.xml:23:9-26:75
 	android:exported

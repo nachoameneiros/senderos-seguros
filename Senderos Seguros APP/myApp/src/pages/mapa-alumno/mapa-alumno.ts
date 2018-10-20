@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AlertController ,ToastController} from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import {AuthService} from "../../providers/auth-service";
+import * as Constants from '../../constants';
 
 @Component({
   selector: 'page-mapa-alumno',
@@ -11,7 +12,7 @@ export class MapaAlumno {
 
     public LocalLat : any;
     public LocalLng : any;
-    public urlMap = "http://localhost/GoogleMaps/";
+    public urlMap = Constants.API_ENDPOINT+"GoogleMaps/";
 
   resposeData : any;
 
@@ -33,7 +34,7 @@ export class MapaAlumno {
               this.LocalLng =-58.40407397;            
           }                
           var idescuela = localStorage.getItem('idcolegio');
-          this.urlMap = "http://localhost/GoogleMaps/?lat="+this.LocalLat+"&lng="+this.LocalLng+"&escuela="+idescuela;   
+          this.urlMap = Constants.API_ENDPOINT+"GoogleMaps/?APIURL="+encodeURIComponent(Constants.API_ENDPOINT)+"&lat="+this.LocalLat+"&lng="+this.LocalLng+"&escuela="+idescuela;   
         }).catch((error) => {
           console.log('Error getting location', error);
         });

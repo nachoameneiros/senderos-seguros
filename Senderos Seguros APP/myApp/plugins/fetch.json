@@ -18,7 +18,7 @@
   "cordova-plugin-device": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-device@^1.1.4"
+      "id": "cordova-plugin-device@^1.1.7"
     },
     "is_top_level": true,
     "variables": {}
@@ -59,14 +59,6 @@
     "variables": {
       "GEOLOCATION_USAGE_DESCRIPTION": "Localizador"
     }
-  },
-  "cordova-plugin-camera": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-camera@4.0.3"
-    },
-    "is_top_level": true,
-    "variables": {}
   },
   "cordova-plugin-file": {
     "source": {

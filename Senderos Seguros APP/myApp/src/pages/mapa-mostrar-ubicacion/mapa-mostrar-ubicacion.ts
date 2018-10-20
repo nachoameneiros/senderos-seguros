@@ -3,6 +3,7 @@ import { NavController,  AlertController ,ToastController,NavParams} from 'ionic
 import { Geolocation } from '@ionic-native/geolocation';
 import { AuthService } from "../../providers/auth-service";
 import { FinalizarAsistencia } from "../finalizar-asistencia/finalizar-asistencia";
+import * as Constants from '../../constants';
 
 @Component({
   selector: 'page-mapa-mostrar-ubicacion',
@@ -12,7 +13,7 @@ export class MapaMostrarUbicacion {
 
     public LocalLat : any;
     public LocalLng : any;
-    public urlMap = "http://localhost/GoogleMaps/";
+    public urlMap = Constants.API_ENDPOINT+"GoogleMaps/";
 
   resposeData : any;
     
@@ -38,7 +39,7 @@ export class MapaMostrarUbicacion {
               this.LocalLat =-34.59122497;
               this.LocalLng =-58.40407397;            
           }                
-          this.urlMap = "http://localhost/GoogleMaps/mostrar.php?lat="+this.LocalLat+"&lng="+this.LocalLng+"&lng_alumno="+this.data.lng+"&lat_alumno="+this.data.lat;   
+          this.urlMap = Constants.API_ENDPOINT+"GoogleMaps/mostrar.php?lat="+this.LocalLat+"&lng="+this.LocalLng+"&lng_alumno="+this.data.lng+"&lat_alumno="+this.data.lat;   
         }).catch((error) => {
           console.log('Error getting location', error);
         });

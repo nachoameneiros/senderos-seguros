@@ -52,7 +52,7 @@
        // heatmap.set('radius', heatmap.get('radius') ? null : 20);
           // Change this depending on the name of your PHP or XML file
           <?php  
-          echo'downloadUrl("http://localhost/GoogleMaps/local.php?escuela='.$_GET["escuela"].'", function(data) {'
+          echo'downloadUrl("'.urldecode($_GET["APIURL"]).'GoogleMaps/local.php?escuela='.$_GET["escuela"].'", function(data) {'
               ?> 
             var xml = data.responseXML;
             var markers = xml.documentElement.getElementsByTagName('marker');
@@ -86,8 +86,9 @@
             });
           });
           
-          
-          downloadUrl('http://localhost/GoogleMaps/heatmap.php', function(data) {
+          <?php  
+         echo 'downloadUrl("'.urldecode($_GET["APIURL"]).'GoogleMaps/heatmap.php", function(data) {'
+          ?> 
               var xml = data.responseXML;
               var markers = xml.documentElement.getElementsByTagName('marker');
               Array.prototype.forEach.call(markers, function(markerElem) {

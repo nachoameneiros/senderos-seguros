@@ -39,7 +39,6 @@
 		373F025B396A49E89E974970 /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8325A256A647D5B3F04246 /* CDVViewController+SplashScreen.m */; };
 		4945D6A262834233AEB17D81 /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F00BD9A4D2E48BFA1A4722E /* IonicKeyboard.m */; };
 		4034EAAA802A4E8486AD590D /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E0D2DF276B49558B97A6EC /* CDVLocation.m */; };
-		0CDC959DC0B84D248D3D6A0E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 671B007B84E343EBA09E23DE /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,7 +125,6 @@
 		EDFFEB2EE4A24C9098BCD57A /* IonicKeyboard.h */ = {isa = PBXFileReference; name = "IonicKeyboard.h"; path = "ionic-plugin-keyboard/IonicKeyboard.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		26E0D2DF276B49558B97A6EC /* CDVLocation.m */ = {isa = PBXFileReference; name = "CDVLocation.m"; path = "cordova-plugin-geolocation/CDVLocation.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		639A4261B1DA440F95D5564C /* CDVLocation.h */ = {isa = PBXFileReference; name = "CDVLocation.h"; path = "cordova-plugin-geolocation/CDVLocation.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		671B007B84E343EBA09E23DE /* CoreLocation.framework */ = {isa = PBXFileReference; name = "CoreLocation.framework"; path = "System/Library/Frameworks/CoreLocation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +135,6 @@
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				2F5B0B389D0F4D4B9E3D181F /* libz.tbd in Frameworks */,
 				3E9F731AF8FF41F9AB1C8382 /* WebKit.framework in Frameworks */,
-				0CDC959DC0B84D248D3D6A0E /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +207,6 @@
 			children = (
 				6D8274F30B494C85BF7608B8 /* libz.tbd */,
 				BB1FCC1BDF414310A3214F67 /* WebKit.framework */,
-				671B007B84E343EBA09E23DE /* CoreLocation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

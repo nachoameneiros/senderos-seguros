@@ -25,9 +25,6 @@
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "io.ionic.starter"
     },
-    "cordova-plugin-camera": {
-      "PACKAGE_NAME": "io.ionic.starter"
-    },
     "cordova-plugin-file": {
       "PACKAGE_NAME": "io.ionic.starter"
     },

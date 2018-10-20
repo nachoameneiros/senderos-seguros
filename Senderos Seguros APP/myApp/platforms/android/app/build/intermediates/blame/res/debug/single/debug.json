@@ -16,12 +16,12 @@
         "source": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/res/drawable-land-mdpi/screen.png"
     },
     {
-        "merged": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_dark.xml.flat",
-        "source": "/home/user/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/5dd8817a489edb9c78444ef2a65fe682/res/drawable/common_google_signin_btn_text_dark.xml"
-    },
-    {
         "merged": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_googleg_disabled_color_18.png.flat",
         "source": "/home/user/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/5dd8817a489edb9c78444ef2a65fe682/res/drawable-mdpi-v4/googleg_disabled_color_18.png"
+    },
+    {
+        "merged": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_dark.xml.flat",
+        "source": "/home/user/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/5dd8817a489edb9c78444ef2a65fe682/res/drawable/common_google_signin_btn_text_dark.xml"
     },
     {
         "merged": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/res/merged/debug/layout_dummy_infowindow.xml.flat",
@@ -36,12 +36,12 @@
         "source": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/res/drawable-port-mdpi/screen.png"
     },
     {
-        "merged": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/res/merged/debug/drawable_dummy_my_location_button.png.flat",
-        "source": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/res/drawable/dummy_my_location_button.png"
-    },
-    {
         "merged": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/res/merged/debug/drawable-port-xhdpi_screen.png.flat",
         "source": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/res/drawable-port-xhdpi/screen.png"
+    },
+    {
+        "merged": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/res/merged/debug/drawable_dummy_my_location_button.png.flat",
+        "source": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/res/drawable/dummy_my_location_button.png"
     },
     {
         "merged": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
@@ -140,12 +140,12 @@
         "source": "/home/user/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/30b9d9d9afac91c02563f69b4580f96c/res/layout/notification_media_action.xml"
     },
     {
-        "merged": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_common_full_open_on_phone.png.flat",
-        "source": "/home/user/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/5dd8817a489edb9c78444ef2a65fe682/res/drawable-hdpi-v4/common_full_open_on_phone.png"
-    },
-    {
         "merged": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_light_focused.xml.flat",
         "source": "/home/user/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/5dd8817a489edb9c78444ef2a65fe682/res/drawable/common_google_signin_btn_icon_light_focused.xml"
+    },
+    {
+        "merged": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_common_full_open_on_phone.png.flat",
+        "source": "/home/user/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/5dd8817a489edb9c78444ef2a65fe682/res/drawable-hdpi-v4/common_full_open_on_phone.png"
     },
     {
         "merged": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_light.xml.flat",
@@ -168,12 +168,12 @@
         "source": "/home/user/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/640a0e60170f50135885de28d15ff076/res/drawable/notification_tile_bg.xml"
     },
     {
-        "merged": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/res/merged/debug/drawable-port-xxxhdpi_screen.png.flat",
-        "source": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/res/drawable-port-xxxhdpi/screen.png"
-    },
-    {
         "merged": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/res/merged/debug/layout_notification_template_part_time.xml.flat",
         "source": "/home/user/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/640a0e60170f50135885de28d15ff076/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/res/merged/debug/drawable-port-xxxhdpi_screen.png.flat",
+        "source": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/res/drawable-port-xxxhdpi/screen.png"
     },
     {
         "merged": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_light.xml.flat",
@@ -362,6 +362,10 @@
     {
         "merged": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/res/merged/debug/layout_notification_template_big_media.xml.flat",
         "source": "/home/user/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/30b9d9d9afac91c02563f69b4580f96c/res/layout/notification_template_big_media.xml"
+    },
+    {
+        "merged": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/res/merged/debug/xml_camera_provider_paths.xml.flat",
+        "source": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/res/xml/camera_provider_paths.xml"
     },
     {
         "merged": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_dark.xml.flat",

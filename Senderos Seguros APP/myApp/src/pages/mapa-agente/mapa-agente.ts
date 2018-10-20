@@ -5,6 +5,7 @@ import {AuthService} from "../../providers/auth-service";
 import { MapaMostrarUbicacion } from '../mapa-mostrar-ubicacion/mapa-mostrar-ubicacion';
 import 'rxjs/add/observable/interval';
 import {Observable} from 'rxjs/Observable';
+import * as Constants from '../../constants';
 
 @Component({
   selector: 'page-mapa-agente',
@@ -14,7 +15,7 @@ export class MapaAgente {
 
     public LocalLat : any; 
     public LocalLng : any;
-    public urlMap = "http://localhost/GoogleMaps/";
+    public urlMap = Constants.API_ENDPOINT+"GoogleMaps/";
     public sub : any;
     public subT : any;
     
@@ -41,7 +42,7 @@ export class MapaAgente {
               this.LocalLng =-58.40407397;            
           }                  
           var idescuela = localStorage.getItem('idcolegio');     
-          this.urlMap = "http://localhost/GoogleMaps/?lat="+this.LocalLat+"&lng="+this.LocalLng+"&escuela="+idescuela;         
+          this.urlMap = Constants.API_ENDPOINT+"GoogleMaps/?APIURL="+encodeURIComponent(Constants.API_ENDPOINT)+"&lat="+this.LocalLat+"&lng="+this.LocalLng+"&escuela="+idescuela;         
         }).catch((error) => {
           console.log('Error getting location', error);
         });
