@@ -30,6 +30,9 @@ import { MomentModule } from 'angular2-moment';
 import { LinkyModule } from 'angular-linky';
 import { Geolocation } from '@ionic-native/geolocation';
 import { SafePipe } from '../providers/pipe';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -77,6 +80,10 @@ import { SafePipe } from '../providers/pipe';
     GoogleMaps,    
     Geolocation,
     SplashScreen,AuthService,SplitPane,Common,
+      FileTransfer,
+      FileTransferObject,
+      File,
+      Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ],
     exports: [
