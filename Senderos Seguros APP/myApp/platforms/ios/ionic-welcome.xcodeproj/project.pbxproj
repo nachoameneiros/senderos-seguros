@@ -39,6 +39,36 @@
 		373F025B396A49E89E974970 /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8325A256A647D5B3F04246 /* CDVViewController+SplashScreen.m */; };
 		4945D6A262834233AEB17D81 /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F00BD9A4D2E48BFA1A4722E /* IonicKeyboard.m */; };
 		4034EAAA802A4E8486AD590D /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E0D2DF276B49558B97A6EC /* CDVLocation.m */; };
+		EDBFF60DBF0F40E7B75E907A /* SOSPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F06D4EEC93A42638DE7F6E5 /* SOSPicker.m */; };
+		1CB0BD8FE72C4D12AFDF5718 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FE6DA0CC89403FBDDC0F77 /* UIImage+fixOrientation.m */; };
+		9217D62B1A7049C5A9E905C0 /* GMAlbumsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EED423F7D6649C7BF1AD329 /* GMAlbumsViewCell.m */; };
+		E940DA26F826443090336CD1 /* GMAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3BA89692F9448EE9872BC09 /* GMAlbumsViewController.m */; };
+		086A3C1EFE514FEA8B718011 /* GMFetchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8884D2C3F2ED4516A6E8C800 /* GMFetchItem.m */; };
+		ED6086D4231141B9A22B28A0 /* GMGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3820EF04C07424DA51A22F9 /* GMGridViewCell.m */; };
+		8E404E5ADF1B41B0B2075004 /* GMGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83315815445C401E86569E15 /* GMGridViewController.m */; };
+		C88318786CFB4744A5EC9CD6 /* GMImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A41DCFD7541CCA67610FE /* GMImagePickerController.m */; };
+		F3E340604C3948D1A4B70514 /* PSYBlockTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFC7CE21D2B43AEA18C39F2 /* PSYBlockTimer.m */; };
+		08C3D901B1E647C38AF0FA8F /* GMPHAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5A70BC9C524E1794249F4B /* GMPHAsset.m */; };
+		5D10DFCA5C2E481B8EA4979F /* GMEmptyFolder@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BFE581C60B4EF59CAD9973 /* GMEmptyFolder@1x.png */; };
+		C7DEF65E2FA2461781EAFCD7 /* GMEmptyFolder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2475921CA9F647C8838305B3 /* GMEmptyFolder@2x.png */; };
+		A4380CE0A15848679B6A90D8 /* GMSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = F306C4DEC2CB4D01BD69CE93 /* GMSelected.png */; };
+		0BAEC3879CBC47EC9EBEC2FF /* GMSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3919D202C5EB492788F0FCA4 /* GMSelected@2x.png */; };
+		59BF88A25A7E4011B914D3EC /* GMVideoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B62BEA6C69764EEDB9D1DA41 /* GMVideoIcon.png */; };
+		5F8DC8DE16974179813C39FB /* GMVideoIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAE804BA19014FB39BC6EB1C /* GMVideoIcon@2x.png */; };
+		D31EF106430240AF9AB529C2 /* ca.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 7691E7D333064F6D935AF9D8 /* ca.lproj */; };
+		72D3BA602CF049D2A2B0A228 /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FAE3A6A07C00480DB89E3CE7 /* de.lproj */; };
+		79A92C958189440CA0CEFFE6 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 97C432EE3BB64E759CDC398E /* en.lproj */; };
+		01D5471981674C91928B7A35 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = B32FB240AA9C4A7E92A66531 /* es.lproj */; };
+		160D888314624019AF5542BF /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 07207F9DF0D94ADEA126FE7C /* fr.lproj */; };
+		C7CBFFF9C78D44BD9B4EB21F /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C37CDBB8C51C45009D9BA6BC /* it.lproj */; };
+		48C5EFE642F64C9B853DAE3E /* pt.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 2A6FD7F6ED414E7B96ED1A16 /* pt.lproj */; };
+		017C6108F7854EACA37B4622 /* pl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C35D4208997C452A8F7A687D /* pl.lproj */; };
+		2090544E7E9449DFA4EE65E9 /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 51CDF34C18F4469684134D2C /* zh-Hans.lproj */; };
+		1FB5688671A141E3B130EB07 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3883B30E6B43EEABBE2904 /* Accelerate.framework */; };
+		4F5D65C4507747A2BBAF15D5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC64B2FF4284C17A4FF00CB /* Security.framework */; };
+		04A6626CED1543D390275821 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E919F7AD68487AAA050770 /* Photos.framework */; };
+		1C263BD381A648068016B0E9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC9E35AC1DC401BB140BE33 /* SystemConfiguration.framework */; };
+		05C9889D34B94F2DA38748C0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09EDD28AC94480F8994EF57 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +155,46 @@
 		EDFFEB2EE4A24C9098BCD57A /* IonicKeyboard.h */ = {isa = PBXFileReference; name = "IonicKeyboard.h"; path = "ionic-plugin-keyboard/IonicKeyboard.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		26E0D2DF276B49558B97A6EC /* CDVLocation.m */ = {isa = PBXFileReference; name = "CDVLocation.m"; path = "cordova-plugin-geolocation/CDVLocation.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		639A4261B1DA440F95D5564C /* CDVLocation.h */ = {isa = PBXFileReference; name = "CDVLocation.h"; path = "cordova-plugin-geolocation/CDVLocation.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		1F06D4EEC93A42638DE7F6E5 /* SOSPicker.m */ = {isa = PBXFileReference; name = "SOSPicker.m"; path = "cordova-plugin-telerik-imagepicker/SOSPicker.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		99FE6DA0CC89403FBDDC0F77 /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; name = "UIImage+fixOrientation.m"; path = "cordova-plugin-telerik-imagepicker/UIImage+fixOrientation.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		3EED423F7D6649C7BF1AD329 /* GMAlbumsViewCell.m */ = {isa = PBXFileReference; name = "GMAlbumsViewCell.m"; path = "cordova-plugin-telerik-imagepicker/GMAlbumsViewCell.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		E3BA89692F9448EE9872BC09 /* GMAlbumsViewController.m */ = {isa = PBXFileReference; name = "GMAlbumsViewController.m"; path = "cordova-plugin-telerik-imagepicker/GMAlbumsViewController.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		8884D2C3F2ED4516A6E8C800 /* GMFetchItem.m */ = {isa = PBXFileReference; name = "GMFetchItem.m"; path = "cordova-plugin-telerik-imagepicker/GMFetchItem.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		C3820EF04C07424DA51A22F9 /* GMGridViewCell.m */ = {isa = PBXFileReference; name = "GMGridViewCell.m"; path = "cordova-plugin-telerik-imagepicker/GMGridViewCell.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		83315815445C401E86569E15 /* GMGridViewController.m */ = {isa = PBXFileReference; name = "GMGridViewController.m"; path = "cordova-plugin-telerik-imagepicker/GMGridViewController.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		1F0A41DCFD7541CCA67610FE /* GMImagePickerController.m */ = {isa = PBXFileReference; name = "GMImagePickerController.m"; path = "cordova-plugin-telerik-imagepicker/GMImagePickerController.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		FEFC7CE21D2B43AEA18C39F2 /* PSYBlockTimer.m */ = {isa = PBXFileReference; name = "PSYBlockTimer.m"; path = "cordova-plugin-telerik-imagepicker/PSYBlockTimer.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		FD5A70BC9C524E1794249F4B /* GMPHAsset.m */ = {isa = PBXFileReference; name = "GMPHAsset.m"; path = "cordova-plugin-telerik-imagepicker/GMPHAsset.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		BB49F37D8A8743A0A4CAF35D /* SOSPicker.h */ = {isa = PBXFileReference; name = "SOSPicker.h"; path = "cordova-plugin-telerik-imagepicker/SOSPicker.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		3A868C293B114826B020D1F2 /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; name = "UIImage+fixOrientation.h"; path = "cordova-plugin-telerik-imagepicker/UIImage+fixOrientation.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		EDBF476DCA224E669AD8385C /* GMAlbumsViewCell.h */ = {isa = PBXFileReference; name = "GMAlbumsViewCell.h"; path = "cordova-plugin-telerik-imagepicker/GMAlbumsViewCell.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		8D717F8C94E5431BB449112F /* GMAlbumsViewController.h */ = {isa = PBXFileReference; name = "GMAlbumsViewController.h"; path = "cordova-plugin-telerik-imagepicker/GMAlbumsViewController.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		03BFB218F6504890B9C73F2C /* GMFetchItem.h */ = {isa = PBXFileReference; name = "GMFetchItem.h"; path = "cordova-plugin-telerik-imagepicker/GMFetchItem.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		E56EF2D623BE49F89111B792 /* GMGridViewCell.h */ = {isa = PBXFileReference; name = "GMGridViewCell.h"; path = "cordova-plugin-telerik-imagepicker/GMGridViewCell.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		75952A48BC434A70838D6FC3 /* GMGridViewController.h */ = {isa = PBXFileReference; name = "GMGridViewController.h"; path = "cordova-plugin-telerik-imagepicker/GMGridViewController.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		C258CE0EA0904C2EAF4C971F /* GMImagePickerController.h */ = {isa = PBXFileReference; name = "GMImagePickerController.h"; path = "cordova-plugin-telerik-imagepicker/GMImagePickerController.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		BE6DDDB95826496B81604406 /* PSYBlockTimer.h */ = {isa = PBXFileReference; name = "PSYBlockTimer.h"; path = "cordova-plugin-telerik-imagepicker/PSYBlockTimer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		F0DF0D40432E421591F2E192 /* GMPHAsset.h */ = {isa = PBXFileReference; name = "GMPHAsset.h"; path = "cordova-plugin-telerik-imagepicker/GMPHAsset.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		02BFE581C60B4EF59CAD9973 /* GMEmptyFolder@1x.png */ = {isa = PBXFileReference; name = "GMEmptyFolder@1x.png"; path = "GMEmptyFolder@1x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2475921CA9F647C8838305B3 /* GMEmptyFolder@2x.png */ = {isa = PBXFileReference; name = "GMEmptyFolder@2x.png"; path = "GMEmptyFolder@2x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F306C4DEC2CB4D01BD69CE93 /* GMSelected.png */ = {isa = PBXFileReference; name = "GMSelected.png"; path = "GMSelected.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3919D202C5EB492788F0FCA4 /* GMSelected@2x.png */ = {isa = PBXFileReference; name = "GMSelected@2x.png"; path = "GMSelected@2x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B62BEA6C69764EEDB9D1DA41 /* GMVideoIcon.png */ = {isa = PBXFileReference; name = "GMVideoIcon.png"; path = "GMVideoIcon.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CAE804BA19014FB39BC6EB1C /* GMVideoIcon@2x.png */ = {isa = PBXFileReference; name = "GMVideoIcon@2x.png"; path = "GMVideoIcon@2x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7691E7D333064F6D935AF9D8 /* ca.lproj */ = {isa = PBXFileReference; name = "ca.lproj"; path = "ca.lproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FAE3A6A07C00480DB89E3CE7 /* de.lproj */ = {isa = PBXFileReference; name = "de.lproj"; path = "de.lproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		97C432EE3BB64E759CDC398E /* en.lproj */ = {isa = PBXFileReference; name = "en.lproj"; path = "en.lproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B32FB240AA9C4A7E92A66531 /* es.lproj */ = {isa = PBXFileReference; name = "es.lproj"; path = "es.lproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		07207F9DF0D94ADEA126FE7C /* fr.lproj */ = {isa = PBXFileReference; name = "fr.lproj"; path = "fr.lproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C37CDBB8C51C45009D9BA6BC /* it.lproj */ = {isa = PBXFileReference; name = "it.lproj"; path = "it.lproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2A6FD7F6ED414E7B96ED1A16 /* pt.lproj */ = {isa = PBXFileReference; name = "pt.lproj"; path = "pt.lproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C35D4208997C452A8F7A687D /* pl.lproj */ = {isa = PBXFileReference; name = "pl.lproj"; path = "pl.lproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		51CDF34C18F4469684134D2C /* zh-Hans.lproj */ = {isa = PBXFileReference; name = "zh-Hans.lproj"; path = "zh-Hans.lproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2F3883B30E6B43EEABBE2904 /* Accelerate.framework */ = {isa = PBXFileReference; name = "Accelerate.framework"; path = "System/Library/Frameworks/Accelerate.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		4EC64B2FF4284C17A4FF00CB /* Security.framework */ = {isa = PBXFileReference; name = "Security.framework"; path = "System/Library/Frameworks/Security.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		50E919F7AD68487AAA050770 /* Photos.framework */ = {isa = PBXFileReference; name = "Photos.framework"; path = "System/Library/Frameworks/Photos.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		CDC9E35AC1DC401BB140BE33 /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		B09EDD28AC94480F8994EF57 /* QuartzCore.framework */ = {isa = PBXFileReference; name = "QuartzCore.framework"; path = "System/Library/Frameworks/QuartzCore.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +205,11 @@
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				2F5B0B389D0F4D4B9E3D181F /* libz.tbd in Frameworks */,
 				3E9F731AF8FF41F9AB1C8382 /* WebKit.framework in Frameworks */,
+				1FB5688671A141E3B130EB07 /* Accelerate.framework in Frameworks */,
+				4F5D65C4507747A2BBAF15D5 /* Security.framework in Frameworks */,
+				04A6626CED1543D390275821 /* Photos.framework in Frameworks */,
+				1C263BD381A648068016B0E9 /* SystemConfiguration.framework in Frameworks */,
+				05C9889D34B94F2DA38748C0 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +272,21 @@
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* ionic-welcome-Info.plist */,
 				6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */,
+				02BFE581C60B4EF59CAD9973 /* GMEmptyFolder@1x.png */,
+				2475921CA9F647C8838305B3 /* GMEmptyFolder@2x.png */,
+				F306C4DEC2CB4D01BD69CE93 /* GMSelected.png */,
+				3919D202C5EB492788F0FCA4 /* GMSelected@2x.png */,
+				B62BEA6C69764EEDB9D1DA41 /* GMVideoIcon.png */,
+				CAE804BA19014FB39BC6EB1C /* GMVideoIcon@2x.png */,
+				7691E7D333064F6D935AF9D8 /* ca.lproj */,
+				FAE3A6A07C00480DB89E3CE7 /* de.lproj */,
+				97C432EE3BB64E759CDC398E /* en.lproj */,
+				B32FB240AA9C4A7E92A66531 /* es.lproj */,
+				07207F9DF0D94ADEA126FE7C /* fr.lproj */,
+				C37CDBB8C51C45009D9BA6BC /* it.lproj */,
+				2A6FD7F6ED414E7B96ED1A16 /* pt.lproj */,
+				C35D4208997C452A8F7A687D /* pl.lproj */,
+				51CDF34C18F4469684134D2C /* zh-Hans.lproj */,
 			);
 			name = Resources;
 			path = "ionic-welcome/Resources";
@@ -207,6 +297,11 @@
 			children = (
 				6D8274F30B494C85BF7608B8 /* libz.tbd */,
 				BB1FCC1BDF414310A3214F67 /* WebKit.framework */,
+				2F3883B30E6B43EEABBE2904 /* Accelerate.framework */,
+				4EC64B2FF4284C17A4FF00CB /* Security.framework */,
+				50E919F7AD68487AAA050770 /* Photos.framework */,
+				CDC9E35AC1DC401BB140BE33 /* SystemConfiguration.framework */,
+				B09EDD28AC94480F8994EF57 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -276,6 +371,26 @@
 				EDFFEB2EE4A24C9098BCD57A /* IonicKeyboard.h */,
 				26E0D2DF276B49558B97A6EC /* CDVLocation.m */,
 				639A4261B1DA440F95D5564C /* CDVLocation.h */,
+				1F06D4EEC93A42638DE7F6E5 /* SOSPicker.m */,
+				99FE6DA0CC89403FBDDC0F77 /* UIImage+fixOrientation.m */,
+				3EED423F7D6649C7BF1AD329 /* GMAlbumsViewCell.m */,
+				E3BA89692F9448EE9872BC09 /* GMAlbumsViewController.m */,
+				8884D2C3F2ED4516A6E8C800 /* GMFetchItem.m */,
+				C3820EF04C07424DA51A22F9 /* GMGridViewCell.m */,
+				83315815445C401E86569E15 /* GMGridViewController.m */,
+				1F0A41DCFD7541CCA67610FE /* GMImagePickerController.m */,
+				FEFC7CE21D2B43AEA18C39F2 /* PSYBlockTimer.m */,
+				FD5A70BC9C524E1794249F4B /* GMPHAsset.m */,
+				BB49F37D8A8743A0A4CAF35D /* SOSPicker.h */,
+				3A868C293B114826B020D1F2 /* UIImage+fixOrientation.h */,
+				EDBF476DCA224E669AD8385C /* GMAlbumsViewCell.h */,
+				8D717F8C94E5431BB449112F /* GMAlbumsViewController.h */,
+				03BFB218F6504890B9C73F2C /* GMFetchItem.h */,
+				E56EF2D623BE49F89111B792 /* GMGridViewCell.h */,
+				75952A48BC434A70838D6FC3 /* GMGridViewController.h */,
+				C258CE0EA0904C2EAF4C971F /* GMImagePickerController.h */,
+				BE6DDDB95826496B81604406 /* PSYBlockTimer.h */,
+				F0DF0D40432E421591F2E192 /* GMPHAsset.h */,
 			);
 			name = Plugins;
 			path = "ionic-welcome/Plugins";
@@ -357,6 +472,21 @@
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
+				5D10DFCA5C2E481B8EA4979F /* GMEmptyFolder@1x.png in Resources */,
+				C7DEF65E2FA2461781EAFCD7 /* GMEmptyFolder@2x.png in Resources */,
+				A4380CE0A15848679B6A90D8 /* GMSelected.png in Resources */,
+				0BAEC3879CBC47EC9EBEC2FF /* GMSelected@2x.png in Resources */,
+				59BF88A25A7E4011B914D3EC /* GMVideoIcon.png in Resources */,
+				5F8DC8DE16974179813C39FB /* GMVideoIcon@2x.png in Resources */,
+				D31EF106430240AF9AB529C2 /* ca.lproj in Resources */,
+				72D3BA602CF049D2A2B0A228 /* de.lproj in Resources */,
+				79A92C958189440CA0CEFFE6 /* en.lproj in Resources */,
+				01D5471981674C91928B7A35 /* es.lproj in Resources */,
+				160D888314624019AF5542BF /* fr.lproj in Resources */,
+				C7CBFFF9C78D44BD9B4EB21F /* it.lproj in Resources */,
+				48C5EFE642F64C9B853DAE3E /* pt.lproj in Resources */,
+				017C6108F7854EACA37B4622 /* pl.lproj in Resources */,
+				2090544E7E9449DFA4EE65E9 /* zh-Hans.lproj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +539,16 @@
 				373F025B396A49E89E974970 /* CDVViewController+SplashScreen.m in Sources */,
 				4945D6A262834233AEB17D81 /* IonicKeyboard.m in Sources */,
 				4034EAAA802A4E8486AD590D /* CDVLocation.m in Sources */,
+				EDBFF60DBF0F40E7B75E907A /* SOSPicker.m in Sources */,
+				1CB0BD8FE72C4D12AFDF5718 /* UIImage+fixOrientation.m in Sources */,
+				9217D62B1A7049C5A9E905C0 /* GMAlbumsViewCell.m in Sources */,
+				E940DA26F826443090336CD1 /* GMAlbumsViewController.m in Sources */,
+				086A3C1EFE514FEA8B718011 /* GMFetchItem.m in Sources */,
+				ED6086D4231141B9A22B28A0 /* GMGridViewCell.m in Sources */,
+				8E404E5ADF1B41B0B2075004 /* GMGridViewController.m in Sources */,
+				C88318786CFB4744A5EC9CD6 /* GMImagePickerController.m in Sources */,
+				F3E340604C3948D1A4B70514 /* PSYBlockTimer.m in Sources */,
+				08C3D901B1E647C38AF0FA8F /* GMPHAsset.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

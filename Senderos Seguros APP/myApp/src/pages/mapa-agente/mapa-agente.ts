@@ -20,7 +20,7 @@ export class MapaAgente {
     public subT : any;
     
     timer : any = 600;
-    estadoAgente : any = "INACTIVO";
+    estadoAgente : any = "ACTIVO";
     maxTime : any;
     hidevalue : any;
   resposeData : any;

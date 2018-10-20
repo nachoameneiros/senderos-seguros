@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, ToastController} from 'ionic-angular';
 import {AuthService} from "../../providers/auth-service";
+import { ImagePicker } from '@ionic-native/image-picker';
 
 
 /**
@@ -10,56 +11,83 @@ import {AuthService} from "../../providers/auth-service";
  * on Ionic pages and navigation.
  */
 @IonicPage()
-@Component({selector: 'page-signup-agente', templateUrl: 'signup-agente.html'})
+@Component({ selector: 'page-signup-agente', templateUrl: 'signup-agente.html' })
 export class SignupAgente {
-  resposeData : any;
-  colegios : any;
-  colegio : any;
-  userData = {"nombre":"", "apellido":"","password":"","email":"","colegio":"","dni":""};
-  constructor(public navCtrl : NavController, public authService : AuthService, private toastCtrl:ToastController) {
-    this.authService.postData(this.userData, "getcolegios/").then((result) =>{
-        this.colegios = result;    
-    });    
-  }
+    resposeData: any;
+    colegios: any;
+    colegio: any;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Signup');
-  }
+    imagen : any;
+    options = {
+        maximumImagesCount: 8,
+        width: 500,
+        height: 500,
+        quality: 75
+    };
 
-  signup() {
-     if(this.userData.nombre && this.userData.apellido && this.userData.password && this.userData.email&& this.userData.colegio&& this.userData.dni){
-      //Api connections
-    this.authService.postData(this.userData, "signupagente/").then((result) =>{
-    this.resposeData = result;
-    if(this.resposeData.resultQuery == "OK"){
-      console.log(this.resposeData);
-      this.presentToast("Registro Exitoso");
-      this.gotowelcome();
+    userData = { "nombre": "", "apellido": "", "password": "", "email": "", "colegio": "", "dni": "" ,  "imagen": "" };
+    constructor(
+        public navCtrl: NavController,
+        public authService: AuthService,
+        private toastCtrl: ToastController,
+        private imagePicker: ImagePicker) {
+        this.authService.postData(this.userData, "getcolegios/").then((result) => {
+            this.colegios = result;
+        });
     }
-    else{
-    this.presentToast("Email existente");
+
+    loadlibrary() {
+        this.imagePicker.getPictures(this.options).then((results) => {
+            for (var i = 0; i < results.length; i++) {
+                console.log('Image URI: ' + results[i]);
+                this.imagen = results[0];
+            }
+        }, (err) => { });
     }
     
-    }, (err) => {
-      //Connection failed message
-    });
-  }
-  else {
-    this.presentToast("Ingresar informacion valida");
-  }
-  
-  }
-    
-      gotowelcome(){
-   this.navCtrl.popToRoot();
-  }
+    ionViewDidLoad() {
+        console.log('ionViewDidLoad Signup');
 
-  presentToast(msg) {
-    let toast = this.toastCtrl.create({
-      message: msg,
-      duration: 2000
-    });
-    toast.present();
-  }
+    }
+
+    signup() {
+        if (this.imagen && this.userData.nombre && this.userData.apellido && this.userData.password && this.userData.email && this.userData.colegio && this.userData.dni) {
+            //Api connections           
+            
+            this.authService.postData(this.userData, "signupagente/").then((result) => {
+                this.resposeData = result;
+                if (this.resposeData.resultQuery == "OK") {
+                    console.log(this.resposeData);
+                    this.presentToast("Registro Exitoso");
+                    this.gotowelcome();
+                }
+                else {
+                    this.presentToast("Email existente");
+                }
+
+            }, (err) => {
+                //Connection failed message
+            });
+            
+            this.userData.imagen = this.imagen;
+            this.authService.postData(this.userData, "uploadimagen/");
+        }
+        else {
+            this.presentToast("Ingresar informacion valida");
+        }
+
+    }
+
+    gotowelcome() {
+        this.navCtrl.popToRoot();
+    }
+
+    presentToast(msg) {
+        let toast = this.toastCtrl.create({
+            message: msg,
+            duration: 2000
+        });
+        toast.present();
+    }
 
 }

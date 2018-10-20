@@ -4,7 +4,7 @@
             "outputFile": "/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-port/values-port.xml",
             "map": [
                 {
-                    "source": "/home/user/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/640a0e60170f50135885de28d15ff076/res/values-port/values-port.xml",
+                    "source": "/home/user/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/78b23c4a533d7491da2ed07ec14607af/res/values-port/values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

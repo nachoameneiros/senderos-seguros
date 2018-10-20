@@ -16,7 +16,7 @@ return $xmlStr;
 
 include_once("../db_connect.php");
 
-$query = "select lat , lng from tb_geo_agente union select lat , lng from tb_local";
+$query = "select lat , lng from tb_geo_agente";
 $result = pg_query($query);
 if (!$result) {
   die('Invalid query: ' . pg_error());

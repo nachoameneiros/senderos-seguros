@@ -21,6 +21,7 @@ import { ReportarAgente } from '../pages/reportar-agente/reportar-agente';
 import { FinalizarAsistencia } from '../pages/finalizar-asistencia/finalizar-asistencia';
 import { GoogleMaps } from '@ionic-native/google-maps';
 
+import { Camera } from '@ionic-native/camera';
 import { Ionic2RatingModule } from 'ionic2-rating';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -30,6 +31,7 @@ import { MomentModule } from 'angular2-moment';
 import { LinkyModule } from 'angular-linky';
 import { Geolocation } from '@ionic-native/geolocation';
 import { SafePipe } from '../providers/pipe';
+import { ImagePicker } from '@ionic-native/image-picker';
 
 @NgModule({
   declarations: [
@@ -75,7 +77,9 @@ import { SafePipe } from '../providers/pipe';
   providers: [
     StatusBar,
     GoogleMaps,    
-    Geolocation,
+    Geolocation,   
+    ImagePicker, 
+    Camera,
     SplashScreen,AuthService,SplitPane,Common,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ],

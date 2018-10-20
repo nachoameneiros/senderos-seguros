@@ -8,13 +8,14 @@ import {AuthService} from "../../providers/auth-service";
 })
 export class ReportarAgente {
         
-  userData = {"asistencia":"", "motivo":"" , "idagente": "","idalumno": "" };
-    
+  userData = {"asistencia":"", "motivo":"" , "idagente": "","idalumno": "" , "valor": "" };
+    data : any;
   resposeData : any;
 
   constructor(public navCtrl: NavController,public navParams: NavParams, private toastCtrl:ToastController, public authService: AuthService) {    
-    var data = this.navParams.data;      
-    this.userData.idagente = data.id;
+    this.data = this.navParams.data;      
+    this.userData.idagente = this.data.id;
+      this.userData.valor = this.data.event;
     this.userData.idalumno = localStorage.getItem('id');
   }    
 
@@ -23,6 +24,7 @@ export class ReportarAgente {
   }       
     
   enviarreporte() {    
+    this.authService.postData(this.data, "postcalificacionagente/");
     this.authService.postData(this.userData, "reportaragente/").then((result) =>{
     this.resposeData = result;
     if(this.resposeData.resultQuery == "OK"){
