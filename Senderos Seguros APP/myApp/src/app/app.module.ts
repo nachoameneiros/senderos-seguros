@@ -20,6 +20,7 @@ import { VerAgentesAlumno } from '../pages/ver-agentes-alumno/ver-agentes-alumno
 import { ReportarAgente } from '../pages/reportar-agente/reportar-agente';
 import { FinalizarAsistencia } from '../pages/finalizar-asistencia/finalizar-asistencia';
 import { GoogleMaps } from '@ionic-native/google-maps';
+import {MostrarAgente} from "../pages/mostrar-agente/mostrar-agente";
 
 import { Ionic2RatingModule } from 'ionic2-rating';
 
@@ -48,6 +49,7 @@ import { Base64 } from '@ionic-native/base64';
     SignupAlumno,
     MapaAlumno,
     MapaAgente,
+    MostrarAgente,
     MapaMostrarUbicacion,
     SafePipe,
     TabsPageAgente,
@@ -70,6 +72,7 @@ import { Base64 } from '@ionic-native/base64';
     SignupAgente,
     SignupAlumno,
     MapaAlumno,
+    MostrarAgente,
     MapaAgente,
     MapaMostrarUbicacion,
     TabsPageAgente,

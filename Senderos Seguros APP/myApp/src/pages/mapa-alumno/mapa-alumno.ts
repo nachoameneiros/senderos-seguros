@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { AlertController ,ToastController} from 'ionic-angular';
+import { AlertController ,ToastController , NavController} from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import {AuthService} from "../../providers/auth-service";
+import {MostrarAgente} from "../mostrar-agente/mostrar-agente";
 import * as Constants from '../../constants';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'page-mapa-alumno',
@@ -15,6 +17,7 @@ export class MapaAlumno {
     public urlMap = Constants.API_ENDPOINT+"GoogleMaps/";
 
   resposeData : any;
+    public sub : any;
 
   userData = {"idalumno":"", "lat":"" , "lng":""};
     
@@ -22,7 +25,8 @@ export class MapaAlumno {
   constructor(
     public geolocation : Geolocation,
     public authService: AuthService,
-    private alertCtrl: AlertController,
+    private alertCtrl: AlertController,    
+    public navCtrl: NavController,
     private toastCtrl:ToastController
   ) {
          this.geolocation.getCurrentPosition().then((resp) => {
@@ -78,13 +82,34 @@ postalerta() {
         this.resposeData = res;
         if (this.resposeData.resultQuery == 't') {
             this.presentToast("Se ha enviado una alerta");
-            } else {            
+            this.iniciarObservable();
+            } else {
             this.presentToast("Ya has enviado la alerta");
         }
     }, (err) => {
       //Connection failed message
     });
-}
+}   
+        
+    iniciarObservable () {      
+        this.sub = Observable.interval(5000).subscribe((val) => { this.heartrevisaralerta();});
+    }        
+    
+    heartrevisaralerta() {     
+       this.authService.postData(this.userData,'getrevisaralerta/').then((res) =>{
+       if(res){
+           this.sub.unsubscribe();
+           this.mostraragente(res);
+       }
+       }, (err) => {
+         //Connection failed message
+       });
+  }
+    
+    mostraragente(data) {         
+        this.navCtrl.push(MostrarAgente,data);
+    }
+    
 alerta() {
   let alert = this.alertCtrl.create({
     title: 'Alerta',

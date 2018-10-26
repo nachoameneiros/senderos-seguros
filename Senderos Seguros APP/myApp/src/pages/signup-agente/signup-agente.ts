@@ -42,7 +42,6 @@ export class SignupAgente {
         this.imagePicker.getPictures(this.options).then((results) => {
             for (var i = 0; i < results.length; i++) {
                 console.log('Image URI: ' + results[i]);
-           //     this.imagen = results[i];
                     this.base64.encodeFile(results[i]).then((base64File: string) => {
                       this.userData.imagen = base64File;
                     }, (err) => {
