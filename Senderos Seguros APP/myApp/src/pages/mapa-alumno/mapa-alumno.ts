@@ -47,7 +47,14 @@ export class MapaAlumno {
 
   ionViewDidLoad(){   
 
-  }    
+  }
+
+  ionViewWillUnload() {
+      if (this.sub) {
+          this.sub.unsubscribe();
+      }
+  }
+
     
   pedirayuda() {
   let alert = this.alertCtrl.create({

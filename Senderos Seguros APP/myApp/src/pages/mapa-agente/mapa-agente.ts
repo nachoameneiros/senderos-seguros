@@ -46,18 +46,21 @@ export class MapaAgente {
         }).catch((error) => {
           console.log('Error getting location', error);
         });
-  
   }
 
-  ionViewDidLoad(){   
+  ionViewWillUnload() {
+      if (this.sub) {
+          this.sub.unsubscribe();
+      }
+  }
+  ionViewWillEnter() {
       this.userData.idagente = localStorage.getItem('id');     
-      this.iniciarObservable(); 
-    //  this.StartTimer();
-      
-      
+      this.iniciarObservable();       
   }
     
+    
   iniciarObservable () {      
+      console.log('OBSERVABLE INICIADO');
       this.sub = Observable.interval(5000).subscribe((val) => { this.heartalerta();});
   }
 
@@ -71,8 +74,8 @@ export class MapaAgente {
         }        
     }    
     
-  heartalerta() {
-     
+  heartalerta() {     
+  console.log('HEART');
     this.authService.postData(this.userData,'getalerta/').then((res) =>{
     this.resposeData = res;
     if(this.resposeData.id){            
