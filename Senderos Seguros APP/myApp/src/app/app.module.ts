@@ -21,7 +21,7 @@ import { ReportarAgente } from '../pages/reportar-agente/reportar-agente';
 import { FinalizarAsistencia } from '../pages/finalizar-asistencia/finalizar-asistencia';
 import { GoogleMaps } from '@ionic-native/google-maps';
 
-import { Camera } from '@ionic-native/camera';
+/*import { Camera } from '@ionic-native/camera';*/
 import { Ionic2RatingModule } from 'ionic2-rating';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -31,7 +31,8 @@ import { MomentModule } from 'angular2-moment';
 import { LinkyModule } from 'angular-linky';
 import { Geolocation } from '@ionic-native/geolocation';
 import { SafePipe } from '../providers/pipe';
-import { ImagePicker } from '@ionic-native/image-picker';
+
+/*import { ImagePicker } from '@ionic-native/image-picker';*/
 
 @NgModule({
   declarations: [
@@ -53,9 +54,8 @@ import { ImagePicker } from '@ionic-native/image-picker';
   ],
   imports: [
     BrowserModule,HttpModule,MomentModule,LinkyModule,
-    IonicModule.forRoot(MyApp),
-    
-    Ionic2RatingModule // Put ionic2-rating module here
+    IonicModule.forRoot(MyApp),    
+    Ionic2RatingModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -78,8 +78,8 @@ import { ImagePicker } from '@ionic-native/image-picker';
     StatusBar,
     GoogleMaps,    
     Geolocation,   
-    ImagePicker, 
-    Camera,
+ /*   ImagePicker,
+    Camera, */
     SplashScreen,AuthService,SplitPane,Common,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ],

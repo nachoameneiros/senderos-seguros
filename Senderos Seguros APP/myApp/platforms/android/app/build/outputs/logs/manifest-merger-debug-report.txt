@@ -1,30 +1,13 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-24:12
-MERGED from [:tbxml-android:] /home/user/.gradle/caches/transforms-1/files-1.1/tbxml-android.aar/dc39cd77f848e5c3fc15bc8fa02e5210/AndroidManifest.xml:2:1-11:12
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/6dd5595183f5728849bab3292f4c6517/AndroidManifest.xml:17:1-32:12
-MERGED from [com.google.android.gms:play-services-location:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-location-15.0.1.aar/ec875fd26d84edfb88efd93745ccac3a/AndroidManifest.xml:2:1-9:12
-MERGED from [com.android.support:appcompat-v7:23.4.0] /home/user/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/78b23c4a533d7491da2ed07ec14607af/AndroidManifest.xml:17:1-27:12
-MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/5dd8817a489edb9c78444ef2a65fe682/AndroidManifest.xml:17:1-29:12
-MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-15.0.1.aar/d3dc271fddacd5bcabfad5999546ba32/AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/3b4f2f3eacd9aed416532941188c418d/AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/48713ab3667e514157d95a3e94d4d26a/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] /home/user/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-23.4.0.aar/a8ae2b3b0bf629da50172db66f549ebb/AndroidManifest.xml:2:1-9:12
-MERGED from [com.android.support:support-vector-drawable:23.4.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-23.4.0.aar/30f2fd62eaa46d8b9885b5b589bea3b7/AndroidManifest.xml:2:1-9:12
-MERGED from [com.android.support:support-v4:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/dddc6e91d1ddcaa0469b52d2a95bcd1c/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-fragment:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/a05c8a57ffe46db9ce57277f9dac7922/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-utils:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/8938f8fe9a45c54fdd67c7ccdb72204f/AndroidManifest.xml:17:1-31:12
+ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-17:12
+INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-17:12
+INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-17:12
+INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-17:12
 MERGED from [:CordovaLib] /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/CordovaLib/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:1-27:12
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/30b9d9d9afac91c02563f69b4580f96c/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-ui:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/dc2f03b6ad30ed6ed7171935d650bb84/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-compat:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/640a0e60170f50135885de28d15ff076/AndroidManifest.xml:17:1-31:12
-MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/user/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/962afd37d18a36e89a4bbf1baba60378/AndroidManifest.xml:17:1-30:12
-INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-17:12
+INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-17:12
+INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:1-17:12
 	package
 		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:2:98-124
 		INJECTED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml
@@ -57,44 +40,10 @@ ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/and
 		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:3:23-48
 uses-permission#android.permission.INTERNET
 ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:4:5-67
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/6dd5595183f5728849bab3292f4c6517/AndroidManifest.xml:24:5-67
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/6dd5595183f5728849bab3292f4c6517/AndroidManifest.xml:24:5-67
 	android:name
 		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:4:22-64
 application
-ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:5:5-15:19
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/6dd5595183f5728849bab3292f4c6517/AndroidManifest.xml:30:5-20
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/6dd5595183f5728849bab3292f4c6517/AndroidManifest.xml:30:5-20
-MERGED from [com.google.android.gms:play-services-location:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-location-15.0.1.aar/ec875fd26d84edfb88efd93745ccac3a/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-location:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-location-15.0.1.aar/ec875fd26d84edfb88efd93745ccac3a/AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:appcompat-v7:23.4.0] /home/user/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/78b23c4a533d7491da2ed07ec14607af/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:appcompat-v7:23.4.0] /home/user/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/78b23c4a533d7491da2ed07ec14607af/AndroidManifest.xml:25:5-20
-MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/5dd8817a489edb9c78444ef2a65fe682/AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/5dd8817a489edb9c78444ef2a65fe682/AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-15.0.1.aar/d3dc271fddacd5bcabfad5999546ba32/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-15.0.1.aar/d3dc271fddacd5bcabfad5999546ba32/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/3b4f2f3eacd9aed416532941188c418d/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/3b4f2f3eacd9aed416532941188c418d/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/48713ab3667e514157d95a3e94d4d26a/AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/48713ab3667e514157d95a3e94d4d26a/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] /home/user/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-23.4.0.aar/a8ae2b3b0bf629da50172db66f549ebb/AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] /home/user/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-23.4.0.aar/a8ae2b3b0bf629da50172db66f549ebb/AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-vector-drawable:23.4.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-23.4.0.aar/30f2fd62eaa46d8b9885b5b589bea3b7/AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-vector-drawable:23.4.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-23.4.0.aar/30f2fd62eaa46d8b9885b5b589bea3b7/AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-v4:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/dddc6e91d1ddcaa0469b52d2a95bcd1c/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-v4:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/dddc6e91d1ddcaa0469b52d2a95bcd1c/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/a05c8a57ffe46db9ce57277f9dac7922/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/a05c8a57ffe46db9ce57277f9dac7922/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/8938f8fe9a45c54fdd67c7ccdb72204f/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/8938f8fe9a45c54fdd67c7ccdb72204f/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/30b9d9d9afac91c02563f69b4580f96c/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/30b9d9d9afac91c02563f69b4580f96c/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/dc2f03b6ad30ed6ed7171935d650bb84/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/dc2f03b6ad30ed6ed7171935d650bb84/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/640a0e60170f50135885de28d15ff076/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/640a0e60170f50135885de28d15ff076/AndroidManifest.xml:25:5-29:19
-MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/user/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/962afd37d18a36e89a4bbf1baba60378/AndroidManifest.xml:24:5-28:19
-MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/user/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/962afd37d18a36e89a4bbf1baba60378/AndroidManifest.xml:24:5-28:19
+ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:5:5-12:19
 	android:supportsRtl
 		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:5:114-140
 	android:label
@@ -129,133 +78,23 @@ category#android.intent.category.LAUNCHER
 ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:9:17-77
 	android:name
 		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:9:27-74
-meta-data#com.google.android.geo.API_KEY
-ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:12:9-106
-	android:value
-		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:12:66-103
-	android:name
-		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:12:20-65
-meta-data#com.google.android.gms.version
-ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:13:9-122
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/48713ab3667e514157d95a3e94d4d26a/AndroidManifest.xml:23:9-25:69
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/48713ab3667e514157d95a3e94d4d26a/AndroidManifest.xml:23:9-25:69
-	android:value
-		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:13:66-119
-	android:name
-		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:13:20-65
-activity#com.synconset.MultiImageChooserActivity
-ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:14:9-160
-	android:label
-		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:14:19-57
-	android:theme
-		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:14:113-157
-	android:name
-		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:14:58-112
 uses-sdk
-ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:16:5-74
-MERGED from [:tbxml-android:] /home/user/.gradle/caches/transforms-1/files-1.1/tbxml-android.aar/dc39cd77f848e5c3fc15bc8fa02e5210/AndroidManifest.xml:7:5-9:41
-MERGED from [:tbxml-android:] /home/user/.gradle/caches/transforms-1/files-1.1/tbxml-android.aar/dc39cd77f848e5c3fc15bc8fa02e5210/AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/6dd5595183f5728849bab3292f4c6517/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/6dd5595183f5728849bab3292f4c6517/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-location:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-location-15.0.1.aar/ec875fd26d84edfb88efd93745ccac3a/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-location:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-location-15.0.1.aar/ec875fd26d84edfb88efd93745ccac3a/AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:appcompat-v7:23.4.0] /home/user/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/78b23c4a533d7491da2ed07ec14607af/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:23.4.0] /home/user/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/78b23c4a533d7491da2ed07ec14607af/AndroidManifest.xml:21:5-23:78
-MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/5dd8817a489edb9c78444ef2a65fe682/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/5dd8817a489edb9c78444ef2a65fe682/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-15.0.1.aar/d3dc271fddacd5bcabfad5999546ba32/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-15.0.1.aar/d3dc271fddacd5bcabfad5999546ba32/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/3b4f2f3eacd9aed416532941188c418d/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/3b4f2f3eacd9aed416532941188c418d/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/48713ab3667e514157d95a3e94d4d26a/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/48713ab3667e514157d95a3e94d4d26a/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] /home/user/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-23.4.0.aar/a8ae2b3b0bf629da50172db66f549ebb/AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] /home/user/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-23.4.0.aar/a8ae2b3b0bf629da50172db66f549ebb/AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:support-vector-drawable:23.4.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-23.4.0.aar/30f2fd62eaa46d8b9885b5b589bea3b7/AndroidManifest.xml:5:5-43
-MERGED from [com.android.support:support-vector-drawable:23.4.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-23.4.0.aar/30f2fd62eaa46d8b9885b5b589bea3b7/AndroidManifest.xml:5:5-43
-MERGED from [com.android.support:support-v4:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/dddc6e91d1ddcaa0469b52d2a95bcd1c/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/dddc6e91d1ddcaa0469b52d2a95bcd1c/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/a05c8a57ffe46db9ce57277f9dac7922/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-fragment:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/a05c8a57ffe46db9ce57277f9dac7922/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-utils:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/8938f8fe9a45c54fdd67c7ccdb72204f/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-utils:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/8938f8fe9a45c54fdd67c7ccdb72204f/AndroidManifest.xml:21:5-23:61
+ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:13:5-74
 MERGED from [:CordovaLib] /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/CordovaLib/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:5-44
 MERGED from [:CordovaLib] /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/CordovaLib/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:5-44
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/30b9d9d9afac91c02563f69b4580f96c/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/30b9d9d9afac91c02563f69b4580f96c/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/dc2f03b6ad30ed6ed7171935d650bb84/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/dc2f03b6ad30ed6ed7171935d650bb84/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/640a0e60170f50135885de28d15ff076/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/640a0e60170f50135885de28d15ff076/AndroidManifest.xml:21:5-23:58
-MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/user/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/962afd37d18a36e89a4bbf1baba60378/AndroidManifest.xml:20:5-22:41
-MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/user/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/962afd37d18a36e89a4bbf1baba60378/AndroidManifest.xml:20:5-22:41
-	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:23.4.0] /home/user/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.4.0.aar/78b23c4a533d7491da2ed07ec14607af/AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:16:42-71
+		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:13:42-71
 	android:minSdkVersion
-		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:16:15-41
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:17:5-79
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/6dd5595183f5728849bab3292f4c6517/AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/6dd5595183f5728849bab3292f4c6517/AndroidManifest.xml:23:5-79
-	android:name
-		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:17:22-76
+		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:13:15-41
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:18:5-81
+ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:14:5-81
 	android:name
-		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:18:22-78
+		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:14:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:19:5-79
+ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:15:5-79
 	android:name
-		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:19:22-76
-uses-feature#0x00020000
-ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:20:5-78
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/6dd5595183f5728849bab3292f4c6517/AndroidManifest.xml:26:5-28:35
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/6dd5595183f5728849bab3292f4c6517/AndroidManifest.xml:26:5-28:35
-	android:glEsVersion
-		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:20:19-51
-	android:required
-		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:20:52-75
-uses-feature#android.hardware.location
-ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:21:5-62
-	android:name
-		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:21:19-59
+		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:15:22-76
 uses-feature#android.hardware.location.gps
-ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:22:5-66
+ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:16:5-66
 	android:name
-		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:22:19-63
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:23:5-81
-	android:name
-		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:23:22-78
-activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/5dd8817a489edb9c78444ef2a65fe682/AndroidManifest.xml:23:9-26:75
-	android:exported
-		ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/5dd8817a489edb9c78444ef2a65fe682/AndroidManifest.xml:25:13-37
-	android:theme
-		ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/5dd8817a489edb9c78444ef2a65fe682/AndroidManifest.xml:26:13-72
-	android:name
-		ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/user/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/5dd8817a489edb9c78444ef2a65fe682/AndroidManifest.xml:24:13-79
-meta-data#android.support.VERSION
-ADDED from [com.android.support:support-v4:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/dddc6e91d1ddcaa0469b52d2a95bcd1c/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/a05c8a57ffe46db9ce57277f9dac7922/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/a05c8a57ffe46db9ce57277f9dac7922/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/8938f8fe9a45c54fdd67c7ccdb72204f/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/8938f8fe9a45c54fdd67c7ccdb72204f/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/30b9d9d9afac91c02563f69b4580f96c/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/30b9d9d9afac91c02563f69b4580f96c/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/dc2f03b6ad30ed6ed7171935d650bb84/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/dc2f03b6ad30ed6ed7171935d650bb84/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/640a0e60170f50135885de28d15ff076/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/640a0e60170f50135885de28d15ff076/AndroidManifest.xml:26:9-28:38
-	android:value
-		ADDED from [com.android.support:support-v4:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/dddc6e91d1ddcaa0469b52d2a95bcd1c/AndroidManifest.xml:28:13-35
-	android:name
-		ADDED from [com.android.support:support-v4:26.1.0] /home/user/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/dddc6e91d1ddcaa0469b52d2a95bcd1c/AndroidManifest.xml:27:13-51
-meta-data#android.arch.lifecycle.VERSION
-ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/user/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/962afd37d18a36e89a4bbf1baba60378/AndroidManifest.xml:25:9-27:47
-	android:value
-		ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/user/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/962afd37d18a36e89a4bbf1baba60378/AndroidManifest.xml:27:13-44
-	android:name
-		ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/user/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/962afd37d18a36e89a4bbf1baba60378/AndroidManifest.xml:26:13-58
+		ADDED from /home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/src/main/AndroidManifest.xml:16:19-63

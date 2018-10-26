@@ -22,22 +22,11 @@
     "cordova-plugin-ionic-webview": {
       "PACKAGE_NAME": "io.ionic.starter"
     },
-    "cordova-plugin-googlemaps": {
-      "API_KEY_FOR_ANDROID": "AIzaSyBxZlL0YaK7FryW3o_lESezBcqR2rKv0yg",
-      "PLAY_SERVICES_VERSION": "15.0.1",
-      "ANDROID_SUPPORT_V4_VERSION": "26.1.0",
-      "PACKAGE_NAME": "io.ionic.starter"
-    },
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "io.ionic.starter"
     },
-    "cordova-plugin-file": {
-      "PACKAGE_NAME": "io.ionic.starter"
-    },
-    "cordova-plugin-file-transfer": {
-      "PACKAGE_NAME": "io.ionic.starter"
-    },
-    "cordova-plugin-telerik-imagepicker": {
+    "cordova-android-play-services-gradle-release": {
+      "PLAY_SERVICES_VERSION": "15.0.0",
       "PACKAGE_NAME": "io.ionic.starter"
     }
   },

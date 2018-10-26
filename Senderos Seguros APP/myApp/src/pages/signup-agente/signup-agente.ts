@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, ToastController} from 'ionic-angular';
 import {AuthService} from "../../providers/auth-service";
-import { ImagePicker } from '@ionic-native/image-picker';
+//import { ImagePicker } from '@ionic-native/image-picker';
 
 
 /**
@@ -29,21 +29,21 @@ export class SignupAgente {
     constructor(
         public navCtrl: NavController,
         public authService: AuthService,
-        private toastCtrl: ToastController,
-        private imagePicker: ImagePicker) {
+        private toastCtrl: ToastController/*,
+        private imagePicker: ImagePicker*/) {
         this.authService.postData(this.userData, "getcolegios/").then((result) => {
             this.colegios = result;
         });
     }
 
-    loadlibrary() {
+   /* loadlibrary() {
         this.imagePicker.getPictures(this.options).then((results) => {
             for (var i = 0; i < results.length; i++) {
                 console.log('Image URI: ' + results[i]);
                 this.imagen = results[0];
             }
         }, (err) => { });
-    }
+    }*/
     
     ionViewDidLoad() {
         console.log('ionViewDidLoad Signup');
@@ -60,8 +60,7 @@ export class SignupAgente {
                     console.log(this.resposeData);
                     this.presentToast("Registro Exitoso");
                     this.gotowelcome();
-                }
-                else {
+                } else {
                     this.presentToast("Email existente");
                 }
 

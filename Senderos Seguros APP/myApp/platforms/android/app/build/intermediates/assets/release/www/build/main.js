@@ -174,6 +174,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+//import { ImagePicker } from '@ionic-native/image-picker';
 /**
  * Generated class for the Signup page.
  *
@@ -181,23 +182,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * on Ionic pages and navigation.
  */
 var SignupAgente = (function () {
-    function SignupAgente(navCtrl, authService, toastCtrl) {
+    function SignupAgente(navCtrl, authService, toastCtrl /*,
+        private imagePicker: ImagePicker*/) {
         var _this = this;
         this.navCtrl = navCtrl;
         this.authService = authService;
-        this.toastCtrl = toastCtrl;
-        this.userData = { "nombre": "", "apellido": "", "password": "", "email": "", "colegio": "", "dni": "" };
+        this.toastCtrl = toastCtrl; /*,
+        private imagePicker: ImagePicker*/
+        this.options = {
+            maximumImagesCount: 8,
+            width: 500,
+            height: 500,
+            quality: 75
+        };
+        this.userData = { "nombre": "", "apellido": "", "password": "", "email": "", "colegio": "", "dni": "", "imagen": "" };
         this.authService.postData(this.userData, "getcolegios/").then(function (result) {
             _this.colegios = result;
         });
     }
+    /* loadlibrary() {
+         this.imagePicker.getPictures(this.options).then((results) => {
+             for (var i = 0; i < results.length; i++) {
+                 console.log('Image URI: ' + results[i]);
+                 this.imagen = results[0];
+             }
+         }, (err) => { });
+     }*/
     SignupAgente.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad Signup');
     };
     SignupAgente.prototype.signup = function () {
         var _this = this;
-        if (this.userData.nombre && this.userData.apellido && this.userData.password && this.userData.email && this.userData.colegio && this.userData.dni) {
-            //Api connections
+        if (this.imagen && this.userData.nombre && this.userData.apellido && this.userData.password && this.userData.email && this.userData.colegio && this.userData.dni) {
+            //Api connections           
             this.authService.postData(this.userData, "signupagente/").then(function (result) {
                 _this.resposeData = result;
                 if (_this.resposeData.resultQuery == "OK") {
@@ -211,6 +228,8 @@ var SignupAgente = (function () {
             }, function (err) {
                 //Connection failed message
             });
+            this.userData.imagen = this.imagen;
+            this.authService.postData(this.userData, "uploadimagen/");
         }
         else {
             this.presentToast("Ingresar informacion valida");
@@ -227,8 +246,11 @@ var SignupAgente = (function () {
         toast.present();
     };
     SignupAgente = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({ selector: 'page-signup-agente',template:/*ion-inline-start:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/signup-agente/signup-agente.html"*/`<ion-content padding>\n<ion-list>\n<h1> Sign-up Alumno </h1>\n\n  <ion-item>\n    <ion-label fixed>Nombre</ion-label>\n    <ion-input type="text"  [(ngModel)]="userData.nombre"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed>Apellido</ion-label>\n    <ion-input type="text"  [(ngModel)]="userData.apellido"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed>Email</ion-label>\n    <ion-input type="text"  [(ngModel)]="userData.email"></ion-input>\n  </ion-item>  \n    \n  <ion-item>\n    <ion-label fixed>password</ion-label>\n    <ion-input type="password" [(ngModel)]="userData.password"></ion-input>\n  </ion-item>\n \n	<ion-item>\n	  <ion-label>Colegio</ion-label>\n	  <ion-select [(ngModel)]="userData.colegio">\n	    <ion-option *ngFor="let colegio of colegios"  [value]="colegio.id">{{colegio.nombre}}</ion-option>\n	  </ion-select>\n	</ion-item>\n\n  <ion-item>\n    <ion-label fixed>DNI</ion-label>\n    <ion-input type="text" [(ngModel)]="userData.dni"></ion-input>\n  </ion-item>\n\n\n  <button ion-button block color="primary" (click)="signup()">Signup</button>\n  \n<a href="#" (click)="gotowelcome()">Back</a>\n</ion-list>\n</ion-content>`/*ion-inline-end:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/signup-agente/signup-agente.html"*/ }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */]])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({ selector: 'page-signup-agente',template:/*ion-inline-start:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/signup-agente/signup-agente.html"*/`<ion-content padding>\n<ion-list>\n<h1> Sign-up Alumno </h1>\n\n  <ion-item>\n    <ion-label fixed>Nombre</ion-label>\n    <ion-input type="text"  [(ngModel)]="userData.nombre"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed>Apellido</ion-label>\n    <ion-input type="text"  [(ngModel)]="userData.apellido"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed>Email</ion-label>\n    <ion-input type="text"  [(ngModel)]="userData.email"></ion-input>\n  </ion-item>  \n    \n  <ion-item>\n    <ion-label fixed>password</ion-label>\n    <ion-input type="password" [(ngModel)]="userData.password"></ion-input>\n  </ion-item>\n \n	<ion-item>\n	  <ion-label>Colegio</ion-label>\n	  <ion-select [(ngModel)]="userData.colegio">\n	    <ion-option *ngFor="let colegio of colegios"  [value]="colegio.id">{{colegio.nombre}}</ion-option>\n	  </ion-select>\n	</ion-item>\n\n  <ion-item>\n    <ion-label fixed>DNI</ion-label>\n    <ion-input type="text" [(ngModel)]="userData.dni"></ion-input>\n  </ion-item>\n\n  <button ion-button block color="primary" (click)="loadlibrary()">Cargar Imagen de Perfil</button>\n\n  <button ion-button block color="primary" (click)="signup()">Signup</button>\n  \n<a href="#" (click)="gotowelcome()">Back</a>\n</ion-list>\n</ion-content>`/*ion-inline-end:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/signup-agente/signup-agente.html"*/ }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */] /*,
+            private imagePicker: ImagePicker*/])
     ], SignupAgente);
     return SignupAgente;
 }());
@@ -405,15 +427,15 @@ var map = {
 		3
 	],
 	"../pages/signup-agente/signup-agente.module": [
-		450,
+		452,
 		2
 	],
 	"../pages/signup-alumno/signup-alumno.module": [
-		451,
+		450,
 		1
 	],
 	"../pages/welcome/welcome.module": [
-		452,
+		451,
 		0
 	]
 };
@@ -558,7 +580,7 @@ var MapaAgente = (function () {
         this.geolocation = geolocation;
         this.urlMap = __WEBPACK_IMPORTED_MODULE_7__constants__["a" /* API_ENDPOINT */] + "GoogleMaps/";
         this.timer = 600;
-        this.estadoAgente = "INACTIVO";
+        this.estadoAgente = "ACTIVO";
         this.userData = { "idagente": "" };
         this.userSigData = { "idagente": "", "idalumno": "", "lat": "", "lng": "" };
         this.geolocation.getCurrentPosition().then(function (resp) {
@@ -570,7 +592,7 @@ var MapaAgente = (function () {
                 _this.LocalLng = -58.40407397;
             }
             var idescuela = localStorage.getItem('idcolegio');
-            _this.urlMap = __WEBPACK_IMPORTED_MODULE_7__constants__["a" /* API_ENDPOINT */] + "GoogleMaps/?lat=" + _this.LocalLat + "&lng=" + _this.LocalLng + "&escuela=" + idescuela;
+            _this.urlMap = __WEBPACK_IMPORTED_MODULE_7__constants__["a" /* API_ENDPOINT */] + "GoogleMaps/?APIURL=" + encodeURIComponent(__WEBPACK_IMPORTED_MODULE_7__constants__["a" /* API_ENDPOINT */]) + "&lat=" + _this.LocalLat + "&lng=" + _this.LocalLng + "&escuela=" + idescuela;
         }).catch(function (error) {
             console.log('Error getting location', error);
         });
@@ -924,7 +946,7 @@ var MapaAlumno = (function () {
                 _this.LocalLng = -58.40407397;
             }
             var idescuela = localStorage.getItem('idcolegio');
-            _this.urlMap = __WEBPACK_IMPORTED_MODULE_4__constants__["a" /* API_ENDPOINT */] + "GoogleMaps/?lat=" + _this.LocalLat + "&lng=" + _this.LocalLng + "&escuela=" + idescuela;
+            _this.urlMap = __WEBPACK_IMPORTED_MODULE_4__constants__["a" /* API_ENDPOINT */] + "GoogleMaps/?APIURL=" + encodeURIComponent(__WEBPACK_IMPORTED_MODULE_4__constants__["a" /* API_ENDPOINT */]) + "&lat=" + _this.LocalLat + "&lng=" + _this.LocalLng + "&escuela=" + idescuela;
         }).catch(function (error) {
             console.log('Error getting location', error);
         });
@@ -1032,16 +1054,27 @@ var VerAgentesAlumno = (function () {
         this.authService = authService;
         this.alertCtrl = alertCtrl;
         this.navParams = navParams;
-        this.userData = { "idcolegio": "" };
+        this.userData = { "idcolegio": "", "idalumno": "" };
+        this.userDataReport = { "asistencia": "", "motivo": "", "idagente": "", "idalumno": "", "valor": "" };
         this.userData.idcolegio = localStorage.getItem('idcolegio');
+        this.userData.idalumno = localStorage.getItem('id');
+        this.userDataReport.idalumno = localStorage.getItem('id');
     }
-    VerAgentesAlumno.prototype.ionViewDidLoad = function () {
+    VerAgentesAlumno.prototype.getAgentes = function () {
         var _this = this;
         this.authService.postData(this.userData, "getagentes/").then(function (res) {
-            _this.resposeData = res;
+            if (res) {
+                _this.resposeData = res;
+            }
+            else {
+                _this.resposeData = [];
+            }
         }, function (err) {
             //Connection failed message
         });
+    };
+    VerAgentesAlumno.prototype.ionViewDidLoad = function () {
+        this.getAgentes();
     };
     VerAgentesAlumno.prototype.dislike = function (data) {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__reportar_agente_reportar_agente__["a" /* ReportarAgente */], data);
@@ -1050,21 +1083,33 @@ var VerAgentesAlumno = (function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__reportar_agente_reportar_agente__["a" /* ReportarAgente */], data);
     };
     VerAgentesAlumno.prototype.onModelChange = function (event, data) {
-        //TODO : ENVIAR PUNTAJE QUE ES EL EVENT
-        //TODO : PASAR A FALSE EL ESTADO DE TB_ALERTAS DEL AGENTE EN CUESTION PARA QUE NO APAREZCA MAS
-        this.mostraralerta(data);
+        data.event = event;
+        data.idalumno = this.userData.idalumno;
+        this.userDataReport.idagente = data.id;
+        this.userDataReport.valor = data.event;
+        this.preguntaralerta(data);
     };
-    VerAgentesAlumno.prototype.mostraralerta = function (data) {
+    VerAgentesAlumno.prototype.sendReport = function (data) {
+        this.authService.postData(data, "postcalificacionagente/");
+        this.authService.postData(this.userDataReport, "reportaragente/");
+    };
+    VerAgentesAlumno.prototype.preguntaralerta = function (data) {
         var _this = this;
         var alert = this.alertCtrl.create({
             title: 'Reportes',
-            message: 'Desea enviar un reporte ?',
+            message: 'Es correcta la calificacion ' + data.event + '  ?',
             buttons: [
                 {
                     text: 'Si',
                     handler: function () {
                         console.log('aceptado');
-                        _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__reportar_agente_reportar_agente__["a" /* ReportarAgente */], data);
+                        if (data.event < 4) {
+                            _this.mostraralerta(data);
+                        }
+                        else {
+                            _this.sendReport(data);
+                            _this.getAgentes();
+                        }
                     }
                 },
                 {
@@ -1072,6 +1117,27 @@ var VerAgentesAlumno = (function () {
                     role: 'cancel',
                     handler: function () {
                         console.log('cancelado');
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    VerAgentesAlumno.prototype.mostraralerta = function (data) {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Reportes',
+            message: 'Debe enviar el motivo',
+            buttons: [
+                {
+                    text: 'Aceptar',
+                    handler: function () {
+                        console.log('aceptado');
+                        _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__reportar_agente_reportar_agente__["a" /* ReportarAgente */], data).then(function () {
+                            _this.navCtrl.getActive().onDidDismiss(function (data) {
+                                _this.getAgentes();
+                            });
+                        });
                     }
                 }
             ]
@@ -1118,15 +1184,17 @@ var ReportarAgente = (function () {
         this.navParams = navParams;
         this.toastCtrl = toastCtrl;
         this.authService = authService;
-        this.userData = { "asistencia": "", "motivo": "", "idagente": "", "idalumno": "" };
-        var data = this.navParams.data;
-        this.userData.idagente = data.id;
+        this.userData = { "asistencia": "", "motivo": "", "idagente": "", "idalumno": "", "valor": "" };
+        this.data = this.navParams.data;
+        this.userData.idagente = this.data.id;
+        this.userData.valor = this.data.event;
         this.userData.idalumno = localStorage.getItem('id');
     }
     ReportarAgente.prototype.ionViewDidLoad = function () {
     };
     ReportarAgente.prototype.enviarreporte = function () {
         var _this = this;
+        this.authService.postData(this.data, "postcalificacionagente/");
         this.authService.postData(this.userData, "reportaragente/").then(function (result) {
             _this.resposeData = result;
             if (_this.resposeData.resultQuery == "OK") {
@@ -1149,7 +1217,7 @@ var ReportarAgente = (function () {
     };
     ReportarAgente = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-reportar-agente',template:/*ion-inline-start:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/reportar-agente/reportar-agente.html"*/`<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Reportes</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>  \n  <ion-item>\n    <ion-label fixed>Asistencia</ion-label>\n    <ion-input type="text" value="" [(ngModel)]="userData.asistencia"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed>Motivo</ion-label>\n    <ion-input type="text" [(ngModel)]="userData.motivo"></ion-input>\n  </ion-item>  \n  \n  <button ion-button  (click)="enviarreporte()">Reportar</button>\n\n</ion-content>`/*ion-inline-end:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/reportar-agente/reportar-agente.html"*/
+            selector: 'page-reportar-agente',template:/*ion-inline-start:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/reportar-agente/reportar-agente.html"*/`<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Reportes</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>  \n<!--   <ion-item> -->\n<!--     <ion-label fixed>Asistencia</ion-label> -->\n<!--     <ion-input type="text" value="" [(ngModel)]="userData.asistencia"></ion-input> -->\n<!--   </ion-item> -->\n\n  <ion-item>\n    <ion-label fixed>Motivo</ion-label>\n    <ion-input type="text" [(ngModel)]="userData.motivo"></ion-input>\n  </ion-item>  \n  \n  <button ion-button  (click)="enviarreporte()">Reportar</button>\n\n</ion-content>`/*ion-inline-end:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/reportar-agente/reportar-agente.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */], __WEBPACK_IMPORTED_MODULE_2__providers_auth_service__["a" /* AuthService */]])
     ], ReportarAgente);
@@ -1351,6 +1419,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+/*import { Camera } from '@ionic-native/camera';*/
 
 
 
@@ -1358,6 +1427,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+/*import { ImagePicker } from '@ionic-native/image-picker';*/
 var AppModule = (function () {
     function AppModule() {
     }
@@ -1386,12 +1456,12 @@ var AppModule = (function () {
                     links: [
                         { loadChildren: '../pages/login/login.module#LoginModule', name: 'Login', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/selecion-agente-alumno/selecion-agente-alumno.module#SelecionAgenteAlumnoModule', name: 'SelecionAgenteAlumno', segment: 'selecion-agente-alumno', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/signup-agente/signup-agente.module#SignupAgenteModule', name: 'SignupAgente', segment: 'signup-agente', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signup-alumno/signup-alumno.module#SignupAlumnoModule', name: 'SignupAlumno', segment: 'signup-alumno', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/welcome/welcome.module#WelcomeModule', name: 'Welcome', segment: 'welcome', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/welcome/welcome.module#WelcomeModule', name: 'Welcome', segment: 'welcome', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/signup-agente/signup-agente.module#SignupAgenteModule', name: 'SignupAgente', segment: 'signup-agente', priority: 'low', defaultHistory: [] }
                     ]
                 }),
-                __WEBPACK_IMPORTED_MODULE_22_ionic2_rating__["a" /* Ionic2RatingModule */] // Put ionic2-rating module here
+                __WEBPACK_IMPORTED_MODULE_22_ionic2_rating__["a" /* Ionic2RatingModule */]
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicApp */]],
             entryComponents: [
@@ -1414,6 +1484,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_23__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_21__ionic_native_google_maps__["a" /* GoogleMaps */],
                 __WEBPACK_IMPORTED_MODULE_27__ionic_native_geolocation__["a" /* Geolocation */],
+                /*   ImagePicker,
+                   Camera, */
                 __WEBPACK_IMPORTED_MODULE_24__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_4__providers_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_5__providers_split_pane__["a" /* SplitPane */], __WEBPACK_IMPORTED_MODULE_6__providers_common__["a" /* Common */],
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicErrorHandler */] }
             ],
@@ -1845,8 +1917,8 @@ var SafePipe = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return API_ENDPOINT; });
-//export const API_ENDPOINT= 'http://localhost/';
-var API_ENDPOINT = 'http://192.168.0.199/';
+var API_ENDPOINT = 'http://localhost/';
+//export const API_ENDPOINT= 'http://192.168.0.199/'; 
 //# sourceMappingURL=constants.js.map
 
 /***/ })

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>ionic-welcome</name>
-    <description>An awesome Ionic/Cordova app.</description>
+    <name>Senderos Seguros</name>
+    <description>Senderos Seguros APP</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
     <content src="index.html" />
     <access origin="*" />
@@ -84,15 +84,9 @@
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="Localizador" />
     </plugin>
-    <plugin name="cordova-plugin-googlemaps" spec="dummy">
-        <variable name="API_KEY_FOR_ANDROID" value="(API_KEY_FOR_ANDROID)" />
-        <variable name="API_KEY_FOR_IOS" value="(API_KEY_FOR_IOS)" />
-    </plugin>
     <allow-navigation href="http://192.168.226.130:8100" />
-    <plugin name="cordova-plugin-file" spec="^6.0.1" />
-    <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
-    <plugin name="cordova-plugin-telerik-imagepicker" spec="^2.2.2">
-        <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="Imagenes de Agentes" />
+    <plugin name="cordova-android-play-services-gradle-release" spec="^1.4.4">
+        <variable name="PLAY_SERVICES_VERSION" value="15.0.0" />
     </plugin>
     <engine name="ios" spec="4.5.4" />
     <engine name="android" spec="7.0.0" />
