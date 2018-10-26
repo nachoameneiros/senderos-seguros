@@ -7,8 +7,8 @@ webpackJsonp([5],{
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Login; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tabs_agente_tabs_agente__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs_alumno_tabs_alumno__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tabs_agente_tabs_agente__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs_alumno_tabs_alumno__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_auth_service__ = __webpack_require__(18);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -162,6 +162,8 @@ var SelecionAgenteAlumno = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_service__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_image_picker__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_base64__ = __webpack_require__(174);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -174,7 +176,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-//import { ImagePicker } from '@ionic-native/image-picker';
+
+
 /**
  * Generated class for the Signup page.
  *
@@ -182,13 +185,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * on Ionic pages and navigation.
  */
 var SignupAgente = (function () {
-    function SignupAgente(navCtrl, authService, toastCtrl /*,
-        private imagePicker: ImagePicker*/) {
+    function SignupAgente(navCtrl, authService, toastCtrl, imagePicker, base64) {
         var _this = this;
         this.navCtrl = navCtrl;
         this.authService = authService;
-        this.toastCtrl = toastCtrl; /*,
-        private imagePicker: ImagePicker*/
+        this.toastCtrl = toastCtrl;
+        this.imagePicker = imagePicker;
+        this.base64 = base64;
         this.options = {
             maximumImagesCount: 8,
             width: 500,
@@ -200,20 +203,26 @@ var SignupAgente = (function () {
             _this.colegios = result;
         });
     }
-    /* loadlibrary() {
-         this.imagePicker.getPictures(this.options).then((results) => {
-             for (var i = 0; i < results.length; i++) {
-                 console.log('Image URI: ' + results[i]);
-                 this.imagen = results[0];
-             }
-         }, (err) => { });
-     }*/
+    SignupAgente.prototype.loadlibrary = function () {
+        var _this = this;
+        this.imagePicker.getPictures(this.options).then(function (results) {
+            for (var i = 0; i < results.length; i++) {
+                console.log('Image URI: ' + results[i]);
+                //     this.imagen = results[i];
+                _this.base64.encodeFile(results[i]).then(function (base64File) {
+                    _this.userData.imagen = base64File;
+                }, function (err) {
+                    console.log(err);
+                });
+            }
+        }, function (err) { });
+    };
     SignupAgente.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad Signup');
     };
     SignupAgente.prototype.signup = function () {
         var _this = this;
-        if (this.imagen && this.userData.nombre && this.userData.apellido && this.userData.password && this.userData.email && this.userData.colegio && this.userData.dni) {
+        if (this.userData.imagen && this.userData.nombre && this.userData.apellido && this.userData.password && this.userData.email && this.userData.colegio && this.userData.dni) {
             //Api connections           
             this.authService.postData(this.userData, "signupagente/").then(function (result) {
                 _this.resposeData = result;
@@ -228,8 +237,6 @@ var SignupAgente = (function () {
             }, function (err) {
                 //Connection failed message
             });
-            this.userData.imagen = this.imagen;
-            this.authService.postData(this.userData, "uploadimagen/");
         }
         else {
             this.presentToast("Ingresar informacion valida");
@@ -249,8 +256,9 @@ var SignupAgente = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({ selector: 'page-signup-agente',template:/*ion-inline-start:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/signup-agente/signup-agente.html"*/`<ion-content padding>\n<ion-list>\n<h1> Sign-up Alumno </h1>\n\n  <ion-item>\n    <ion-label fixed>Nombre</ion-label>\n    <ion-input type="text"  [(ngModel)]="userData.nombre"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed>Apellido</ion-label>\n    <ion-input type="text"  [(ngModel)]="userData.apellido"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed>Email</ion-label>\n    <ion-input type="text"  [(ngModel)]="userData.email"></ion-input>\n  </ion-item>  \n    \n  <ion-item>\n    <ion-label fixed>password</ion-label>\n    <ion-input type="password" [(ngModel)]="userData.password"></ion-input>\n  </ion-item>\n \n	<ion-item>\n	  <ion-label>Colegio</ion-label>\n	  <ion-select [(ngModel)]="userData.colegio">\n	    <ion-option *ngFor="let colegio of colegios"  [value]="colegio.id">{{colegio.nombre}}</ion-option>\n	  </ion-select>\n	</ion-item>\n\n  <ion-item>\n    <ion-label fixed>DNI</ion-label>\n    <ion-input type="text" [(ngModel)]="userData.dni"></ion-input>\n  </ion-item>\n\n  <button ion-button block color="primary" (click)="loadlibrary()">Cargar Imagen de Perfil</button>\n\n  <button ion-button block color="primary" (click)="signup()">Signup</button>\n  \n<a href="#" (click)="gotowelcome()">Back</a>\n</ion-list>\n</ion-content>`/*ion-inline-end:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/signup-agente/signup-agente.html"*/ }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2__providers_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */] /*,
-            private imagePicker: ImagePicker*/])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_image_picker__["a" /* ImagePicker */],
+            __WEBPACK_IMPORTED_MODULE_4__ionic_native_base64__["a" /* Base64 */]])
     ], SignupAgente);
     return SignupAgente;
 }());
@@ -397,7 +405,7 @@ var Welcome = (function () {
 
 /***/ }),
 
-/***/ 119:
+/***/ 118:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -410,32 +418,32 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 119;
+webpackEmptyAsyncContext.id = 118;
 
 /***/ }),
 
-/***/ 161:
+/***/ 160:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/login/login.module": [
-		448,
+		449,
 		4
 	],
 	"../pages/selecion-agente-alumno/selecion-agente-alumno.module": [
-		449,
+		450,
 		3
 	],
 	"../pages/signup-agente/signup-agente.module": [
-		450,
+		451,
 		2
 	],
 	"../pages/signup-alumno/signup-alumno.module": [
-		451,
+		452,
 		1
 	],
 	"../pages/welcome/welcome.module": [
-		452,
+		453,
 		0
 	]
 };
@@ -450,22 +458,22 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 161;
+webpackAsyncContext.id = 160;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 162:
+/***/ 161:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPageAgente; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_geolocation__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_geolocation__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mapa_agente_mapa_agente__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mapa_agente_mapa_agente__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_auth_service__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_interval__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_interval__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_interval___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_interval__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_Observable__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_Observable__);
@@ -539,17 +547,17 @@ var TabsPageAgente = (function () {
 
 /***/ }),
 
-/***/ 165:
+/***/ 164:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapaAgente; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_service__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mapa_mostrar_ubicacion_mapa_mostrar_ubicacion__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_interval__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mapa_mostrar_ubicacion_mapa_mostrar_ubicacion__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_interval__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_interval___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_interval__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_Observable__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_Observable__);
@@ -687,16 +695,16 @@ var MapaAgente = (function () {
 
 /***/ }),
 
-/***/ 167:
+/***/ 166:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapaMostrarUbicacion; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_service__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__finalizar_asistencia_finalizar_asistencia__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__finalizar_asistencia_finalizar_asistencia__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__constants__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -789,7 +797,7 @@ var MapaMostrarUbicacion = (function () {
 
 /***/ }),
 
-/***/ 168:
+/***/ 167:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -856,15 +864,15 @@ var FinalizarAsistencia = (function () {
 
 /***/ }),
 
-/***/ 170:
+/***/ 169:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPageAlumno; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mapa_alumno_mapa_alumno__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ver_agentes_alumno_ver_agentes_alumno__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mapa_alumno_mapa_alumno__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ver_agentes_alumno_ver_agentes_alumno__ = __webpack_require__(171);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -904,14 +912,14 @@ var TabsPageAlumno = (function () {
 
 /***/ }),
 
-/***/ 171:
+/***/ 170:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapaAlumno; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_service__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__constants__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1026,7 +1034,7 @@ var MapaAlumno = (function () {
 
 /***/ }),
 
-/***/ 172:
+/***/ 171:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1034,7 +1042,7 @@ var MapaAlumno = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_service__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__reportar_agente_reportar_agente__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__reportar_agente_reportar_agente__ = __webpack_require__(172);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1158,7 +1166,7 @@ var VerAgentesAlumno = (function () {
 
 /***/ }),
 
-/***/ 173:
+/***/ 172:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1234,8 +1242,8 @@ var ReportarAgente = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(410);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(409);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1286,7 +1294,7 @@ var AuthService = (function () {
 
 /***/ }),
 
-/***/ 215:
+/***/ 216:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1341,12 +1349,12 @@ var SplitPane = (function () {
 
 /***/ }),
 
-/***/ 354:
+/***/ 355:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(356);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(378);
 
 
@@ -1363,34 +1371,37 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(436);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(435);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_auth_service__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_split_pane__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_common__ = __webpack_require__(437);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_http__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_split_pane__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_common__ = __webpack_require__(436);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_http__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_welcome_welcome__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_selecion_agente_alumno_selecion_agente_alumno__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_login_login__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_signup_agente_signup_agente__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_signup_alumno_signup_alumno__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_mapa_alumno_mapa_alumno__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_mapa_agente_mapa_agente__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_mapa_mostrar_ubicacion_mapa_mostrar_ubicacion__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_tabs_agente_tabs_agente__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_tabs_alumno_tabs_alumno__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_ver_agentes_alumno_ver_agentes_alumno__ = __webpack_require__(172);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_reportar_agente_reportar_agente__ = __webpack_require__(173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_finalizar_asistencia_finalizar_asistencia__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_google_maps__ = __webpack_require__(438);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_mapa_alumno_mapa_alumno__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_mapa_agente_mapa_agente__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_mapa_mostrar_ubicacion_mapa_mostrar_ubicacion__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_tabs_agente_tabs_agente__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_tabs_alumno_tabs_alumno__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_ver_agentes_alumno_ver_agentes_alumno__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_reportar_agente_reportar_agente__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_finalizar_asistencia_finalizar_asistencia__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_google_maps__ = __webpack_require__(437);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ionic2_rating__ = __webpack_require__(439);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_status_bar__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_splash_screen__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_status_bar__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_splash_screen__ = __webpack_require__(215);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_angular2_moment__ = __webpack_require__(441);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_angular2_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_25_angular2_moment__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_angular_linky__ = __webpack_require__(445);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_angular_linky___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_26_angular_linky__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__ionic_native_geolocation__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__ionic_native_geolocation__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_pipe__ = __webpack_require__(447);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__ionic_native_camera__ = __webpack_require__(448);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ionic_native_image_picker__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ionic_native_base64__ = __webpack_require__(174);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1419,7 +1430,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-/*import { Camera } from '@ionic-native/camera';*/
 
 
 
@@ -1427,7 +1437,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-/*import { ImagePicker } from '@ionic-native/image-picker';*/
+
+
+
 var AppModule = (function () {
     function AppModule() {
     }
@@ -1484,8 +1496,9 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_23__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_21__ionic_native_google_maps__["a" /* GoogleMaps */],
                 __WEBPACK_IMPORTED_MODULE_27__ionic_native_geolocation__["a" /* Geolocation */],
-                /*   ImagePicker,
-                   Camera, */
+                __WEBPACK_IMPORTED_MODULE_30__ionic_native_image_picker__["a" /* ImagePicker */],
+                __WEBPACK_IMPORTED_MODULE_31__ionic_native_base64__["a" /* Base64 */],
+                __WEBPACK_IMPORTED_MODULE_29__ionic_native_camera__["a" /* Camera */],
                 __WEBPACK_IMPORTED_MODULE_24__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_4__providers_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_5__providers_split_pane__["a" /* SplitPane */], __WEBPACK_IMPORTED_MODULE_6__providers_common__["a" /* Common */],
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicErrorHandler */] }
             ],
@@ -1501,16 +1514,16 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 436:
+/***/ 435:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_split_pane__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_split_pane__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_welcome_welcome__ = __webpack_require__(109);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1560,7 +1573,7 @@ var MyApp = (function () {
 
 /***/ }),
 
-/***/ 437:
+/***/ 436:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1611,252 +1624,252 @@ var Common = (function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 218,
-	"./af.js": 218,
-	"./ar": 219,
-	"./ar-dz": 220,
-	"./ar-dz.js": 220,
-	"./ar-kw": 221,
-	"./ar-kw.js": 221,
-	"./ar-ly": 222,
-	"./ar-ly.js": 222,
-	"./ar-ma": 223,
-	"./ar-ma.js": 223,
-	"./ar-sa": 224,
-	"./ar-sa.js": 224,
-	"./ar-tn": 225,
-	"./ar-tn.js": 225,
-	"./ar.js": 219,
-	"./az": 226,
-	"./az.js": 226,
-	"./be": 227,
-	"./be.js": 227,
-	"./bg": 228,
-	"./bg.js": 228,
-	"./bm": 229,
-	"./bm.js": 229,
-	"./bn": 230,
-	"./bn.js": 230,
-	"./bo": 231,
-	"./bo.js": 231,
-	"./br": 232,
-	"./br.js": 232,
-	"./bs": 233,
-	"./bs.js": 233,
-	"./ca": 234,
-	"./ca.js": 234,
-	"./cs": 235,
-	"./cs.js": 235,
-	"./cv": 236,
-	"./cv.js": 236,
-	"./cy": 237,
-	"./cy.js": 237,
-	"./da": 238,
-	"./da.js": 238,
-	"./de": 239,
-	"./de-at": 240,
-	"./de-at.js": 240,
-	"./de-ch": 241,
-	"./de-ch.js": 241,
-	"./de.js": 239,
-	"./dv": 242,
-	"./dv.js": 242,
-	"./el": 243,
-	"./el.js": 243,
-	"./en-au": 244,
-	"./en-au.js": 244,
-	"./en-ca": 245,
-	"./en-ca.js": 245,
-	"./en-gb": 246,
-	"./en-gb.js": 246,
-	"./en-ie": 247,
-	"./en-ie.js": 247,
-	"./en-il": 248,
-	"./en-il.js": 248,
-	"./en-nz": 249,
-	"./en-nz.js": 249,
-	"./eo": 250,
-	"./eo.js": 250,
-	"./es": 251,
-	"./es-do": 252,
-	"./es-do.js": 252,
-	"./es-us": 253,
-	"./es-us.js": 253,
-	"./es.js": 251,
-	"./et": 254,
-	"./et.js": 254,
-	"./eu": 255,
-	"./eu.js": 255,
-	"./fa": 256,
-	"./fa.js": 256,
-	"./fi": 257,
-	"./fi.js": 257,
-	"./fo": 258,
-	"./fo.js": 258,
-	"./fr": 259,
-	"./fr-ca": 260,
-	"./fr-ca.js": 260,
-	"./fr-ch": 261,
-	"./fr-ch.js": 261,
-	"./fr.js": 259,
-	"./fy": 262,
-	"./fy.js": 262,
-	"./gd": 263,
-	"./gd.js": 263,
-	"./gl": 264,
-	"./gl.js": 264,
-	"./gom-latn": 265,
-	"./gom-latn.js": 265,
-	"./gu": 266,
-	"./gu.js": 266,
-	"./he": 267,
-	"./he.js": 267,
-	"./hi": 268,
-	"./hi.js": 268,
-	"./hr": 269,
-	"./hr.js": 269,
-	"./hu": 270,
-	"./hu.js": 270,
-	"./hy-am": 271,
-	"./hy-am.js": 271,
-	"./id": 272,
-	"./id.js": 272,
-	"./is": 273,
-	"./is.js": 273,
-	"./it": 274,
-	"./it.js": 274,
-	"./ja": 275,
-	"./ja.js": 275,
-	"./jv": 276,
-	"./jv.js": 276,
-	"./ka": 277,
-	"./ka.js": 277,
-	"./kk": 278,
-	"./kk.js": 278,
-	"./km": 279,
-	"./km.js": 279,
-	"./kn": 280,
-	"./kn.js": 280,
-	"./ko": 281,
-	"./ko.js": 281,
-	"./ky": 282,
-	"./ky.js": 282,
-	"./lb": 283,
-	"./lb.js": 283,
-	"./lo": 284,
-	"./lo.js": 284,
-	"./lt": 285,
-	"./lt.js": 285,
-	"./lv": 286,
-	"./lv.js": 286,
-	"./me": 287,
-	"./me.js": 287,
-	"./mi": 288,
-	"./mi.js": 288,
-	"./mk": 289,
-	"./mk.js": 289,
-	"./ml": 290,
-	"./ml.js": 290,
-	"./mn": 291,
-	"./mn.js": 291,
-	"./mr": 292,
-	"./mr.js": 292,
-	"./ms": 293,
-	"./ms-my": 294,
-	"./ms-my.js": 294,
-	"./ms.js": 293,
-	"./mt": 295,
-	"./mt.js": 295,
-	"./my": 296,
-	"./my.js": 296,
-	"./nb": 297,
-	"./nb.js": 297,
-	"./ne": 298,
-	"./ne.js": 298,
-	"./nl": 299,
-	"./nl-be": 300,
-	"./nl-be.js": 300,
-	"./nl.js": 299,
-	"./nn": 301,
-	"./nn.js": 301,
-	"./pa-in": 302,
-	"./pa-in.js": 302,
-	"./pl": 303,
-	"./pl.js": 303,
-	"./pt": 304,
-	"./pt-br": 305,
-	"./pt-br.js": 305,
-	"./pt.js": 304,
-	"./ro": 306,
-	"./ro.js": 306,
-	"./ru": 307,
-	"./ru.js": 307,
-	"./sd": 308,
-	"./sd.js": 308,
-	"./se": 309,
-	"./se.js": 309,
-	"./si": 310,
-	"./si.js": 310,
-	"./sk": 311,
-	"./sk.js": 311,
-	"./sl": 312,
-	"./sl.js": 312,
-	"./sq": 313,
-	"./sq.js": 313,
-	"./sr": 314,
-	"./sr-cyrl": 315,
-	"./sr-cyrl.js": 315,
-	"./sr.js": 314,
-	"./ss": 316,
-	"./ss.js": 316,
-	"./sv": 317,
-	"./sv.js": 317,
-	"./sw": 318,
-	"./sw.js": 318,
-	"./ta": 319,
-	"./ta.js": 319,
-	"./te": 320,
-	"./te.js": 320,
-	"./tet": 321,
-	"./tet.js": 321,
-	"./tg": 322,
-	"./tg.js": 322,
-	"./th": 323,
-	"./th.js": 323,
-	"./tl-ph": 324,
-	"./tl-ph.js": 324,
-	"./tlh": 325,
-	"./tlh.js": 325,
-	"./tr": 326,
-	"./tr.js": 326,
-	"./tzl": 327,
-	"./tzl.js": 327,
-	"./tzm": 328,
-	"./tzm-latn": 329,
-	"./tzm-latn.js": 329,
-	"./tzm.js": 328,
-	"./ug-cn": 330,
-	"./ug-cn.js": 330,
-	"./uk": 331,
-	"./uk.js": 331,
-	"./ur": 332,
-	"./ur.js": 332,
-	"./uz": 333,
-	"./uz-latn": 334,
-	"./uz-latn.js": 334,
-	"./uz.js": 333,
-	"./vi": 335,
-	"./vi.js": 335,
-	"./x-pseudo": 336,
-	"./x-pseudo.js": 336,
-	"./yo": 337,
-	"./yo.js": 337,
-	"./zh-cn": 338,
-	"./zh-cn.js": 338,
-	"./zh-hk": 339,
-	"./zh-hk.js": 339,
-	"./zh-tw": 340,
-	"./zh-tw.js": 340
+	"./af": 219,
+	"./af.js": 219,
+	"./ar": 220,
+	"./ar-dz": 221,
+	"./ar-dz.js": 221,
+	"./ar-kw": 222,
+	"./ar-kw.js": 222,
+	"./ar-ly": 223,
+	"./ar-ly.js": 223,
+	"./ar-ma": 224,
+	"./ar-ma.js": 224,
+	"./ar-sa": 225,
+	"./ar-sa.js": 225,
+	"./ar-tn": 226,
+	"./ar-tn.js": 226,
+	"./ar.js": 220,
+	"./az": 227,
+	"./az.js": 227,
+	"./be": 228,
+	"./be.js": 228,
+	"./bg": 229,
+	"./bg.js": 229,
+	"./bm": 230,
+	"./bm.js": 230,
+	"./bn": 231,
+	"./bn.js": 231,
+	"./bo": 232,
+	"./bo.js": 232,
+	"./br": 233,
+	"./br.js": 233,
+	"./bs": 234,
+	"./bs.js": 234,
+	"./ca": 235,
+	"./ca.js": 235,
+	"./cs": 236,
+	"./cs.js": 236,
+	"./cv": 237,
+	"./cv.js": 237,
+	"./cy": 238,
+	"./cy.js": 238,
+	"./da": 239,
+	"./da.js": 239,
+	"./de": 240,
+	"./de-at": 241,
+	"./de-at.js": 241,
+	"./de-ch": 242,
+	"./de-ch.js": 242,
+	"./de.js": 240,
+	"./dv": 243,
+	"./dv.js": 243,
+	"./el": 244,
+	"./el.js": 244,
+	"./en-au": 245,
+	"./en-au.js": 245,
+	"./en-ca": 246,
+	"./en-ca.js": 246,
+	"./en-gb": 247,
+	"./en-gb.js": 247,
+	"./en-ie": 248,
+	"./en-ie.js": 248,
+	"./en-il": 249,
+	"./en-il.js": 249,
+	"./en-nz": 250,
+	"./en-nz.js": 250,
+	"./eo": 251,
+	"./eo.js": 251,
+	"./es": 252,
+	"./es-do": 253,
+	"./es-do.js": 253,
+	"./es-us": 254,
+	"./es-us.js": 254,
+	"./es.js": 252,
+	"./et": 255,
+	"./et.js": 255,
+	"./eu": 256,
+	"./eu.js": 256,
+	"./fa": 257,
+	"./fa.js": 257,
+	"./fi": 258,
+	"./fi.js": 258,
+	"./fo": 259,
+	"./fo.js": 259,
+	"./fr": 260,
+	"./fr-ca": 261,
+	"./fr-ca.js": 261,
+	"./fr-ch": 262,
+	"./fr-ch.js": 262,
+	"./fr.js": 260,
+	"./fy": 263,
+	"./fy.js": 263,
+	"./gd": 264,
+	"./gd.js": 264,
+	"./gl": 265,
+	"./gl.js": 265,
+	"./gom-latn": 266,
+	"./gom-latn.js": 266,
+	"./gu": 267,
+	"./gu.js": 267,
+	"./he": 268,
+	"./he.js": 268,
+	"./hi": 269,
+	"./hi.js": 269,
+	"./hr": 270,
+	"./hr.js": 270,
+	"./hu": 271,
+	"./hu.js": 271,
+	"./hy-am": 272,
+	"./hy-am.js": 272,
+	"./id": 273,
+	"./id.js": 273,
+	"./is": 274,
+	"./is.js": 274,
+	"./it": 275,
+	"./it.js": 275,
+	"./ja": 276,
+	"./ja.js": 276,
+	"./jv": 277,
+	"./jv.js": 277,
+	"./ka": 278,
+	"./ka.js": 278,
+	"./kk": 279,
+	"./kk.js": 279,
+	"./km": 280,
+	"./km.js": 280,
+	"./kn": 281,
+	"./kn.js": 281,
+	"./ko": 282,
+	"./ko.js": 282,
+	"./ky": 283,
+	"./ky.js": 283,
+	"./lb": 284,
+	"./lb.js": 284,
+	"./lo": 285,
+	"./lo.js": 285,
+	"./lt": 286,
+	"./lt.js": 286,
+	"./lv": 287,
+	"./lv.js": 287,
+	"./me": 288,
+	"./me.js": 288,
+	"./mi": 289,
+	"./mi.js": 289,
+	"./mk": 290,
+	"./mk.js": 290,
+	"./ml": 291,
+	"./ml.js": 291,
+	"./mn": 292,
+	"./mn.js": 292,
+	"./mr": 293,
+	"./mr.js": 293,
+	"./ms": 294,
+	"./ms-my": 295,
+	"./ms-my.js": 295,
+	"./ms.js": 294,
+	"./mt": 296,
+	"./mt.js": 296,
+	"./my": 297,
+	"./my.js": 297,
+	"./nb": 298,
+	"./nb.js": 298,
+	"./ne": 299,
+	"./ne.js": 299,
+	"./nl": 300,
+	"./nl-be": 301,
+	"./nl-be.js": 301,
+	"./nl.js": 300,
+	"./nn": 302,
+	"./nn.js": 302,
+	"./pa-in": 303,
+	"./pa-in.js": 303,
+	"./pl": 304,
+	"./pl.js": 304,
+	"./pt": 305,
+	"./pt-br": 306,
+	"./pt-br.js": 306,
+	"./pt.js": 305,
+	"./ro": 307,
+	"./ro.js": 307,
+	"./ru": 308,
+	"./ru.js": 308,
+	"./sd": 309,
+	"./sd.js": 309,
+	"./se": 310,
+	"./se.js": 310,
+	"./si": 311,
+	"./si.js": 311,
+	"./sk": 312,
+	"./sk.js": 312,
+	"./sl": 313,
+	"./sl.js": 313,
+	"./sq": 314,
+	"./sq.js": 314,
+	"./sr": 315,
+	"./sr-cyrl": 316,
+	"./sr-cyrl.js": 316,
+	"./sr.js": 315,
+	"./ss": 317,
+	"./ss.js": 317,
+	"./sv": 318,
+	"./sv.js": 318,
+	"./sw": 319,
+	"./sw.js": 319,
+	"./ta": 320,
+	"./ta.js": 320,
+	"./te": 321,
+	"./te.js": 321,
+	"./tet": 322,
+	"./tet.js": 322,
+	"./tg": 323,
+	"./tg.js": 323,
+	"./th": 324,
+	"./th.js": 324,
+	"./tl-ph": 325,
+	"./tl-ph.js": 325,
+	"./tlh": 326,
+	"./tlh.js": 326,
+	"./tr": 327,
+	"./tr.js": 327,
+	"./tzl": 328,
+	"./tzl.js": 328,
+	"./tzm": 329,
+	"./tzm-latn": 330,
+	"./tzm-latn.js": 330,
+	"./tzm.js": 329,
+	"./ug-cn": 331,
+	"./ug-cn.js": 331,
+	"./uk": 332,
+	"./uk.js": 332,
+	"./ur": 333,
+	"./ur.js": 333,
+	"./uz": 334,
+	"./uz-latn": 335,
+	"./uz-latn.js": 335,
+	"./uz.js": 334,
+	"./vi": 336,
+	"./vi.js": 336,
+	"./x-pseudo": 337,
+	"./x-pseudo.js": 337,
+	"./yo": 338,
+	"./yo.js": 338,
+	"./zh-cn": 339,
+	"./zh-cn.js": 339,
+	"./zh-hk": 340,
+	"./zh-hk.js": 340,
+	"./zh-tw": 341,
+	"./zh-tw.js": 341
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -1917,11 +1930,11 @@ var SafePipe = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return API_ENDPOINT; });
-var API_ENDPOINT = 'http://localhost/';
-//export const API_ENDPOINT= 'http://192.168.0.199/'; 
+//export const API_ENDPOINT= 'http://localhost/';
+var API_ENDPOINT = 'http://192.168.241.128/';
 //# sourceMappingURL=constants.js.map
 
 /***/ })
 
-},[354]);
+},[355]);
 //# sourceMappingURL=main.js.map

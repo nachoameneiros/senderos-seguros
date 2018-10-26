@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, ToastController} from 'ionic-angular';
 import {AuthService} from "../../providers/auth-service";
-//import { ImagePicker } from '@ionic-native/image-picker';
+import { ImagePicker } from '@ionic-native/image-picker';
+import { Base64 } from '@ionic-native/base64';
 
 
 /**
@@ -29,21 +30,27 @@ export class SignupAgente {
     constructor(
         public navCtrl: NavController,
         public authService: AuthService,
-        private toastCtrl: ToastController/*,
-        private imagePicker: ImagePicker*/) {
+        private toastCtrl: ToastController,
+        private imagePicker: ImagePicker,
+        private base64: Base64) {
         this.authService.postData(this.userData, "getcolegios/").then((result) => {
             this.colegios = result;
         });
     }
 
-   /* loadlibrary() {
+    loadlibrary() {
         this.imagePicker.getPictures(this.options).then((results) => {
             for (var i = 0; i < results.length; i++) {
                 console.log('Image URI: ' + results[i]);
-                this.imagen = results[0];
+           //     this.imagen = results[i];
+                    this.base64.encodeFile(results[i]).then((base64File: string) => {
+                      this.userData.imagen = base64File;
+                    }, (err) => {
+                      console.log(err);
+                    });                    
             }
         }, (err) => { });
-    }*/
+    }
     
     ionViewDidLoad() {
         console.log('ionViewDidLoad Signup');
@@ -51,7 +58,7 @@ export class SignupAgente {
     }
 
     signup() {
-        if (this.imagen && this.userData.nombre && this.userData.apellido && this.userData.password && this.userData.email && this.userData.colegio && this.userData.dni) {
+        if (this.userData.imagen && this.userData.nombre && this.userData.apellido && this.userData.password && this.userData.email && this.userData.colegio && this.userData.dni) {
             //Api connections           
             
             this.authService.postData(this.userData, "signupagente/").then((result) => {
@@ -68,8 +75,6 @@ export class SignupAgente {
                 //Connection failed message
             });
             
-            this.userData.imagen = this.imagen;
-            this.authService.postData(this.userData, "uploadimagen/");
         }
         else {
             this.presentToast("Ingresar informacion valida");
