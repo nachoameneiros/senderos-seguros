@@ -37,16 +37,16 @@
         	
         	<?php        					
                	 echo 'center: new google.maps.LatLng('.$_GET["lat"].','.$_GET["lng"].'),zoom: 15';        	
-               	?>     
+            ?> 
     
         });
         
 
         heatmap = new google.maps.visualization.HeatmapLayer({
-            data: taxiData,
-            map: map
+            data: taxiData
         });
-        
+
+
         var infoWindow = new google.maps.InfoWindow;
 
        // heatmap.set('radius', heatmap.get('radius') ? null : 20);
@@ -83,11 +83,13 @@
                 infoWindow.setContent(infowincontent);
                 infoWindow.open(map, marker);
               });
+
+              heatmap.setMap(map);
             });
           });
           
           <?php  
-         echo 'downloadUrl("'.urldecode($_GET["APIURL"]).'GoogleMaps/heatmap.php", function(data) {'
+         echo 'downloadUrl("'.urldecode($_GET["APIURL"]).'GoogleMaps/heatmap.php?escuela='.$_GET["escuela"].'", function(data) {'
           ?> 
               var xml = data.responseXML;
               var markers = xml.documentElement.getElementsByTagName('marker');
