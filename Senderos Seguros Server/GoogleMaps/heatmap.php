@@ -16,7 +16,15 @@ return $xmlStr;
 
 include_once("../db_connect.php");
 
-$query = "select lat , lng from tb_geo_agente";
+$query = "
+select tb_geo_agente.id , tb_geo_agente.lat , tb_geo_agente.lng 
+from tb_geo_agente 
+inner join tb_agente on tb_geo_agente.id = tb_agente.id 
+inner join tb_escuela on tb_escuela.id = tb_agente.idcolegio
+where idcolegio =".$_GET["escuela"]."
+and tb_escuela.lat-tb_geo_agente.lat<0.1
+and tb_escuela.lng-tb_geo_agente.lng<0.1";
+
 $result = pg_query($query);
 if (!$result) {
   die('Invalid query: ' . pg_error());

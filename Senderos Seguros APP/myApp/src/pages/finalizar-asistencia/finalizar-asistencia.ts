@@ -15,9 +15,9 @@ export class FinalizarAsistencia {
   constructor(public navCtrl: NavController,public navParams: NavParams, private toastCtrl:ToastController, public authService: AuthService) {    
     var data = this.navParams.data;      
     this.userData.idalumno = data.idalumno; 
+    this.userData.idagente = data.idagente; 
     this.userData.lat = data.lat; 
     this.userData.lng = data.lng; 
-    this.userData.idagente = localStorage.getItem('id');
   }    
 
   ionViewDidLoad() {    
@@ -27,7 +27,7 @@ export class FinalizarAsistencia {
   finalizar() {    
     this.authService.postData(this.userData, "finalizarasistencia/").then((result) =>{
     this.resposeData = result;
-    if(this.resposeData.resultQuery == "OK"){
+    if(this.resposeData.resultQuery){
       this.presentToast("Reporte Exitoso");        
     }
     

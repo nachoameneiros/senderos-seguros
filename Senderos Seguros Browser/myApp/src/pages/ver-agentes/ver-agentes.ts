@@ -27,7 +27,7 @@ export class verAgentes {
   }
 
   ionViewDidLoad(){   
-    this.authService.postData(this.userData,"getagentes/").then((res) =>{
+    this.authService.postData(this.userData,"getagentesescuela/").then((res) =>{
     this.resposeData = res;
  
     }, (err) => {
@@ -38,7 +38,7 @@ export class verAgentes {
   habilitarAgente (res) {      
   this.agenteData.id = res.id;
     this.authService.postData(this.agenteData,"habilitaragente/").then((res) =>{
-        this.authService.postData(this.userData,"getagentes/").then((res) =>{
+        this.authService.postData(this.userData,"getagentesescuela/").then((res) =>{
         this.resposeData = res;
      
         }, (err) => {
@@ -46,7 +46,15 @@ export class verAgentes {
         });           
     }, (err) => {
       //Connection failed message
-    });          
+      });
   }
-    
+
+  agentelockeado(res) {
+      if (res.lockeado == 'f') {
+          return 'HABILITADO'
+      } else {
+          return 'DESHABILITADO'
+      }
+  }
+
 }

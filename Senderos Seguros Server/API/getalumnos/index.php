@@ -9,7 +9,7 @@ $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 $idcolegio = $request->idcolegio;
 
-$result = pg_query($conn, "select id , nombre||' '||apellido as nombre  from tb_alumnos where idcolegio = ".$idcolegio);
+$result = pg_query($conn, "select id , nombre , apellido , email , curso  from tb_alumnos where idcolegio = ".$idcolegio." order by id ");
 
 $rows = pg_fetch_all($result);
 

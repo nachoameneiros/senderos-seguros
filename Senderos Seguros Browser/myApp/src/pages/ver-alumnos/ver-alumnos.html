@@ -12,7 +12,9 @@
 
   <ion-list>
 	  <ion-item *ngFor="let res of resposeData">
-	    <h2> {{ res.nombre }} </h2>	    
+	    <h2> Nombre y Apellido :  {{ res.nombre }} {{ res.apellido }} </h2>	   
+	    <h2>Email : {{ res.email }} </h2>	       
+	    <h2>Curso : {{ res.curso }} </h2>	    
 	  </ion-item>
 	  
   </ion-list>

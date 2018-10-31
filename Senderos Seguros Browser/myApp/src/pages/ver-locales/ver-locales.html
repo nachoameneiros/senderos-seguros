@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Locales</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-list>
+	  <ion-item *ngFor="let res of resposeData">
+	    <h2>Nombre : {{ res.name }} </h2>	     
+	    <h2>Direccion : {{ res.address }} </h2>	   
+	    <h2>Latitud-Longitud ( {{ res.lat }} ,  {{ res.lng }} ) </h2>	  
+	  </ion-item>
+	  
+  	  <button ion-button block color="primary" (click)="eliminarlocal()">Eliminar</button>
+  	  <button ion-button block color="primary" (click)="modificarlocal()">Modificar</button>
+  </ion-list> 
+  
+</ion-content>

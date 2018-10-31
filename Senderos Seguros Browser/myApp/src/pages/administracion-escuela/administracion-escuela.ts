@@ -7,6 +7,7 @@ import {Observable} from 'rxjs/Observable';
 import { verAgentes } from '../ver-agentes/ver-agentes';
 import { verAlumnos } from '../ver-alumnos/ver-alumnos';
 import { verReportes } from '../ver-reportes/ver-reportes';
+import { verLocales } from '../ver-locales/ver-locales';
 import { verReportesAsistencia } from '../ver-reportes-asistencia/ver-reportes-asistencia';
 
 @Component({
@@ -15,20 +16,16 @@ import { verReportesAsistencia } from '../ver-reportes-asistencia/ver-reportes-a
 })
 export class AdministracionEscuela {
 
-
-
   constructor(
     private navCtrl: NavController,
     public authService: AuthService,
     private alertCtrl: AlertController,
     public geolocation : Geolocation
   ) {
-
   
   }
 
-  ionViewDidLoad(){   
-      
+  ionViewDidLoad(){         
       
   }
    
@@ -41,7 +38,11 @@ export class AdministracionEscuela {
   }
   pushverreportes() {        
       this.navCtrl.push(verReportes);      
+  }     
+  pushverlocales() {        
+      this.navCtrl.push(verLocales);      
   }   
+    
     
   pushverreportesasistencia() {        
       this.navCtrl.push(verReportesAsistencia);      

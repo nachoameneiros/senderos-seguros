@@ -16,7 +16,7 @@ return $xmlStr;
 
 include_once("../db_connect.php");
 
-$query = "SELECT * FROM tb_local
+$query = "SELECT id , name , address , lat , lng , type FROM tb_local
 union all
 select id , nombre as name , '' as address , lat , lng , 'escuela' as type
 from tb_escuela where id = ".$_GET["escuela"];

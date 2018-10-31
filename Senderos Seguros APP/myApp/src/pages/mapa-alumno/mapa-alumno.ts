@@ -17,6 +17,7 @@ export class MapaAlumno {
     public urlMap = Constants.API_ENDPOINT+"GoogleMaps/";
 
   resposeData : any;
+  revisarData : any;
     public sub : any;
 
   userData = {"idalumno":"", "lat":"" , "lng":""};
@@ -102,17 +103,28 @@ postalerta() {
         this.sub = Observable.interval(5000).subscribe((val) => { this.heartrevisaralerta();});
     }        
     
-    heartrevisaralerta() {     
-       this.authService.postData(this.userData,'getrevisaralerta/').then((res) =>{
-       if(res){
-           this.sub.unsubscribe();
-           this.mostraragente(res);
-       }
-       }, (err) => {
-         //Connection failed message
-       });
-  }
-    
+    heartrevisaralerta() {
+        this.authService.postData(this.userData, 'getrevisaralerta/').then((res) => {          
+            if (res) {
+                this.sub.unsubscribe();
+                this.mostraragente(res);
+            } else {
+                this.authService.postData(this.userData, 'revisarnull/').then((res) => {
+                    this.revisarData = res;
+                    if (this.revisarData.agente == 'NOHAY') {
+                        this.sub.unsubscribe();
+                        this.alertagente();
+                        this.authService.postData(this.userData, 'deletealerta/');
+                    } 
+                }, (err) => {
+                    //Connection failed message
+                });
+            }
+        }, (err) => {
+            //Connection failed message
+        });
+    }
+
     mostraragente(data) {         
         this.navCtrl.push(MostrarAgente,data);
     }
@@ -125,7 +137,18 @@ alerta() {
   });
   alert.present();
 }
+    
+    
+alertagente() {
+  let alert = this.alertCtrl.create({
+    title: 'Alerta',
+    subTitle: 'No hay agentes cercanos',
+    buttons: ['Cerrar']
+  });
+  alert.present();
+}
 
+    
     
     
   presentToast(msg) {

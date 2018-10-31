@@ -13,6 +13,7 @@ import { TabsPageEscuela } from '../pages/tabs-escuela/tabs-escuela';
 import { verAgentes } from '../pages/ver-agentes/ver-agentes';
 import { verAlumnos } from '../pages/ver-alumnos/ver-alumnos';
 import { verReportes } from '../pages/ver-reportes/ver-reportes';
+import { verLocales } from '../pages/ver-locales/ver-locales';
 import { verReportesAsistencia } from '../pages/ver-reportes-asistencia/ver-reportes-asistencia';
 import { AdministracionEscuela } from '../pages/administracion-escuela/administracion-escuela';
 import { GoogleMaps } from '@ionic-native/google-maps';
@@ -34,6 +35,7 @@ import { SafePipe } from '../providers/pipe';
     verAgentes,
     verAlumnos,
     verReportes,
+    verLocales,
     verReportesAsistencia,
     TabsPageEscuela,
     AdministracionEscuela,
@@ -52,6 +54,7 @@ import { SafePipe } from '../providers/pipe';
     verAgentes,
     verAlumnos,
     verReportes,
+    verLocales,
     verReportesAsistencia,
     TabsPageEscuela,
     AdministracionEscuela
