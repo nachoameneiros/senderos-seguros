@@ -8,6 +8,7 @@ import { verAgentes } from '../ver-agentes/ver-agentes';
 import { verAlumnos } from '../ver-alumnos/ver-alumnos';
 import { verReportes } from '../ver-reportes/ver-reportes';
 import { verLocales } from '../ver-locales/ver-locales';
+import { altaLocales } from '../alta-locales/alta-locales';
 import { verReportesAsistencia } from '../ver-reportes-asistencia/ver-reportes-asistencia';
 
 @Component({
@@ -41,6 +42,10 @@ export class AdministracionEscuela {
   }     
   pushverlocales() {        
       this.navCtrl.push(verLocales);      
+  }   
+    
+  pushaltalocales() {        
+      this.navCtrl.push(altaLocales);      
   }   
     
     

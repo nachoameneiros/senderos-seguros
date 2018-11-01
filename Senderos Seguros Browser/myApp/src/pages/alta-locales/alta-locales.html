@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Registrar Local</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label fixed>Nombre</ion-label>
+    <ion-input type="text"  [(ngModel)]="userData.nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Direccion</ion-label>
+    <ion-input type="text"  [(ngModel)]="userData.address"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Latitud</ion-label>
+    <ion-input type="text"  [(ngModel)]="userData.lat"></ion-input>
+  </ion-item>  
+    
+  <ion-item>
+    <ion-label fixed>Longitud</ion-label>
+    <ion-input type="text" [(ngModel)]="userData.lng"></ion-input>
+  </ion-item>
+  
+  <button ion-button block color="primary" (click)="cargarLocal()">Cargar Local</button>
+  
+</ion-content>

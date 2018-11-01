@@ -2043,7 +2043,7 @@ var SafePipe = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return API_ENDPOINT; });
 //export const API_ENDPOINT= 'http://localhost/';
-var API_ENDPOINT = 'http://192.168.241.128/';
+var API_ENDPOINT = 'http://190.19.94.195:8000/';
 //# sourceMappingURL=constants.js.map
 
 /***/ })

@@ -17,6 +17,7 @@ import { verLocales } from '../pages/ver-locales/ver-locales';
 import { verReportesAsistencia } from '../pages/ver-reportes-asistencia/ver-reportes-asistencia';
 import { AdministracionEscuela } from '../pages/administracion-escuela/administracion-escuela';
 import { GoogleMaps } from '@ionic-native/google-maps';
+import { altaLocales } from '../pages/alta-locales/alta-locales';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -35,6 +36,7 @@ import { SafePipe } from '../providers/pipe';
     verAgentes,
     verAlumnos,
     verReportes,
+    altaLocales,
     verLocales,
     verReportesAsistencia,
     TabsPageEscuela,
@@ -53,6 +55,7 @@ import { SafePipe } from '../providers/pipe';
     SignupAgente,
     verAgentes,
     verAlumnos,
+    altaLocales,
     verReportes,
     verLocales,
     verReportesAsistencia,

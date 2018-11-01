@@ -8,6 +8,8 @@
 </ion-header>
 
 <ion-content>
+  <button ion-button block color="primary" (click)="pushvermapa()">Ver Mapa</button>
+  
 
 
   <ion-list>
@@ -15,7 +17,7 @@
 	    <h2>Alumno : {{ res.alumno }} </h2>	    
 	    <h2>Agente : {{ res.agente }} </h2>	    
 	    <h2>Fecha : {{ res.fecha }} </h2>	    
-	    <h2>Motivo : {{ res.motivo }} </h2>	   
+	    <h2>Motivo : {{ getmotivo(res.motivo) }} </h2>	   
 	    <h2>Descripcion : {{ res.descripcion }} </h2>	 
 	    <h2>Latitud-Longitud ( {{ res.lat }} ,  {{ res.lng }} ) </h2>	
 	  </ion-item>
