@@ -26,7 +26,7 @@ export class verAgentes {
 
     }
 
-    ionViewDidLoad() {
+    obtenerAgentes() {
         this.authService.postData(this.userData, "getagentesescuela/").then((res) => {
             this.resposeData = res;
 
@@ -35,15 +35,14 @@ export class verAgentes {
         });
     }
 
+    ionViewDidLoad() {
+        this.obtenerAgentes()
+    }
+
     habilitarAgente(res) {
         this.agenteData.id = res.id;
         this.authService.postData(this.agenteData, "habilitaragente/").then((res) => {
-            this.authService.postData(this.userData, "getagentesescuela/").then((res) => {
-                this.resposeData = res;
-
-            }, (err) => {
-                //Connection failed message
-            });
+            this.obtenerAgentes()
         }, (err) => {
             //Connection failed message
         });
@@ -55,6 +54,39 @@ export class verAgentes {
         } else {
             return 'DESHABILITADO'
         }
-    }   
+    }
+
+    desvincularAgente(res) {
+        this.terminar(res);
+    }
+
+
+    terminar(res) {
+        let alert = this.alertCtrl.create({
+            title: 'Finalizar',
+            message: 'Desea desvincular el agente ?',
+            buttons: [
+                {
+                    text: 'No',
+                    role: 'cancel',
+                    handler: () => {
+                        console.log('cancelado');
+                    }
+                },
+                {
+                    text: 'Si',
+                    handler: () => {
+                        console.log('aceptado');
+                        this.authService.postData(res, "desvincularagente/").then((res) => {
+                            this.obtenerAgentes()
+                        }, (err) => {
+                            //Connection failed message
+                        });
+                    }
+                }
+            ]
+        });
+        alert.present();
+    }
 
 }

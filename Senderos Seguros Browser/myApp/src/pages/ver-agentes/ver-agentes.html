@@ -16,6 +16,7 @@
 	    <h2>Email : {{ res.email }} </h2>	       
 	    <h2>DNI : {{ res.dni }} </h2>	    
   	    <button ion-button block color="primary" (click)="habilitarAgente(res)">{{agentelockeado(res)}}</button>
+  	    <button ion-button block color="primary" (click)="desvincularAgente(res)">Desvincular Agente</button>
 	  </ion-item>
 	  
   </ion-list>
