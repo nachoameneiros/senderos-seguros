@@ -11,7 +11,7 @@
 
 
   <ion-list>
-	  <ion-item *ngFor="let res of resposeData">
+	  <ion-item (click)="verfoto(res)" *ngFor="let res of resposeData">
 	    <h2> Nombre y Apellido :  {{ res.nombre }} {{ res.apellido }} </h2>	   
 	    <h2>Email : {{ res.email }} </h2>	       
 	    <h2>DNI : {{ res.dni }} </h2>	    

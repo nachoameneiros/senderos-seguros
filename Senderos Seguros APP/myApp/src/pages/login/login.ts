@@ -60,7 +60,7 @@ export class Login {
                     }
                 }
                 else {
-                    this.presentToast("Usuario o password incorrecto");
+                    this.presentToast("Usuario o password incorrecto/Usuario no habilitado");
                 }
             }, (err) => {
                 //Connection failed message

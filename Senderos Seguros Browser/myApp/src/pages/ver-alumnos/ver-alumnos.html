@@ -15,6 +15,7 @@
 	    <h2> Nombre y Apellido :  {{ res.nombre }} {{ res.apellido }} </h2>	   
 	    <h2>Email : {{ res.email }} </h2>	       
 	    <h2>Curso : {{ res.curso }} </h2>	    
+  	    <button ion-button block color="primary" (click)="habilitarAlumno(res)">{{alumnolockeado(res)}}</button>
 	  </ion-item>
 	  
   </ion-list>

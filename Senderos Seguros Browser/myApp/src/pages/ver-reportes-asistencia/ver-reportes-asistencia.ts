@@ -4,6 +4,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import {AuthService} from "../../providers/auth-service";
 import 'rxjs/add/observable/interval';
 import {Observable} from 'rxjs/Observable';
+import {verReportesAsistenciaMapa} from "../ver-reportes-asistencia-mapa/ver-reportes-asistencia-mapa";
 
 @Component({
     selector: 'page-ver-reportes-asistencia',
@@ -46,6 +47,10 @@ export class verReportesAsistencia {
         if (val == 3) {
             return 'Extravio';
         }
+    }
+
+    pushvermapa() {
+        this.navCtrl.push(verReportesAsistenciaMapa);
     }
 
 }

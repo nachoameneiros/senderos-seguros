@@ -4,6 +4,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import {AuthService} from "../../providers/auth-service";
 import 'rxjs/add/observable/interval';
 import {Observable} from 'rxjs/Observable';
+import { verAgenteImagen } from '../ver-agente-imagen/ver-agente-imagen';
 
 @Component({
     selector: 'page-ver-agentes',
@@ -21,9 +22,7 @@ export class verAgentes {
         private alertCtrl: AlertController,
         public geolocation: Geolocation
     ) {
-
         this.userData.idcolegio = localStorage.getItem('id');
-
     }
 
     obtenerAgentes() {
@@ -46,6 +45,10 @@ export class verAgentes {
         }, (err) => {
             //Connection failed message
         });
+    }
+
+    verfoto(res) {
+        this.navCtrl.push(verAgenteImagen, res.imagen);
     }
 
     agentelockeado(res) {

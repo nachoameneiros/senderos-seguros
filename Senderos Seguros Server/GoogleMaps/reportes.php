@@ -16,14 +16,8 @@ return $xmlStr;
 
 include_once("../db_connect.php");
 
-$query = "
-select vw_tb_geo_agente.id , vw_tb_geo_agente.lat , vw_tb_geo_agente.lng 
-from vw_tb_geo_agente 
-inner join tb_agente on vw_tb_geo_agente.id = tb_agente.id 
-inner join tb_escuela on tb_escuela.id = tb_agente.idcolegio
-where idcolegio =".$_GET["escuela"]."
-and tb_escuela.lat-vw_tb_geo_agente.lat<0.1
-and tb_escuela.lng-vw_tb_geo_agente.lng<0.1";
+$query = "SELECT  motivo as name , descripcion as address , lat , lng , 'local' as type FROM tb_reportes_asistencia
+where idagente in (select id from tb_agente where idcolegio = ".$_GET["escuela"].")";
 
 $result = pg_query($query);
 if (!$result) {
@@ -36,8 +30,11 @@ echo '<markers>';
 
 while ($row = @pg_fetch_assoc($result)){
   echo '<marker ';
+  echo 'name="' . parseToXML($row['name']) . '" ';
+  echo 'address="' . parseToXML($row['address']) . '" ';
   echo 'lat="' . $row['lat'] . '" ';
   echo 'lng="' . $row['lng'] . '" ';
+  echo 'type="' . $row['type'] . '" ';
   echo '/>';
 }
 

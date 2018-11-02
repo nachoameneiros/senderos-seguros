@@ -21,7 +21,7 @@ if ($result['resultquery'] == "ALREADY EXISTS" ) {
 	$response->resultQuery = $result['resultquery'];
 	$json_response = json_encode($response);
 } else {
-	$query = "INSERT INTO tb_alumnos(nombre, apellido, password, email, idcolegio, curso , lockeado) VALUES ('".$nombre."','".$apellido."','".$password."','".$email."','".$colegio."','".$curso."' , true)";
+	$query = "INSERT INTO tb_alumnos(nombre, apellido, password, email, idcolegio, curso , lockeado) VALUES ('".$nombre."','".$apellido."','".$password."','".$email."','".$colegio."','".$curso."' , false)";
 	pg_query($conn, $query);
 	$response->resultQuery = "OK";
 	$json_response = json_encode($response);

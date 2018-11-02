@@ -15,9 +15,11 @@ import { verAlumnos } from '../pages/ver-alumnos/ver-alumnos';
 import { verReportes } from '../pages/ver-reportes/ver-reportes';
 import { verLocales } from '../pages/ver-locales/ver-locales';
 import { verReportesAsistencia } from '../pages/ver-reportes-asistencia/ver-reportes-asistencia';
+import { verReportesAsistenciaMapa } from '../pages/ver-reportes-asistencia-mapa/ver-reportes-asistencia-mapa';
 import { AdministracionEscuela } from '../pages/administracion-escuela/administracion-escuela';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { altaLocales } from '../pages/alta-locales/alta-locales';
+import { verAgenteImagen } from '../pages/ver-agente-imagen/ver-agente-imagen';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -38,7 +40,9 @@ import { SafePipe } from '../providers/pipe';
     verReportes,
     altaLocales,
     verLocales,
+    verAgenteImagen,
     verReportesAsistencia,
+    verReportesAsistenciaMapa,
     TabsPageEscuela,
     AdministracionEscuela,
     SafePipe
@@ -55,10 +59,12 @@ import { SafePipe } from '../providers/pipe';
     SignupAgente,
     verAgentes,
     verAlumnos,
+    verAgenteImagen,
     altaLocales,
     verReportes,
     verLocales,
     verReportesAsistencia,
+    verReportesAsistenciaMapa,
     TabsPageEscuela,
     AdministracionEscuela
   ],
