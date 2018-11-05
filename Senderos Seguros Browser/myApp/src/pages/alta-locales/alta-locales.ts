@@ -5,6 +5,7 @@ import {AuthService} from "../../providers/auth-service";
 import {ToastController} from 'ionic-angular';
 import 'rxjs/add/observable/interval';
 import {Observable} from 'rxjs/Observable';
+import {verLocalesMapa} from "../ver-locales-mapa/ver-locales-mapa";
 
 @Component({
     selector: 'page-alta-locales',
@@ -13,7 +14,7 @@ import {Observable} from 'rxjs/Observable';
 export class altaLocales {
 
     resposeData: any;
-    userData = { "idcolegio": "", "nombre": "", "address": "", "lat": "", "lng": "" };
+    userData = { "idcolegio": "", "nombre": "", "address": "", "lat": "", "lng": "" , "horarios" : "" };
     agenteData = { "id": "", "nombre": "" };
 
     constructor(
@@ -29,7 +30,9 @@ export class altaLocales {
     ionViewDidLoad() {
 
     }
-
+    pushvermapa() {
+        this.navCtrl.push(verLocalesMapa);
+    }
 
     presentToast(msg) {
         let toast = this.toastCtrl.create({

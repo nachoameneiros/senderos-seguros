@@ -8,6 +8,8 @@
 </ion-header>
 
 <ion-content>
+
+  <button ion-button block color="primary" (click)="pushvermapa()">Ver Mapa</button>
   <ion-item>
     <ion-label fixed>Nombre</ion-label>
     <ion-input type="text"  [(ngModel)]="userData.nombre"></ion-input>
@@ -28,6 +30,11 @@
     <ion-input type="text" [(ngModel)]="userData.lng"></ion-input>
   </ion-item>
   
-  <button ion-button block color="primary" (click)="cargarLocal()">Cargar Local</button>
+  <ion-item>
+    <ion-label fixed>Horarios</ion-label>
+    <ion-input type="text" [(ngModel)]="userData.horarios"></ion-input>
+  </ion-item>
   
+  <button ion-button block color="primary" (click)="cargarLocal()">Cargar Local</button>
+
 </ion-content>

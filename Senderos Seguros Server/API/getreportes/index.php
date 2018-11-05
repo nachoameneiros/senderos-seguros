@@ -11,7 +11,7 @@ $idcolegio = $request->idcolegio;
 
 $result = pg_query($conn, "select (select nombre||' '||apellido from tb_agente where id = tb_reportes.idagente) as agente,
 (select nombre||' '||apellido from tb_alumnos where id = tb_reportes.idalumno) as alumno ,
-fecha,
+fecha, valor ,
 motivo
  from tb_reportes where idagente in ( select id from tb_agente where idcolegio =  ".$idcolegio. " ) ");
 

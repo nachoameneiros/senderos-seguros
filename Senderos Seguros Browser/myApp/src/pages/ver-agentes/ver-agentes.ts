@@ -5,6 +5,7 @@ import {AuthService} from "../../providers/auth-service";
 import 'rxjs/add/observable/interval';
 import {Observable} from 'rxjs/Observable';
 import { verAgenteImagen } from '../ver-agente-imagen/ver-agente-imagen';
+import {verAgentesMapa} from "../ver-agentes-mapa/ver-agentes-mapa";
 
 @Component({
     selector: 'page-ver-agentes',
@@ -37,7 +38,9 @@ export class verAgentes {
     ionViewDidLoad() {
         this.obtenerAgentes()
     }
-
+    pushvermapa() {
+        this.navCtrl.push(verAgentesMapa);
+    }
     habilitarAgente(res) {
         this.agenteData.id = res.id;
         this.authService.postData(this.agenteData, "habilitaragente/").then((res) => {

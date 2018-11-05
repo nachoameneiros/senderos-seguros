@@ -6,6 +6,8 @@ import { MapaMostrarUbicacion } from '../mapa-mostrar-ubicacion/mapa-mostrar-ubi
 import 'rxjs/add/observable/interval';
 import {Observable} from 'rxjs/Observable';
 import * as Constants from '../../constants';
+import { LocalNotifications } from '@ionic-native/local-notifications';
+
 
 @Component({
   selector: 'page-mapa-agente',
@@ -31,6 +33,7 @@ export class MapaAgente {
     private navCtrl: NavController,
     public authService: AuthService,
     private alertCtrl: AlertController,
+  public localNotifications: LocalNotifications,
     public geolocation : Geolocation
   ) {
          this.geolocation.getCurrentPosition().then((resp) => {
@@ -42,11 +45,34 @@ export class MapaAgente {
               this.LocalLng =-58.40407397;            
           }                  
           var idescuela = localStorage.getItem('idcolegio');     
-          this.urlMap = Constants.API_ENDPOINT+"GoogleMaps/?APIURL="+encodeURIComponent(Constants.API_ENDPOINT)+"&lat="+this.LocalLat+"&lng="+this.LocalLng+"&escuela="+idescuela;         
+          this.urlMap = Constants.API_ENDPOINT+"GoogleMaps/indexAgente.php?APIURL="+encodeURIComponent(Constants.API_ENDPOINT)+"&lat="+this.LocalLat+"&lng="+this.LocalLng+"&escuela="+idescuela;         
         }).catch((error) => {
           console.log('Error getting location', error);
         });
   }
+
+    
+  data = { title:'', description:'', date:'', time:'' };
+  submit() {
+//      console.log(this.data);
+//      var date = new Date(this.data.date + " " + this.data.time);
+//      console.log(date);
+//      this.localNotifications.schedule({
+//          text: 'Delayed ILocalNotification',
+//          at: date,
+//          led: 'FF0000',
+//          sound: null
+//      });
+//      let alert = this.alertCtrl.create({
+//          title: 'Congratulation!',
+//          subTitle: 'Notification setup successfully at ' + date,
+//          buttons: ['OK']
+//      });
+//      alert.present();
+//      this.data = { title: '', description: '', date: '', time: '' };
+  }
+    
+    
 
   ionViewWillUnload() {
       if (this.sub) {

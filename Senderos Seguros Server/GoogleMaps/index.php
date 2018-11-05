@@ -43,9 +43,12 @@
         
 
         heatmap = new google.maps.visualization.HeatmapLayer({
-            data: taxiData
+            data: taxiData,
+            dissipating: true,
+            radius : 25
         });
-
+        var thiszoom =  map.getZoom();
+        var actualRadius = 0;
 
         var infoWindow = new google.maps.InfoWindow;
 
@@ -97,24 +100,75 @@
                 taxiData.push(new google.maps.LatLng(markerElem.getAttribute('lat'), markerElem.getAttribute('lng')));
                 
               });
-              heatmap.set('radius', heatmap.get('radius') ? null : 100);                    
+       //       heatmap.set('radius', heatmap.get('radius') ? null : 100);   
+
+              
            });
 
-            
-        }
-        
-        function zoomChanged () {
-            map.addListener('zoom_changed', function() {
-          	  heatmap.set('radius', heatmap.get('radius') ? null : map.getZoom());
-            });
-        }
-        
-        function getPoints() {
-            return [
-              new google.maps.LatLng(-34.59122497, -58.40407397)
-            ];
-          }
 
+
+
+           <?php  
+        	          echo'downloadUrl("'.urldecode($_GET["APIURL"]).'GoogleMaps/escuela.php?escuela='.$_GET["escuela"].'", function(data) {'
+        	              ?> 
+        	            var xml = data.responseXML;
+        	            var markers = xml.documentElement.getElementsByTagName('marker');
+        	            Array.prototype.forEach.call(markers, function(markerElem) {
+        	              var name = markerElem.getAttribute('name');
+        	              var address = markerElem.getAttribute('address');
+        	              var type = markerElem.getAttribute('type');
+        	              var point = new google.maps.LatLng(
+        	                  parseFloat(markerElem.getAttribute('lat')),
+        	                  parseFloat(markerElem.getAttribute('lng')));
+
+        	              var infowincontent = document.createElement('div');
+        	              var strong = document.createElement('strong');
+        	              strong.textContent = name
+        	              infowincontent.appendChild(strong);
+        	              infowincontent.appendChild(document.createElement('br'));
+
+        	              var text = document.createElement('text');
+        	              text.textContent = address
+        	              infowincontent.appendChild(text);
+        	              var icon = customLabel[type] || {};
+        	              var marker = new google.maps.Marker({
+        	                map: map,
+        	                position: point,
+        	                label: icon.label
+        	              });
+        	              marker.addListener('click', function() {
+        	                infoWindow.setContent(infowincontent);
+        	                infoWindow.open(map, marker);
+        	              });
+
+        	              // Add circle overlay and bind to marker
+        	              var circle = new google.maps.Circle({
+        	                map: map,
+        	                radius: 1000,    // 10 miles in metres
+        	                fillColor: '#AA0000'
+        	              });
+        	              circle.bindTo('center', marker, 'position');
+        	            });
+        	          });
+
+
+        	          map.addListener('zoom_changed', function() {
+						  var differenceZoom = map.getZoom()-thiszoom;						  
+						  actualRadius = actualRadius+(differenceZoom*100);						  
+            	          console.log( actualRadius);
+            	          thiszoom = map.getZoom();
+            	        if (actualRadius <= 0) {
+            	            heatmap.set('radius', 50);  
+            	        } else {
+            	            heatmap.set('radius', actualRadius);  
+            	        }
+
+        	          });
+
+
+        }
+        
+        
 
       function downloadUrl(url, callback) {
         var request = window.ActiveXObject ?

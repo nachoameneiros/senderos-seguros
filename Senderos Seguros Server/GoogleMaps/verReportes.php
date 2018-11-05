@@ -27,7 +27,7 @@
               label: 'E'
             },
             local: {
-              label: 'L'
+              label: 'R'
             }
           };
 
@@ -75,7 +75,6 @@
                 infoWindow.setContent(infowincontent);
                 infoWindow.open(map, marker);
               });
-
             });
           });
           

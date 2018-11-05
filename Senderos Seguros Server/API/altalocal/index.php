@@ -12,11 +12,13 @@ $address = $request->address;
 $idcolegio = $request->idcolegio;
 $lat = $request->lat;
 $lng = $request->lng;
+$horarios = $request->horarios;
 
 
-$query = "INSERT INTO public.tb_local(name, address, lat, lng, type, idescuela) VALUES ('".$nombre."','".$address."', ".$lat.",".$lng.", 'bar' , ".$idcolegio.")";
+$query = "INSERT INTO public.tb_local(name, address, lat, lng, type, idescuela, horarios) VALUES ('".$nombre."','".$address."', ".$lat.",".$lng.", 'bar' , ".$idcolegio." , '".$horarios."')";
 pg_query($conn, $query);
 $response->resultQuery = "OK";
+$response->returnquery = $query;
 $json_response = json_encode($response);
 
 

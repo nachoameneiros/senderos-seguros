@@ -9,17 +9,33 @@
 
 <ion-content>
 
-
+  <button ion-button block color="primary" (click)="pushvermapa()">Ver Mapa</button>
   <ion-list>
-	  <ion-item (click)="verfoto(res)" *ngFor="let res of resposeData">
-	    <h2> Nombre y Apellido :  {{ res.nombre }} {{ res.apellido }} </h2>	   
-	    <h2>Email : {{ res.email }} </h2>	       
-	    <h2>DNI : {{ res.dni }} </h2>	    
+	  <ion-item *ngFor="let res of resposeData">	  
+		<ion-grid  (click)="verfoto(res)">
+		  <ion-row>
+			     Nombre y Apellido :  {{ res.nombre }} {{ res.apellido }}  
+		  </ion-row>  
+		  <ion-row>
+			    Email : {{ res.email }} 	
+		  </ion-row>
+		  <ion-row>
+			    DNI : {{ res.dni }} 	
+		  </ion-row>
+		  <ion-row>
+			    Ultima actividad : {{ res.lastlogin }}	 		
+		  </ion-row>
+		  <ion-row>
+			    Valoracion Promedio : {{ res.promval }} 
+		  </ion-row>
+		</ion-grid>
+	  <ion-row>   
   	    <button ion-button block color="primary" (click)="habilitarAgente(res)">{{agentelockeado(res)}}</button>
   	    <button ion-button block color="primary" (click)="desvincularAgente(res)">Desvincular Agente</button>
-	  </ion-item>
-	  
+	  </ion-row>
+  </ion-item>
   </ion-list>
+  
   
   
 </ion-content>

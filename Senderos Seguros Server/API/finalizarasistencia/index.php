@@ -14,7 +14,7 @@ $descripcion = $request->descripcion;
 $lat = $request->lat;
 $lng = $request->lng;
 
-$query = "INSERT INTO tb_reportes_asistencia(idalumno, idagente,  motivo, descripcion , lat ,lng , fecha ) VALUES (".$idalumno.", ".$idagente.", ".$motivo.", '".$descripcion."' , ".$lat." ,".$lng." , current_date )";
+$query = "INSERT INTO tb_reportes_asistencia(idalumno, idagente,  motivo, descripcion , lat ,lng , fecha ) VALUES (".$idalumno.", ".$idagente.", ".$motivo.", '".$descripcion."' , ".$lat." ,".$lng." , current_timestamp )";
 
 pg_query($conn, $query);
 

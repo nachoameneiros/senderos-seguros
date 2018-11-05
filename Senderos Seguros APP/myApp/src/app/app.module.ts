@@ -21,6 +21,7 @@ import { ReportarAgente } from '../pages/reportar-agente/reportar-agente';
 import { FinalizarAsistencia } from '../pages/finalizar-asistencia/finalizar-asistencia';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import {MostrarAgente} from "../pages/mostrar-agente/mostrar-agente";
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 import { Ionic2RatingModule } from 'ionic2-rating';
 
@@ -85,6 +86,7 @@ import { Base64 } from '@ionic-native/base64';
     ImagePicker,
     Base64,
     Camera, 
+    LocalNotifications,
     SplashScreen,AuthService,SplitPane,Common,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ],

@@ -16,7 +16,9 @@ return $xmlStr;
 
 include_once("../db_connect.php");
 
-$query = "SELECT  motivo as name , descripcion as address , lat , lng , 'local' as type FROM tb_reportes_asistencia
+$query = "SELECT  (select name from tb_motivos where tb_motivos.id::character varying = tb_reportes_asistencia.motivo)||' - '||descripcion as name , 
+ (select 'Agente : '||nombre||' '||apellido from tb_agente where tb_agente.id=tb_reportes_asistencia.idagente)||' | '||
+ (select 'Alumno : '||nombre||' '||apellido from tb_alumnos where tb_alumnos.id=tb_reportes_asistencia.idalumno)||' | '||fecha as address , lat , lng , 'local' as type FROM tb_reportes_asistencia
 where idagente in (select id from tb_agente where idcolegio = ".$_GET["escuela"].")";
 
 $result = pg_query($query);

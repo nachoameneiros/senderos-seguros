@@ -9,7 +9,7 @@ $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 $idcolegio = $request->idcolegio;
 
-$result = pg_query($conn, "select id , name , address , lat , lng from tb_local where idescuela = ".$idcolegio);
+$result = pg_query($conn, "select id , name , address , lat , lng , horarios from tb_local where idescuela = ".$idcolegio);
 
 $rows = pg_fetch_all($result);
 
