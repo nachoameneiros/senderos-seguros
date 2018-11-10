@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
-import * as Constants from '../constants';
+import { Constants }  from '../constants';
 
 let apiUrl = Constants.API_ENDPOINT+'API/';
 /*

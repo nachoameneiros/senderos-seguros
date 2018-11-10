@@ -1,4 +1,0 @@
-#Sat Nov 03 14:17:03 ART 2018
-base.0=/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/transforms/dex/release/0
-renamed.0=classes.dex
-file.0=/home/user/eclipse-workspace/Senderos Seguros APP/myApp/platforms/android/app/build/intermediates/transforms/dex/release/0/classes.dex

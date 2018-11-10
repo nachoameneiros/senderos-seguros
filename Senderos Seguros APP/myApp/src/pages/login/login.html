@@ -14,7 +14,7 @@
 
   <ion-item>
     <ion-label fixed>Email</ion-label>
-    <ion-input type="text" value="" [(ngModel)]="userData.email"></ion-input>
+    <ion-input (ngModelChange)="(data!=null)?data = data.toLowerCase():''" type="text" value="" [(ngModel)]="userData.email"></ion-input>
   </ion-item>
 
   <ion-item>

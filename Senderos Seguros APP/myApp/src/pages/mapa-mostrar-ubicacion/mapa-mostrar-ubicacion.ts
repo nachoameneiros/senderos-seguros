@@ -3,7 +3,7 @@ import { NavController, AlertController, ToastController, NavParams} from 'ionic
 import { Geolocation } from '@ionic-native/geolocation';
 import { AuthService } from "../../providers/auth-service";
 import { FinalizarAsistencia } from "../finalizar-asistencia/finalizar-asistencia";
-import * as Constants from '../../constants';
+import { Constants }  from '../../constants';
 
 @Component({
     selector: 'page-mapa-mostrar-ubicacion',

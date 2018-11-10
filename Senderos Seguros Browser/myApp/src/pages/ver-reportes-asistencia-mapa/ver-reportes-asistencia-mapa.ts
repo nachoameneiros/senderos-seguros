@@ -4,7 +4,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import {AuthService} from "../../providers/auth-service";
 import 'rxjs/add/observable/interval';
 import {Observable} from 'rxjs/Observable';
-import * as Constants from '../../constants';
+import { Constants }  from '../../constants';
 
 @Component({
     selector: 'page-ver-reportes-asistencia-mapa',

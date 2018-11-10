@@ -3,7 +3,7 @@ import { AlertController ,ToastController , NavController} from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import {AuthService} from "../../providers/auth-service";
 import {MostrarAgente} from "../mostrar-agente/mostrar-agente";
-import * as Constants from '../../constants';
+import { Constants } from '../../constants';
 import {Observable} from 'rxjs/Observable';
 
 @Component({

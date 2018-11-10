@@ -5,7 +5,7 @@ import {AuthService} from "../../providers/auth-service";
 import { MapaMostrarUbicacion } from '../mapa-mostrar-ubicacion/mapa-mostrar-ubicacion';
 import 'rxjs/add/observable/interval';
 import {Observable} from 'rxjs/Observable';
-import * as Constants from '../../constants';
+import { Constants } from '../../constants';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 
 
@@ -49,6 +49,14 @@ export class MapaAgente {
         }).catch((error) => {
           console.log('Error getting location', error);
         });
+      
+      
+      this.localNotifications.schedule({
+   text: 'NOTIFICACION DE PRUEBA',
+   trigger: {at: new Date(new Date().getTime() + 1)},
+   led: 'FF0000',
+   sound: null
+});
   }
 
     

@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
-import * as Constants from '../constants';
+import { Constants }  from '../constants';
 
-let apiUrl = Constants.API_ENDPOINT+'API/';
 /*
   Generated class for the AuthService provider.
 
@@ -21,7 +20,7 @@ export class AuthService {
 
     return new Promise((resolve, reject) =>{
       let headers = new Headers();
-      this.http.post(apiUrl+type, JSON.stringify(credentials), {headers: headers}).
+      this.http.post(Constants.API_ENDPOINT+'API/'+type, JSON.stringify(credentials), {headers: headers}).
       subscribe(res =>{
         resolve(res.json());
       }, (err) =>{

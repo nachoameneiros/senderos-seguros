@@ -105,7 +105,7 @@ var Login = (function () {
     ], Login.prototype, "select", void 0);
     Login = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-login',template:/*ion-inline-start:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/login/login.html"*/`\n\n\n<ion-content padding>\n<ion-list>\n\n	<ion-item>\n	  <ion-label>Usuario</ion-label>\n	  <ion-select [(ngModel)]="tipousuario">\n	    <ion-option value="Alumno">Alumno</ion-option>\n	    <ion-option value="Agente">Agente</ion-option>\n	  </ion-select>\n	</ion-item>\n\n  <ion-item>\n    <ion-label fixed>Email</ion-label>\n    <ion-input type="text" value="" [(ngModel)]="userData.email"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed>Password</ion-label>\n    <ion-input type="password" [(ngModel)]="userData.password"></ion-input>\n  </ion-item>\n\n  <button ion-button block color="primary" (click)="login()">Iniciar Sesion</button>\n \n\n	<ion-item [hidden]=true>\n  <ion-label>Seleccione un colegio</ion-label>\n	  <ion-select (ionChange)="updateColegio()"  #selectColegio [(ngModel)]="colegioData">\n	    <ion-option *ngFor="let colegio of colegios"  [value]="colegio.id">{{colegio.nombre}}</ion-option>\n	  </ion-select>\n	</ion-item>\n\n\n\n  <a href="#" (click)="gotowelcome()">Volver</a>\n</ion-list>\n</ion-content>\n`/*ion-inline-end:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/login/login.html"*/`\n\n\n<ion-content padding>\n<ion-list>\n\n	<ion-item>\n	  <ion-label>Usuario</ion-label>\n	  <ion-select [(ngModel)]="tipousuario">\n	    <ion-option value="Alumno">Alumno</ion-option>\n	    <ion-option value="Agente">Agente</ion-option>\n	  </ion-select>\n	</ion-item>\n\n  <ion-item>\n    <ion-label fixed>Email</ion-label>\n    <ion-input (ngModelChange)="(data!=null)?data = data.toLowerCase():\'\'" type="text" value="" [(ngModel)]="userData.email"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed>Password</ion-label>\n    <ion-input type="password" [(ngModel)]="userData.password"></ion-input>\n  </ion-item>\n\n  <button ion-button block color="primary" (click)="login()">Iniciar Sesion</button>\n \n\n	<ion-item [hidden]=true>\n  <ion-label>Seleccione un colegio</ion-label>\n	  <ion-select (ionChange)="updateColegio()"  #selectColegio [(ngModel)]="colegioData">\n	    <ion-option *ngFor="let colegio of colegios"  [value]="colegio.id">{{colegio.nombre}}</ion-option>\n	  </ion-select>\n	</ion-item>\n\n\n\n  <a href="#" (click)="gotowelcome()">Volver</a>\n</ion-list>\n</ion-content>\n`/*ion-inline-end:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/login/login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__providers_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */]])
     ], Login);
@@ -377,6 +377,7 @@ var SignupAlumno = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__selecion_agente_alumno_selecion_agente_alumno__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__constants__ = __webpack_require__(45);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -386,6 +387,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -400,6 +402,9 @@ var Welcome = (function () {
     function Welcome(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.counterlogin = 0;
+        this.renderip = false;
+        this.newip = __WEBPACK_IMPORTED_MODULE_4__constants__["a" /* Constants */].API_ENDPOINT;
     }
     Welcome.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad Welcome');
@@ -407,12 +412,30 @@ var Welcome = (function () {
     Welcome.prototype.login = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__login_login__["a" /* Login */]);
     };
+    Welcome.prototype.changeip = function () {
+        __WEBPACK_IMPORTED_MODULE_4__constants__["a" /* Constants */].API_ENDPOINT = this.newip;
+    };
+    Welcome.prototype.viewpdf = function () {
+        //        this.fileOpener.open('assets/manual.pdf', 'application/pdf')
+        //            .then(() => console.log('File is opened'))
+        //            .catch(e => console.log('Error opening file', e));
+    };
     Welcome.prototype.signup = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__selecion_agente_alumno_selecion_agente_alumno__["a" /* SelecionAgenteAlumno */]);
     };
+    Welcome.prototype.unlocklogin = function () {
+        if (this.counterlogin > 10) {
+            this.counterlogin = 0;
+            this.renderip = true;
+        }
+        else {
+            this.renderip = false;
+            this.counterlogin = this.counterlogin + 1;
+        }
+    };
     Welcome = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-welcome',template:/*ion-inline-start:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/welcome/welcome.html"*/`\n\n\n<ion-content padding id="welcome">\n\n	  <ion-row  justify-content-center align-items-center>	\n			<img width="200" height="200" src="../../assets/imgs/logo.png"/>\n	  </ion-row>\n\n<button ion-button block class="marginTop" (click)="login()">Iniciar Sesion</button>\n<button ion-button block color="lightprimary" (click)="signup()">Registrarse</button>\n  <a href="../assets/manual.pdf" >Manual</a>\n</ion-content>\n`/*ion-inline-end:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/welcome/welcome.html"*/,
+            selector: 'page-welcome',template:/*ion-inline-start:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/welcome/welcome.html"*/`\n\n\n<ion-content padding id="welcome">\n\n	  <ion-row  justify-content-center align-items-center>	\n			<img width="200" height="200"  (click)="unlocklogin()" src="assets/imgs/logo.png"/>\n	  </ion-row>\n\n<button ion-button block class="marginTop" (click)="login()">Iniciar Sesion</button>\n<button ion-button block color="lightprimary" (click)="signup()">Registrarse</button>\n\n  <a href="#" (click)="viewpdf()">Manual</a>\n\n\n<div *ngIf="renderip">\n	<ion-input type="text" (change)="changeip()" [(ngModel)]="newip"></ion-input>\n</div>\n\n\n</ion-content>\n`/*ion-inline-end:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/welcome/welcome.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
     ], Welcome);
@@ -449,7 +472,7 @@ webpackEmptyAsyncContext.id = 118;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(411);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(45);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -463,7 +486,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var apiUrl = __WEBPACK_IMPORTED_MODULE_3__constants__["a" /* API_ENDPOINT */] + 'API/';
 /*
   Generated class for the AuthService provider.
 
@@ -479,7 +501,7 @@ var AuthService = (function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
             var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-            _this.http.post(apiUrl + type, JSON.stringify(credentials), { headers: headers }).
+            _this.http.post(__WEBPACK_IMPORTED_MODULE_3__constants__["a" /* Constants */].API_ENDPOINT + 'API/' + type, JSON.stringify(credentials), { headers: headers }).
                 subscribe(function (res) {
                 resolve(res.json());
             }, function (err) {
@@ -637,7 +659,7 @@ var TabsPageAgente = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_interval___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_interval__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_Observable__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__constants__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__constants__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_local_notifications__ = __webpack_require__(169);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -665,7 +687,7 @@ var MapaAgente = (function () {
         this.alertCtrl = alertCtrl;
         this.localNotifications = localNotifications;
         this.geolocation = geolocation;
-        this.urlMap = __WEBPACK_IMPORTED_MODULE_7__constants__["a" /* API_ENDPOINT */] + "GoogleMaps/";
+        this.urlMap = __WEBPACK_IMPORTED_MODULE_7__constants__["a" /* Constants */].API_ENDPOINT + "GoogleMaps/";
         this.timer = 600;
         this.estadoAgente = "ACTIVO";
         this.userData = { "idagente": "" };
@@ -680,9 +702,15 @@ var MapaAgente = (function () {
                 _this.LocalLng = -58.40407397;
             }
             var idescuela = localStorage.getItem('idcolegio');
-            _this.urlMap = __WEBPACK_IMPORTED_MODULE_7__constants__["a" /* API_ENDPOINT */] + "GoogleMaps/indexAgente.php?APIURL=" + encodeURIComponent(__WEBPACK_IMPORTED_MODULE_7__constants__["a" /* API_ENDPOINT */]) + "&lat=" + _this.LocalLat + "&lng=" + _this.LocalLng + "&escuela=" + idescuela;
+            _this.urlMap = __WEBPACK_IMPORTED_MODULE_7__constants__["a" /* Constants */].API_ENDPOINT + "GoogleMaps/indexAgente.php?APIURL=" + encodeURIComponent(__WEBPACK_IMPORTED_MODULE_7__constants__["a" /* Constants */].API_ENDPOINT) + "&lat=" + _this.LocalLat + "&lng=" + _this.LocalLng + "&escuela=" + idescuela;
         }).catch(function (error) {
             console.log('Error getting location', error);
+        });
+        this.localNotifications.schedule({
+            text: 'NOTIFICACION DE PRUEBA',
+            trigger: { at: new Date(new Date().getTime() + 1) },
+            led: 'FF0000',
+            sound: null
         });
     }
     MapaAgente.prototype.submit = function () {
@@ -810,7 +838,7 @@ var MapaAgente = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_service__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__finalizar_asistencia_finalizar_asistencia__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__constants__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__constants__ = __webpack_require__(45);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -835,7 +863,7 @@ var MapaMostrarUbicacion = (function () {
         this.alertCtrl = alertCtrl;
         this.navParams = navParams;
         this.toastCtrl = toastCtrl;
-        this.urlMap = __WEBPACK_IMPORTED_MODULE_5__constants__["a" /* API_ENDPOINT */] + "GoogleMaps/";
+        this.urlMap = __WEBPACK_IMPORTED_MODULE_5__constants__["a" /* Constants */].API_ENDPOINT + "GoogleMaps/";
         this.userData = { "idalumno": "", "lat": "", "lng": "" };
         this.data = this.navParams.data;
         this.geolocation.getCurrentPosition().then(function (resp) {
@@ -846,7 +874,7 @@ var MapaMostrarUbicacion = (function () {
                 _this.LocalLat = -34.59122497;
                 _this.LocalLng = -58.40407397;
             }
-            _this.urlMap = __WEBPACK_IMPORTED_MODULE_5__constants__["a" /* API_ENDPOINT */] + "GoogleMaps/mostrar.php?lat=" + _this.LocalLat + "&lng=" + _this.LocalLng + "&lng_alumno=" + _this.data.lng + "&lat_alumno=" + _this.data.lat;
+            _this.urlMap = __WEBPACK_IMPORTED_MODULE_5__constants__["a" /* Constants */].API_ENDPOINT + "GoogleMaps/mostrar.php?lat=" + _this.LocalLat + "&lng=" + _this.LocalLng + "&lng_alumno=" + _this.data.lng + "&lat_alumno=" + _this.data.lat;
         }).catch(function (error) {
             console.log('Error getting location', error);
         });
@@ -1027,7 +1055,7 @@ var TabsPageAlumno = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_service__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mostrar_agente_mostrar_agente__ = __webpack_require__(172);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__constants__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__constants__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_Observable__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_Observable__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1054,7 +1082,7 @@ var MapaAlumno = (function () {
         this.alertCtrl = alertCtrl;
         this.navCtrl = navCtrl;
         this.toastCtrl = toastCtrl;
-        this.urlMap = __WEBPACK_IMPORTED_MODULE_5__constants__["a" /* API_ENDPOINT */] + "GoogleMaps/";
+        this.urlMap = __WEBPACK_IMPORTED_MODULE_5__constants__["a" /* Constants */].API_ENDPOINT + "GoogleMaps/";
         this.userData = { "idalumno": "", "lat": "", "lng": "" };
         this.geolocation.getCurrentPosition().then(function (resp) {
             _this.LocalLat = resp.coords.latitude;
@@ -1065,7 +1093,7 @@ var MapaAlumno = (function () {
                 _this.LocalLng = -58.40407397;
             }
             var idescuela = localStorage.getItem('idcolegio');
-            _this.urlMap = __WEBPACK_IMPORTED_MODULE_5__constants__["a" /* API_ENDPOINT */] + "GoogleMaps/?APIURL=" + encodeURIComponent(__WEBPACK_IMPORTED_MODULE_5__constants__["a" /* API_ENDPOINT */]) + "&lat=" + _this.LocalLat + "&lng=" + _this.LocalLng + "&escuela=" + idescuela;
+            _this.urlMap = __WEBPACK_IMPORTED_MODULE_5__constants__["a" /* Constants */].API_ENDPOINT + "GoogleMaps/?APIURL=" + encodeURIComponent(__WEBPACK_IMPORTED_MODULE_5__constants__["a" /* Constants */].API_ENDPOINT) + "&lat=" + _this.LocalLat + "&lng=" + _this.LocalLng + "&escuela=" + idescuela;
         }).catch(function (error) {
             console.log('Error getting location', error);
         });
@@ -2082,13 +2110,19 @@ var SafePipe = (function () {
 
 /***/ }),
 
-/***/ 50:
+/***/ 45:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return API_ENDPOINT; });
-var API_ENDPOINT = 'http://localhost/';
-//export const API_ENDPOINT= 'http://190.19.94.195:8000/'; 
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Constants; });
+var Constants = (function () {
+    function Constants() {
+    }
+    //   public static API_ENDPOINT= 'http://localhost/';
+    Constants.API_ENDPOINT = 'http://190.19.94.195:8000/';
+    return Constants;
+}());
+
 //# sourceMappingURL=constants.js.map
 
 /***/ })

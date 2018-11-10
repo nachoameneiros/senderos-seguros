@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController, NavParams} from 'ionic-angular';
 import {AuthService} from "../../providers/auth-service";
-import * as Constants from '../../constants';
+import { Constants }  from '../../constants';
 import { DomSanitizer } from '@angular/platform-browser';
 
 
