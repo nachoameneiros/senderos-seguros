@@ -72,9 +72,6 @@
       "cordova-plugin-geolocation": {
         "GEOLOCATION_USAGE_DESCRIPTION": "Localizador"
       },
-      "cordova-android-play-services-gradle-release": {
-        "PLAY_SERVICES_VERSION": "15.0.0"
-      },
       "cordova-plugin-telerik-imagepicker": {
         "PHOTO_LIBRARY_USAGE_DESCRIPTION": "your usage message"
       },

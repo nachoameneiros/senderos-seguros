@@ -10,17 +10,10 @@
     "com-badrit-base64": {
       "PACKAGE_NAME": "io.ionic.starter"
     },
-    "cordova-android-play-services-gradle-release": {
-      "PLAY_SERVICES_VERSION": "15.0.0",
-      "PACKAGE_NAME": "io.ionic.starter"
-    },
     "cordova-plugin-camera": {
       "PACKAGE_NAME": "io.ionic.starter"
     },
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "io.ionic.starter"
-    },
-    "cordova-plugin-file-opener2": {
       "PACKAGE_NAME": "io.ionic.starter"
     },
     "cordova-plugin-geolocation": {

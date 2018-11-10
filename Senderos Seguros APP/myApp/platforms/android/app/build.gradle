@@ -91,7 +91,6 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
-apply from: "../cordova-android-play-services-gradle-release/starter-cordova-android-play-services-gradle-release.gradle"
 apply from: "../cordova-plugin-badge/starter-badge.gradle"
 apply from: "../cordova-plugin-local-notification/starter-localnotification.gradle"
 apply from: "../cordova-plugin-telerik-imagepicker/starter-ignorelinterrors.gradle"
@@ -265,7 +264,6 @@ dependencies {
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
     compile "com.android.support:support-v4:24.1.1+"
-    compile "com.android.support:support-v4:+"
     compile "com.android.support:support-v4:26.+"
     compile "com.android.support:appcompat-v7:23+"
     // SUB-PROJECT DEPENDENCIES END

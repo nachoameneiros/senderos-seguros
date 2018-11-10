@@ -57,14 +57,6 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-plugin-file-opener2.FileOpener2",
-    "file": "plugins/cordova-plugin-file-opener2/www/plugins.FileOpener2.js",
-    "pluginId": "cordova-plugin-file-opener2",
-    "clobbers": [
-      "cordova.plugins.fileOpener2"
-    ]
-  },
-  {
     "id": "cordova-plugin-geolocation.geolocation",
     "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
     "pluginId": "cordova-plugin-geolocation",
@@ -134,11 +126,9 @@ module.exports.metadata =
 // TOP OF METADATA
 {
   "com-badrit-base64": "0.2.0",
-  "cordova-android-play-services-gradle-release": "1.4.4",
   "cordova-plugin-badge": "0.8.7",
   "cordova-plugin-camera": "4.0.3",
   "cordova-plugin-device": "1.1.7",
-  "cordova-plugin-file-opener2": "2.0.19",
   "cordova-plugin-geolocation": "4.0.1",
   "cordova-plugin-ionic-webview": "1.2.1",
   "cordova-plugin-local-notification": "0.9.0-beta.2",
