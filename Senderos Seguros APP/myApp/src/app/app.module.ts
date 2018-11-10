@@ -36,6 +36,8 @@ import { SafePipe } from '../providers/pipe';
 import { Camera } from '@ionic-native/camera';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { Base64 } from '@ionic-native/base64';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
 
 @NgModule({
   declarations: [
@@ -83,6 +85,7 @@ import { Base64 } from '@ionic-native/base64';
     StatusBar,
     GoogleMaps,    
     Geolocation,   
+    InAppBrowser,
     ImagePicker,
     Base64,
     Camera, 

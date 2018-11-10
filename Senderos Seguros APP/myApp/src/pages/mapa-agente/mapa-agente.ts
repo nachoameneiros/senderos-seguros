@@ -51,12 +51,7 @@ export class MapaAgente {
         });
       
       
-      this.localNotifications.schedule({
-   text: 'NOTIFICACION DE PRUEBA',
-   trigger: {at: new Date(new Date().getTime() + 1)},
-   led: 'FF0000',
-   sound: null
-});
+
   }
 
     
@@ -125,11 +120,13 @@ export class MapaAgente {
     });
   }
     
-    
-    
-
-
     mostraralerta() {
+        this.localNotifications.schedule({
+            text: 'PEDIDO DE AYUDA',
+            trigger: { at: new Date(new Date().getTime() + 1) },
+            led: 'FF0000',
+            sound: null
+        });
     let alert = this.alertCtrl.create({
         title: 'Pedido de ayuda',
         message: 'responder la llamada?',
