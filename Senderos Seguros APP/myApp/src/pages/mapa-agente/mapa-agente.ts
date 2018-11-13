@@ -33,7 +33,7 @@ export class MapaAgente {
     private navCtrl: NavController,
     public authService: AuthService,
     private alertCtrl: AlertController,
-  public localNotifications: LocalNotifications,
+    public localNotifications: LocalNotifications,
     public geolocation : Geolocation
   ) {
          this.geolocation.getCurrentPosition().then((resp) => {

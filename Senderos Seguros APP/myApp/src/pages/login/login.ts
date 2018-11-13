@@ -41,26 +41,30 @@ export class Login {
             }
             this.authService.postData(this.userData, login).then((res) => {
                 this.resposeData = res;
-                if (this.resposeData.userData.res) {
-                    localStorage.setItem('nombre', this.resposeData.userData.nombre);
-                    localStorage.setItem('apellido', this.resposeData.userData.apellido);
-                    localStorage.setItem('idcolegio', this.resposeData.userData.idcolegio);
-                    localStorage.setItem('id', this.resposeData.userData.id);
-                    localStorage.setItem('hardcode', "f"); // T = HABILITO EL HARCODEO DE POSICIONES EN TODO EL CODIGO
-                    if (this.tipousuario == "Agente") {
-                        if (this.resposeData.userData.idcolegio) {
+                if (this.resposeData.userData) {
+                    if (this.resposeData.userData.lockeado == 'f') {
+                        localStorage.setItem('nombre', this.resposeData.userData.nombre);
+                        localStorage.setItem('apellido', this.resposeData.userData.apellido);
+                        localStorage.setItem('idcolegio', this.resposeData.userData.idcolegio);
+                        localStorage.setItem('id', this.resposeData.userData.id);
+                        localStorage.setItem('hardcode', "f"); // T = HABILITO EL HARCODEO DE POSICIONES EN TODO EL CODIGO
+                        if (this.tipousuario == "Agente") {
                             this.navCtrl.push(TabsPageAgente);
                             this.menu.close();
                         } else {
+                            this.navCtrl.push(TabsPageAlumno);
+                            this.menu.close();
+                        }
+                    }
+                    else {
+                        if (this.resposeData.userData.idcolegio) {
+                            this.presentToast("Usuario no habilitado");
+                        } else {
                             this.select.open();
                         }
-                    } else {
-                        this.navCtrl.push(TabsPageAlumno);
-                        this.menu.close();
                     }
-                }
-                else {
-                    this.presentToast("Usuario o password incorrecto/Usuario no habilitado");
+                } else {
+                    this.presentToast("Usuario o password incorrecto");
                 }
             }, (err) => {
                 //Connection failed message
@@ -76,7 +80,7 @@ export class Login {
     }
 
     updateColegio() {
-        var data = {"colegio" : "" , "idagente" : ""};
+        var data = { "colegio": "", "idagente": "" };
         data.colegio = this.colegioData;
         data.idagente = this.resposeData.userData.id;
         this.authService.postData(data, "setcolegio/");

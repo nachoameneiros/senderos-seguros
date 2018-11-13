@@ -35,6 +35,11 @@ export class VerAgentesAlumno {
             //Connection failed message
         });
     }
+    
+    ionViewWillEnter() {
+        this.getAgentes();    
+    }
+    
     ionViewDidLoad() {
         this.getAgentes();
     }

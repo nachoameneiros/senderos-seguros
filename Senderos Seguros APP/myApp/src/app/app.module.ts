@@ -19,7 +19,6 @@ import { TabsPageAlumno } from '../pages/tabs-alumno/tabs-alumno';
 import { VerAgentesAlumno } from '../pages/ver-agentes-alumno/ver-agentes-alumno';
 import { ReportarAgente } from '../pages/reportar-agente/reportar-agente';
 import { FinalizarAsistencia } from '../pages/finalizar-asistencia/finalizar-asistencia';
-import { GoogleMaps } from '@ionic-native/google-maps';
 import {MostrarAgente} from "../pages/mostrar-agente/mostrar-agente";
 import { LocalNotifications } from '@ionic-native/local-notifications';
 
@@ -36,7 +35,6 @@ import { SafePipe } from '../providers/pipe';
 import { Camera } from '@ionic-native/camera';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { Base64 } from '@ionic-native/base64';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
 @NgModule({
@@ -82,10 +80,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     TabsPageAlumno
   ],
   providers: [
-    StatusBar,
-    GoogleMaps,    
+    StatusBar, 
     Geolocation,   
-    InAppBrowser,
     ImagePicker,
     Base64,
     Camera, 

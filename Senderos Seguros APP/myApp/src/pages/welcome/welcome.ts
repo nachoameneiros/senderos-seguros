@@ -4,7 +4,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Login } from '../login/login';
 import { SelecionAgenteAlumno } from '../selecion-agente-alumno/selecion-agente-alumno';
 import { Constants } from '../../constants';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
 /**
@@ -24,7 +23,7 @@ export class Welcome {
     public newip: any;
 
     constructor(public navCtrl: NavController,
-        private iab: InAppBrowser,
+     
         public navParams: NavParams) {
         this.newip = Constants.API_ENDPOINT;
     }
@@ -42,8 +41,7 @@ export class Welcome {
     }
     
     viewpdf() {
-       const browser = this.iab.create(Constants.API_ENDPOINT+'manual.pdf');
-       browser.close();
+
     }
 
     signup() {

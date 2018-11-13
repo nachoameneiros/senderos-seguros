@@ -34,8 +34,9 @@ export class verLocalesMapa {
                 this.LocalLat = -34.59122497;
                 this.LocalLng = -58.40407397;
             }
-            var idescuela = localStorage.getItem('id');
-            this.urlMap = "https://www.gps-coordinates.net/";
+            var idescuela = localStorage.getItem('id');              
+            this.urlMap = Constants.API_ENDPOINT+"GoogleMaps/?APIURL="+encodeURIComponent(Constants.API_ENDPOINT)+"&lat="+this.LocalLat+"&lng="+this.LocalLng+"&escuela="+idescuela;   
+     
         }).catch((error) => {
             console.log('Error getting location', error);
         });

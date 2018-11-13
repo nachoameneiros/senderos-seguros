@@ -38,27 +38,30 @@ export class verReportesAsistencia {
         this.authService.postData(this.userData, "getreportesasistencia/").then((res) => {
             this.resposeData = res;
             this.authService.postData(this.userData, "getcountreportesasistencia/").then((res) => {
+                if (res) {
+                    
+//                    this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
+//                        type: 'doughnut',
+//                        data: {
+//                            labels: ["Robo", "Accidente", "Extravio"],
+//                            datasets: [{
+//                                label: '# de instancias',
+//                                data: [res.countrobo, res.countaccidente, res.countextravio],
+//                                backgroundColor: [
+//                                    'rgba(255, 99, 132, 0.2)',
+//                                    'rgba(54, 162, 235, 0.2)',
+//                                    'rgba(255, 206, 86, 0.2)'
+//                                ],
+//                                hoverBackgroundColor: [
+//                                    "#FF6384",
+//                                    "#36A2EB",
+//                                    "#FFCE56"
+//                                ]
+//                            }]
+//                        }
+//                    });
+                }
 
-                this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ["Robo", "Accidente", "Extravio"],
-                        datasets: [{
-                            label: '# de instancias',
-                            data: [res.countrobo, res.countaccidente, res.countextravio],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)'
-                            ],
-                            hoverBackgroundColor: [
-                                "#FF6384",
-                                "#36A2EB",
-                                "#FFCE56"
-                            ]
-                        }]
-                    }
-                });
 
 
 

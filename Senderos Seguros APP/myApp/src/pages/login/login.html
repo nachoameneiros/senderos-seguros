@@ -1,10 +1,10 @@
 
 
 
-<ion-content padding>
+<ion-content padding id="welcome">
 <ion-list>
 
-	<ion-item>
+	<ion-item  id="welcome">
 	  <ion-label>Usuario</ion-label>
 	  <ion-select [(ngModel)]="tipousuario">
 	    <ion-option value="Alumno">Alumno</ion-option>
@@ -12,26 +12,26 @@
 	  </ion-select>
 	</ion-item>
 
-  <ion-item>
+  <ion-item  id="welcome">
     <ion-label fixed>Email</ion-label>
     <ion-input (ngModelChange)="(data!=null)?data = data.toLowerCase():''" type="text" value="" [(ngModel)]="userData.email"></ion-input>
   </ion-item>
 
-  <ion-item>
-    <ion-label fixed>Password</ion-label>
+  <ion-item id="welcome">
+    <ion-label fixed >Password</ion-label>
     <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
   </ion-item>
 
   <button ion-button block color="primary" (click)="login()">Iniciar Sesion</button>
  
-
+	
 	<ion-item [hidden]=true>
-  <ion-label>Seleccione un colegio</ion-label>
-	  <ion-select (ionChange)="updateColegio()"  #selectColegio [(ngModel)]="colegioData">
+	  <ion-label>Seleccione un colegio</ion-label>
+		  <ion-select (ionChange)="updateColegio()"  #selectColegio [(ngModel)]="colegioData">
 	    <ion-option *ngFor="let colegio of colegios"  [value]="colegio.id">{{colegio.nombre}}</ion-option>
 	  </ion-select>
 	</ion-item>
-
+	
 
 
   <a href="#" (click)="gotowelcome()">Volver</a>

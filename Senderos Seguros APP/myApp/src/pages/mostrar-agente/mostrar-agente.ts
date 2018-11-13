@@ -12,6 +12,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class MostrarAgente {
 
     public image: any;
+    public data : any;
 
     constructor(
         private navCtrl: NavController,
@@ -21,20 +22,14 @@ export class MostrarAgente {
         public navParams: NavParams
     ) {
 
+        this.data = navParams.data;
         if (navParams.data.imagen != null) {
             this.image = this.sanitizer.bypassSecurityTrustUrl(navParams.data.imagen);
         }
     }
 
-
-
-
-
     ionViewDidLoad() {
 
-
     }
-
-
 
 }
