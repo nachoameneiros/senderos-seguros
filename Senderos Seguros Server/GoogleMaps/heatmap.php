@@ -22,8 +22,9 @@ from vw_tb_geo_agente
 inner join tb_agente on vw_tb_geo_agente.id = tb_agente.id 
 inner join tb_escuela on tb_escuela.id = tb_agente.idcolegio
 where idcolegio =".$_GET["escuela"]."
-and tb_escuela.lat-vw_tb_geo_agente.lat<0.01
-and tb_escuela.lng-vw_tb_geo_agente.lng<0.01";
+and @(tb_escuela.lat-vw_tb_geo_agente.lat)<0.01
+and @(tb_escuela.lng-vw_tb_geo_agente.lng)<0.01";
+
 
 $result = pg_query($query);
 if (!$result) {
