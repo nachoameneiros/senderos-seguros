@@ -88,12 +88,12 @@ export class SignupAgente {
             this.responseConsulta = res;
             if (this.responseConsulta.lockeado == 'f') {
                 this.sub.unsubscribe();
-            /*    this.localNotifications.schedule({
+                this.localNotifications.schedule({
                     text: 'CUENTA APROBADA',
                     trigger: { at: new Date(new Date().getTime() + 1) },
                     led: 'FF0000',
                     sound: null
-                });*/
+                });
             }
         }, (err) => {
             //Connection failed message
