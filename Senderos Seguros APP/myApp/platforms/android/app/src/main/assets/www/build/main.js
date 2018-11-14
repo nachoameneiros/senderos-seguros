@@ -269,12 +269,12 @@ var SignupAgente = (function () {
             _this.responseConsulta = res;
             if (_this.responseConsulta.lockeado == 'f') {
                 _this.sub.unsubscribe();
-                /*    this.localNotifications.schedule({
-                        text: 'CUENTA APROBADA',
-                        trigger: { at: new Date(new Date().getTime() + 1) },
-                        led: 'FF0000',
-                        sound: null
-                    });*/
+                _this.localNotifications.schedule({
+                    text: 'CUENTA APROBADA',
+                    trigger: { at: new Date(new Date().getTime() + 1) },
+                    led: 'FF0000',
+                    sound: null
+                });
             }
         }, function (err) {
             //Connection failed message
@@ -476,7 +476,7 @@ var Welcome = (function () {
     };
     Welcome = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-welcome',template:/*ion-inline-start:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/welcome/welcome.html"*/`\n\n\n<ion-content padding id="welcome">\n\n	  <ion-row  justify-content-center align-items-center>	\n			<img width="200" height="200"  (click)="unlocklogin()" src="assets/imgs/logo.png"/>\n	  </ion-row>\n\n<button ion-button block class="marginTop" (click)="login()">Iniciar Sesion</button>\n<button ion-button block color="lightprimary" (click)="signup()">Registrarse</button>\n\n<a href="#" (click)="viewpdf()">Manual</a>\n\n\n<div *ngIf="renderip">\n	<ion-input type="text" (change)="changeip()" [(ngModel)]="newip"></ion-input>\n</div>\n\n\n</ion-content>\n`/*ion-inline-end:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/welcome/welcome.html"*/,
+            selector: 'page-welcome',template:/*ion-inline-start:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/welcome/welcome.html"*/`\n\n\n<ion-content padding id="welcome">\n\n	  <ion-row  justify-content-center align-items-center>	\n			<img width="200" height="200"  (click)="unlocklogin()" src="assets/imgs/logo.png"/>\n	  </ion-row>\n\n<button ion-button block class="marginTop" (click)="login()">Iniciar Sesion</button>\n<button ion-button block color="lightprimary" (click)="signup()">Registrarse</button>\n\n<a href="{{newip}}manual.pdf" >Manual</a>\n\n\n<div *ngIf="renderip">\n	<ion-input type="text" (change)="changeip()" [(ngModel)]="newip"></ion-input>\n</div>\n\n\n</ion-content>\n`/*ion-inline-end:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/welcome/welcome.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
@@ -1149,6 +1149,9 @@ var MapaAlumno = (function () {
             this.sub.unsubscribe();
         }
     };
+    MapaAlumno.prototype.refrescarmapa = function () {
+        this.urlMap = this.urlMap + "&d=1";
+    };
     MapaAlumno.prototype.pedirayuda = function () {
         var _this = this;
         var alert = this.alertCtrl.create({
@@ -1247,7 +1250,7 @@ var MapaAlumno = (function () {
     };
     MapaAlumno = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-mapa-alumno',template:/*ion-inline-start:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/mapa-alumno/mapa-alumno.html"*/`<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Mapa</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n  <button ion-button block color="primary" (click)="pedirayuda()">Ayuda</button>\n  \n  <div #frame style="width:100%;height:100%;overflow:scroll !important;-webkit-overflow-scrolling:touch !important"> \n     <iframe width="100%" height="100%" [src]=\'urlMap | safe\'></iframe>\n  </div>\n</ion-content>`/*ion-inline-end:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/mapa-alumno/mapa-alumno.html"*/
+            selector: 'page-mapa-alumno',template:/*ion-inline-start:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/mapa-alumno/mapa-alumno.html"*/`<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Mapa</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n  <button ion-button block color="primary" (click)="pedirayuda()">Ayuda</button>\n  <button ion-button block color="primary" (click)="refrescarmapa()">Refrescar</button>\n  \n  <div #frame style="width:100%;height:100%;overflow:scroll !important;-webkit-overflow-scrolling:touch !important"> \n     <iframe width="100%" height="100%" [src]=\'urlMap | safe\'></iframe>\n  </div>\n</ion-content>`/*ion-inline-end:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/mapa-alumno/mapa-alumno.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */],
             __WEBPACK_IMPORTED_MODULE_3__providers_auth_service__["a" /* AuthService */],
@@ -1300,7 +1303,7 @@ var MostrarAgente = (function () {
     };
     MostrarAgente = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-mostrar-agente',template:/*ion-inline-start:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/mostrar-agente/mostrar-agente.html"*/`<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Agente</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <ion-label fixed>{{data.nombre}}</ion-label>\n\n<img  [src]="image"/>\n\n</ion-content>`/*ion-inline-end:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/mostrar-agente/mostrar-agente.html"*/
+            selector: 'page-mostrar-agente',template:/*ion-inline-start:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/mostrar-agente/mostrar-agente.html"*/`<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Agente</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <ion-label>{{data.nombre}}</ion-label>\n\n<img  [src]="image"/>\n\n</ion-content>`/*ion-inline-end:"/home/user/eclipse-workspace/Senderos Seguros APP/myApp/src/pages/mostrar-agente/mostrar-agente.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2__providers_auth_service__["a" /* AuthService */],

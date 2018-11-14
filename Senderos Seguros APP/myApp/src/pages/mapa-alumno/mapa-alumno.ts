@@ -54,6 +54,10 @@ export class MapaAlumno {
             this.sub.unsubscribe();
         }
     }
+    
+    refrescarmapa() {
+              this.urlMap = this.urlMap + "&d=1";      
+    }
 
     pedirayuda() {
         let alert = this.alertCtrl.create({
