@@ -33,9 +33,21 @@ export class verLocales {
         });
     }
 
-    eliminarlocal() {
+    eliminarlocal(res) {
+        this.authService.postData(res, "eliminarlocal/").then((res) => {       
+            this.authService.postData(this.userData, "getlocales/").then((res) => {
+                if (res) {
+                this.resposeData = res;
+                    } else {
+                    this.resposeData = [];
+                    }
 
-
+            }, (err) => {
+                //Connection failed message
+            });
+        }, (err) => {
+            //Connection failed message
+        });
 
     }
 
